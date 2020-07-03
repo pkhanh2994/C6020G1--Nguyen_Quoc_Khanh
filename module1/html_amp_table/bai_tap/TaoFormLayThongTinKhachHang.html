@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <title>Customer Information</title>
     <style>
-        td, th {
+         th {
             border: 1px solid #dddddd;
             text-align: left;
             padding: 8px;
         }
-        table, th, td {
+        table, th,td  {
             border: 1px solid black;
             border-collapse: collapse;
         }
         tr:nth-child(even){
             background-color: #dddddd;
         }
+        td {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 <form method="post">
     <h1>Market Research Survey</h1>
-    <p>Please take a few moments to complete this satisfation survey</p>
+    <p>Please take a few moments to complete this saticfation survey</p>
     <hr style="border:1px dotted">
     <p><b>What is your age ranger?</b></p>
     <select name="age" style="width: 500px" >
@@ -83,50 +86,50 @@
             <th> Strong disagree</th>
         </tr>
         <tr>
-            <td><b>Our product are priced fairly</b></td>
+            <th style="text-align: left">Our product are priced fairly</th>
             <td>
-                <input type="radio" value="strong disagree" name="2" style="margin-left:50px">
+                <input type="radio" value="strong disagree" name="2" ><br><span>1</span>
             </td>
             <td>
-                <input  type="radio" value="disagree" name="2" style="margin-left:22px">
+                <input  type="radio" value="disagree" name="2" ><br><span>2</span>
             </td>
             <td>
-                <input type="radio" value="agree" name="2" style="margin-left:15px">
+                <input type="radio" value="agree" name="2"><br><span>3</span>
             </td>
             <td>
-                <input type="radio" value="strong agree" name="2" style="margin-left:45px">
+                <input type="radio" value="strong agree" name="2"><br><span>4</span>
             </td>
 
 
         </tr>
         <tr>
-            <td><b>Our product are high quality</b></td>
+            <th style="text-align: left">Our product are high quality</th>
             <td>
-                <input type="radio" value="strong disagree" name="2" style="margin-left:50px">
+                <input type="radio" value="strong disagree" name="2" ><br><span>1</span>
             </td>
             <td>
-                <input  type="radio" value="disagree" name="2" style="margin-left:22px">
+                <input  type="radio" value="disagree" name="2" ><br><span>2</span>
             </td>
             <td>
-                <input type="radio" value="agree" name="2" style="margin-left:15px">
+                <input type="radio" value="agree" name="2" ><br><span>3</span>
             </td>
             <td>
-                <input type="radio" value="strong agree" name="2" style="margin-left:45px">
+                <input type="radio" value="strong agree" name="2" ><br><span>4</span>
             </td>
         </tr>
         <tr>
-            <td><b> You would recommend our product to a friend or coworker</b></td>
+            <th style="text-align: left"> You would recommend our product to a friend or coworker</th>
             <td>
-                <input type="radio" value="strong disagree" name="2" style="margin-left:50px">
+                <input type="radio" value="strong disagree" name="2" ><br><span>1</span>
             </td>
             <td>
-                <input  type="radio" value="disagree" name="2" style="margin-left:22px">
+                <input  type="radio" value="disagree" name="2"><br><span>2</span>
             </td>
             <td>
-                <input type="radio" value="agree" name="2" style="margin-left:15px">
+                <input type="radio" value="agree" name="2"><br><span>3</span>
             </td>
             <td>
-                <input type="radio" value="strong agree" name="2" style="margin-left:45px">
+                <input type="radio" value="strong agree" name="2" ><br><span>4</span>
         </tr>
     </table>
     <input type="submit" value="submit">
