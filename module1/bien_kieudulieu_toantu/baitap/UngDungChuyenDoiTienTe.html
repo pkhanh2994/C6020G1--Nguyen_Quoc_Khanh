@@ -6,18 +6,21 @@
     <script src="ChuyenDoi.js"></script>
 </head>
 <body>
-<span><b> Amount</b></span><span>From currency</span><span>To currency</span>
+<form>
+    <h2>Chuyển đổi tiền tệ</h2>
+<span><b> Amount</b></span><span style="margin-left: 140px">From currency</span><span style="margin-left: 80px">To currency</span>
 <br>
-<input type="text" id="money">
-<select id="fromcurrency">
-    <option type="text" value="VN">Vietnam</option>
-    <option type="text" value="dollar">USD</option>
+<input type="text" id="money" name="money">
+<select style="margin-left: 20px;width: 120px" id="fromcurrency">
+    <option value="VN">Vietnam</option>
+    <option  value="USD">USD</option>
 </select>
-<select id="tocurrency">
-    <option type="text" value="Vn">Vietnam</option>
-    <option type="text" value="dollar">USD</option>
+<select style="margin-left: 50px;width: 120px" id="tocurrency">
+    <option value="VN">Vietnam</option>
+    <option value="USD">USD</option>
 </select>
-<input type="button" onclick="caculator()" value="Convert">
-<p id="ketQua"></p>
+<input type="button" value="Convert" onclick="caculator()" >
+<p style="color: cornflowerblue" id="ketQua"></p>
+</form>
 </body>
 </html>
