@@ -17,22 +17,37 @@
     let qualityIncluded;
     let rentDay;
     let totalpay;
-
-    name=prompt("input name: ");
-    cmnd=prompt("input CMND: ");
-    birthday=prompt("input birthday: ");
-    address=prompt("input address: ");
-    typeService=prompt("input type service: ");
-    typeRoom=prompt("input type room: ");
-    typeCustomer=prompt("input type customer: ");
-    discount=prompt("input discount:" );
-    qualityIncluded=prompt("input quality included: ");
-    rentDay=prompt("input rent day: ");
-    totalpay=300*rentDay*(1-discount/100);
-    alert("name: "+name+"cmnd: "+cmnd+"birthday"+birthday+"address"+address+"typeService"+typeService+
-    "typeRoom"+typeRoom+"typeCustomer"+typeCustomer+"discount"+discount+"qualityIncluded"+qualityIncluded+"rentDay"+rentDay+
-        "totalpay"+totalpay);
-
+    let money;
+    name = prompt("input name: ");
+    cmnd = prompt("input CMND: ");
+    birthday = prompt("input birthday: ");
+    address = prompt("input address: ");
+    typeService = prompt("input type service: ");
+    typeRoom = prompt("input type room: ");
+    typeCustomer = prompt("input type customer: ");
+    discount = prompt("input d iscount:");
+    qualityIncluded = prompt("input quality included: ");
+    rentDay = prompt("input rent day: ");
+    if (typeService == "villa") {
+        money = 500;
+    } else if (typeService == "house") {
+        money = 300;
+    } else {
+        money = 100;
+    }
+    totalpay = (parseInt(money) * parseInt(rentDay)) * (1 - (parseInt(discount) / 100));
+    alert(
+        "Name: " + name +
+        "\n cmnd:  " + cmnd +
+        "\n birthday:  " + birthday +
+        "\n address:  " + address +
+        "\n typeService: " + typeService +
+        "\n typeroom:  " + typeRoom +
+        "\n typeCustomer:  " + typeCustomer +
+        "\n discount:  " + discount +
+        "\n qualityIncluded:  " + qualityIncluded +
+        "\n rentDay:  " + rentDay +
+        "\n totalPay:  " + totalpay);
 </script>
 
 </body>

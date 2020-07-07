@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra Năm Nhuận</title>
+</head>
+<body>
+<script>
+    let year = parseInt(prompt("nhập năm: "));
+    if (year % 4==0){
+        if(year%100==0) {
+            if (year % 400 == 0) {
+                alert("Năm là năm nhuận");
+            } else {
+                alert("Năm không phải là năm nhuận");
+            }
+        }else {
+            alert("Năm là năm nhuận");
+        }
+    }else{
+        alert("Năm không phải là năm nhuận");
+    }
+</script>
+</body>
+</html>

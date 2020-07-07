@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cấu trúc Swich case</title>
+</head>
+<body>
+<script>
+    /*Bài 1
+   /* let browser=prompt("Nhập vào trình duyệt của bạn: ",'');
+    switch (browser) {
+        case 'edge':
+            alert("You've got Edge");
+            break;
+        case 'chrome':
+        case 'safari':
+        case 'fire fox':
+        case 'opera':
+            alert("oke we support these browsers too");
+            break;
+     default:
+         alert("we hope that this page look ok");
+    }
+    */
+    /* bài 2
+    let a=prompt('a','');
+    switch (a) {
+        case '0':
+            alert('0');
+            break;
+        case '1':
+            alert('1');
+            break;
+        case '2':
+        case '3':
+            alert('2,3');
+            break;
+    }
+     */
+    let value= parseInt(prompt('nhập số',''));
+    switch ((value>0) ? 1 : (value<0)?-1:0){
+        case 1:
+            alert(1);
+            break;
+        case -1:
+            alert(-1);
+            break;
+        default:
+            alert(0);
+    }
+</script>
+
+</body>
+</html>

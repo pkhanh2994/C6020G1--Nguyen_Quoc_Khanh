@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2859424a-5f51-41a9-8920-ecba434acfb8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/YeuCau2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/YeuCau3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module1/cau_truc_dieu_kien_1/thuc_hanh/CauTrucSwichCase.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../module1/cau_truc_dieu_kien_1/thuc_hanh/ToanTuBaNgoi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../yeu_cau_1/YeuCau1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../yeu_cau_1/YeuCau1.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1eLl4P1LR7R4Sic3JnWPYj3AwzY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../yeu_cau_1/YeuCau1.html" />
+  </component>
+  <component name="RunManager">
+    <configuration name="YeuCau2.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/yeu_cau_2/YeuCau2.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.YeuCau2.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2859424a-5f51-41a9-8920-ecba434acfb8" name="Default Changelist" comment="" />
+      <created>1594108561874</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594108561874</updated>
+      <workItem from="1594108563118" duration="8322000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1594110038003">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594110038003" />
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1594117083945">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594117083945" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1594117083944">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594117083944" />
+    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1594117083944">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594117083944" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1594117083944">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594117083944" />
+    <state width="1515" height="210" key="GridCell.Tab.1.bottom" timestamp="1594117083946">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594117083946" />
+    <state width="1515" height="210" key="GridCell.Tab.1.center" timestamp="1594117083945">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1594117083945" />
+    <state width="1515" height="210" key="GridCell.Tab.1.left" timestamp="1594117083945">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1594117083945" />
+    <state width="1515" height="210" key="GridCell.Tab.1.right" timestamp="1594117083945">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="210" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1594117083945" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1594110978918">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1594110978918" />
+  </component>
+</project>
