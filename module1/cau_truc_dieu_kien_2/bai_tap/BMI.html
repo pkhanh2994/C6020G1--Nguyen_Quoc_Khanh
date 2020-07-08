@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính BMI</title>
+</head>
+<body>
+<input type="text"id="cannang">
+<input type="text"id="chieucao">
+<input type="button" onclick="tinhtoan()" value="Chỉ số BMI">
+<p style="color: cornflowerblue" id="ketQua"></p>
+
+<script>
+    function tinhtoan() {
+        let weight=parseInt(document.getElementById("cannang").value);
+        let hight=parseInt(document.getElementById("chieucao").value);
+        let bmi;
+        bmi=weight/(hight*hight);
+        if (bmi < 18){
+            document.getElementById("ketQua").innerHTML="Underweight"+bmi;
+        }
+        else if (bmi < 25.0)
+            document.getElementById("ketQua").innerHTML="Normal"+bmi;
+        else if (bmi < 30.0)
+            document.getElementById("ketQua").innerHTML="Overweight"+bmi;
+        else
+            document.getElementById("ketQua").innerHTML="Obese"+bmi;
+    }
+
+</script>
+</body>
+</html>

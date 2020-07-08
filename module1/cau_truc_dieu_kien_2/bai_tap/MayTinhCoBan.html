@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy Tính</title>
+</head>
+<body>
+<form>
+    <fieldset style="width: 200px; height: 200px">
+    <input type="text" id="cuaso"value=""style="width: 100px;width: 165px;font-size: 20px";><br><br>
+    <input type="button" onclick="nhap(this.value)"value="1" style="width: 40px;height: 40px">
+    <input type="button" onclick="nhap(this.value)"value="2" style="width: 40px;height: 40px">
+    <input type="button" onclick="nhap(this.value)"value="3" style="width: 40px;height: 40px">
+    <input type="button" onclick="nhap(this.value)"value="4" style="width: 40px;height: 40px">
+    <input type="button" onclick="nhap(this.value)"value="5" style="width: 40px;height: 40px">
+    <input type="button" onclick="nhap(this.value)"value="6" style="width: 40px;height: 40px">
+    <input type="button" onclick="nhap(this.value)"value="7" style="width: 40px;height: 40px">
+    <input type="button" onclick="nhap(this.value)"value="8" style="width: 40px;height: 40px">
+    <input type="button" onclick="nhap(this.value)"value="9" style="width: 40px;height: 40px">
+    <input type="button" onclick="nhap(this.value)"value="*" style="width: 40px;height: 40px">
+    <input type="button" onclick="nhap(this.value)"value="C" style="width: 40px;height: 40px">
+    <input type="button" onclick="nhap(this.value)"value="0" style="width: 40px;height: 40px">
+    <input type="button" onclick="nhap(this.value)"value="+" style="width: 40px;height: 40px">
+    <input type="button" onclick="nhap(this.value)"value="-" style="width: 40px;height: 40px">
+    <input type="button" onclick="nhap(this.value)"value="/" style="width: 40px;height: 40px">
+    <input type="button" onclick="bang()" value="=" style="width: 40px;height: 40px">
+    </fieldset>
+</form>
+<script>
+    function nhap(giatri) {
+        document.getElementById("cuaso").value+=giatri;
+    }
+    function bang() {
+        let string=document.getElementById("cuaso").value;
+        result=eval(string);
+        document.getElementById("cuaso").value= result;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do You Love Me</title>
+</head>
+<body>
+<h1 style="color: pink">Do you love me</h1>
+<input type="button" value="yes" onclick="yes()">
+<input type="button" id="nope" value="no" onmouseover="NoHover()" style="position: absolute">
+<script>
+    function yes() {
+        alert("Ô kê, nhà nghĩ không em");
+    }
+    function NoHover() {
+        let x=Math.round(Math.random()*window.innerWidth);
+        let y=Math.round(Math.random()*window.innerHeight);
+        document.getElementById("nope").style.left= x+'px';
+        document.getElementById("nope").style.top= y+'px';
+    }
+</script>
+</body>
+</html>
