@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="337a97ba-bcc4-41c5-9ad2-dde842d3bee7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../BMI.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MayTinhCoBan.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HoaHong.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TuoiHocSinh.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/XepHangHocSinh.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CuocDienThoai.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../casestudy_C0620G1_nguyen_quoc_khanh/yeu_cau_2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../casestudy_C0620G1_nguyen_quoc_khanh/yeu_cau_2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HoaHong.html" beforeDir="false" afterPath="$PROJECT_DIR$/HoaHong.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XepHangHocSinh.html" beforeDir="false" afterPath="$PROJECT_DIR$/XepHangHocSinh.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,10 +46,17 @@
       <option name="presentableId" value="Default" />
       <updated>1594183206680</updated>
       <workItem from="1594183207974" duration="4012000" />
+      <workItem from="1594191798615" duration="3257000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="548" y="155" key="FileChooserDialogImpl" timestamp="1594195072873">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="548" y="155" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1594195072873" />
   </component>
 </project>

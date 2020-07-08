@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi nhiệt độ</title>
+</head>
+<body>
+<script>
+    let chon = prompt("Hãy chọn nhiệt độ bạn muốn đổi: \n" + "1.Độ C\n" + "2.Độ F");
+    switch (chon) {
+        case'1':
+            let doC = parseInt(prompt("Hãy nhập độ C"));
+            let ketqua1 = (doC * 9 / 5) + 32;
+            alert("Giá trị độ F là: " + ketqua1);
+            break;
+        case '2':
+            let doF = parseInt(prompt("Hãy nhập độ F"))
+            let ketqua2 = (doF * 5 / 9) - 32;
+            alert("Giá trị độ C la : " + ketqua2)
+            break;
+    }
+</script>
+
+</body>
+</html>

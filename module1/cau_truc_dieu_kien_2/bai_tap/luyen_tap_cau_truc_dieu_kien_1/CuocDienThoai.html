@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let noiMang=2000;
+    let ngoaiMang=3000;
+    let soPhutNoiMang=prompt("Hãy nhập số phút nội mạng");
+    let soPhutNgoaiMang=prompt("Hãy nhập số phút nội mạng");
+    let giamGiaNoiMang;
+    let giamGiaNgoaiMang;
+    let thanhTien;
+    let tientam=(noiMang*soPhutNoiMang)+(ngoaiMang*soPhutNgoaiMang);
+    if (soPhutNoiMang>=20){
+        giamgia=(tientam*5)/100;
+    }else{
+        giamGiaNoiMang=0;
+    }
+    if(soPhutNgoaiMang>=10){
+        giamGiaNgoaiMang=(tientam*3)/100;
+    }else {
+        giamGiaNgoaiMang=0;
+    }
+    thanhTien=tientam-giamGiaNgoaiMang-giamGiaNoiMang;
+    alert("số tiền cần thanh toán là: "+thanhTien);
+</script>
+
+</body>
+</html>

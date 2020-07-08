@@ -6,8 +6,18 @@
 </head>
 <body>
 <script>
-    let doanhSo=parseInt(prompt("Hãy nhập doanh số"));
-
+    let doanhSo = prompt("Hãy nhập doanh số");
+    let hoahong;
+    if (doanhSo >= 100000000) {
+        hoahong = (doanhSo*5)/100;
+    } else {
+        if((8000000 <= doanhSo)&& (doanhSo<= 9000000)) {
+            hoahong = (doanhSo*3)/100;
+        } else {
+            hoahong =0;
+        }
+    }
+    alert("Hoa Hồng nhận được la: " + hoahong);
 </script>
 
 </body>

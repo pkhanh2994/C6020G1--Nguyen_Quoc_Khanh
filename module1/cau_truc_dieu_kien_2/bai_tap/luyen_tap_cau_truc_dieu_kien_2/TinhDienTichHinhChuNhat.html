@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện Tích Hình Chữ Nhật</title>
+</head>
+<body>
+<script>
+    let nhapcanha = parseInt(prompt("Hãy nhập chiều dài của hình chữ nhật"));
+    let nhapcanhb = parseInt(prompt("Hãy nhập chiều rộng của hình chữ nhật"));
+    if ((nhapcanha > 0)&&(nhapcanhb>0)) {
+        let ketqua = nhapcanha * nhapcanhb;
+        alert("Diện tích hình chữ nhật là: " + ketqua);
+    } else {
+        alert("Hãy nhập chính xác độ dài các cạnh của hình chữ nhật");
+    }
+</script>
+</body>
+</html>
