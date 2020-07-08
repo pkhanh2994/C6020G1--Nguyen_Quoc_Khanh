@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện Tích Tam Giác Vuông</title>
+</head>
+<body>
+<script>
+    let nhapcanha = parseInt(prompt("Hãy nhập chiều dài cạnh góc vuông thứ nhất"));
+    let nhapcanhb = parseInt(prompt("Hãy nhập chiều dài của cạnh góc vuông thứ hai"));
+    if ((nhapcanha > 0)&&(nhapcanhb>0)) {
+        let ketqua = (nhapcanha * nhapcanhb)/2;
+        alert("Diện tích tam giác vuông là: " + ketqua);
+    } else {
+        alert("Hãy nhập chí nh xác độ dài các cạnh của tam giác vuông: ");
+    }
+</script>
+
+</body>
+</html>
