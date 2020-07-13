@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In Hình Tam Giác</title>
+</head>
+<body>
+<script>
+
+        let hang;
+        let cot;
+        for (hang = 1; hang <= 5; hang++) {
+            for (cot = 1; cot <= hang; cot++) {
+                document.write("*")
+            }
+            document.write("<br>");
+        }
+
+        document.write("<br>");
+        let cot1;
+        let hang1;
+        for (hang1 = 1; hang1 <= 5; hang1++) {
+            for (cot1 = 6 - hang1; cot1 >= 1; cot1--) {
+                document.write("*")
+            }
+            document.write("<br>");
+ }
+
+
+
+        let cot2;
+        let hang2;
+        let dem;
+        for (cot2 = 4; (cot2 < 5) && (cot2 >= 0); cot2--) {
+            for (hang2 = cot2; (hang2 <= cot2) && (hang2 >= 0); hang2--) {
+                document.write("\xa0\xa0");
+                if (hang2 === 0) {
+                    dem = 4 - cot2;
+                    for (; dem >= 0; dem--)
+                        document.write("*");
+                }
+
+            }
+            document.write("<br>");
+        }
+        document.write("<br>");
+        let cot3;
+        let hang3;
+        let dem1;
+        for (cot3 = 0; (cot3 < 5); cot3++) {
+            for (hang3 = cot3; (hang3 <= cot3) && (hang3 >= 0); hang3--) {
+                document.write("\xa0\xa0");
+                if (hang3 === 0) {
+                    dem1 = 4 - cot3;
+                    for (; dem1 >= 0; dem1--)
+                        document.write("*");
+                }
+            }
+            document.write("<br>");
+        }
+
+</script>
+
+</body>
+</html>

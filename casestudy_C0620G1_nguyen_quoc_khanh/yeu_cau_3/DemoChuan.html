@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+function sua(){
+    let name = prompt("Hãy nhập lại thông tin: ");
+    name = name.replace(/\s+/g, ' ');
+    name = name.toLocaleLowerCase();
+    let name1 = "";
+    for (let i = 0; i <= name.length; i++) {
+        if (i === 0 || name.charAt(i - 1) === (" ")) {
+            name1 += name.charAt(i).toLocaleUpperCase();
+            continue;
+        }
+        name1 += name.charAt(i);
+    }
+    name = name1;
+}
+</script>
+</body>
+</html>

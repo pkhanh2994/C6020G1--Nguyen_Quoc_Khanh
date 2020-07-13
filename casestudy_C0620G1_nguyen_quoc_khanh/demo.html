@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    do {
+        var dateOfBirth = prompt("Nhập lại ngày sinh:\nTheo định dạng : tháng/ngày/năm\n Ví dụ : 12/31/2001");
+        let phanCach = dateOfBirth.indexOf("/");
+        let phanCach2 = dateOfBirth.lastIndexOf("/");
+        let test = dateOfBirth.indexOf("+");
+        if (test > -1 || (phanCach != 2) || (phanCach2 != 5) || (phanCach2 + 5 > dateOfBirth.length))
+            alert("Ngu 1 !");
+        else {
+            let catDateOfBirth1 = dateOfBirth.slice(0, 2);
+            let catDateOfBirth2 = dateOfBirth.slice(3, 5);
+            let catDateOfBirth3 = dateOfBirth.slice(6);
+            if (catDateOfBirth1 < 0 || catDateOfBirth1 > 12 || catDateOfBirth2 < 0 || catDateOfBirth2 > 31 || catDateOfBirth3 < 1900 || catDateOfBirth3 >2020) {
+                alert("Ngu 2 !");
+                continue;
+            }
+            break;
+        }
+    } while (1);
+    alert("Hết ngu !");
+    let dateChuan = new Date(dateOfBirth);
+    alert(dateChuan);
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu Cầu 3</title>
+</head>
+<body>
+<script>
+    let fullName = "Lâm Thanh Phong";
+    let idCard = "123456789";
+    let dateOfBirth = "03/20/2003";
+    let email = "abc@codegym.com";
+    let address = "Đà Lạt";
+    let customer = "Diamond";
+    let disCountPercent = "50";
+    let quantityIncluded = "500";
+    let rentDays = "10";
+    let typeOfService = "Villa";
+    let kindOfRoom = "Vip";
+    menu();
+    function menu() {
+        let choose = prompt("Nhập thao tác muốn thực hiện:\n1.show\n2.edit");
+        switch (choose) {
+            case "1":
+                show();
+                break;
+            case "2":
+                edit();
+                break;
+            default:
+                alert("Failed");
+                break;
+        }
+        menu();
+    }
+    function show() {
+        if (typeOfService === "Villa") {
+            monneyForServiceType = 500;
+        } else if (typeOfService === "House") {
+            monneyForServiceType = 300;
+        } else {
+            monneyForServiceType = 100;
+        }
+        let totalDisCount = 0;
+        let totalPay;
+        let currentYear = new Date().getFullYear();
+        let birthday = new Date(dateOfBirth).getFullYear();
+        let ageCustomer = currentYear - birthday;
+        let disCountForRentDays = 0;
+        if (rentDays >= 7)
+            disCountForRentDays = 30;
+        else if (rentDays >= 5)
+            disCountForRentDays = 20;
+        else if (rentDays >= 2)
+            disCountForRentDays = 10;
+        let disCountForCustomer = 0;
+        switch (customer) {
+            case "Diamond":
+                disCountForCustomer = 15;
+                break;
+            case "Platinum":
+                disCountForCustomer = 10;
+                break;
+            case "Gold":
+                disCountForCustomer = 5;
+                break;
+            case "Silve":
+                disCountForCustomer = 2;
+                break;
+        }
+        let disCountForAdressAndAge = 0;
+        if (address === "Đà Nẵng")
+            if (ageCustomer >= 30)
+                disCountForAdressAndAge = 22;
+            else if (ageCustomer >= 20)
+                disCountForAdressAndAge = 21;
+            else disCountForAdressAndAge = 20;
+        if (address === "Huế")
+            disCountForAdressAndAge = 10;
+        if (address === "Quảng Nam")
+            disCountForAdressAndAge = 5;
+        totalDisCount = disCountForRentDays + disCountForCustomer + disCountForAdressAndAge;
+        totalPay = (monneyForServiceType * parseFloat(rentDays) * (1 - (parseFloat(disCountPercent) / 100)) - totalDisCount) + "$";
+        alert("1.Tên khách hàng: " + fullName + "" +
+            "\n" + "2.Số CMND: " + idCard + "" +
+            "\n" + "3.Ngày sinh: " + dateOfBirth + "" +
+            "\n" + "4.Email: " + email + "" +
+            "\n" + "5.Địa chỉ: " + address + "" +
+            "\n" + "6.Loại Customer: " + customer + "" +
+            "\n" + "7.Phần trăm giảm giá: " + disCountPercent + "%" +
+            "\n" + "8.Số lượng đi kèm: " + quantityIncluded + "" +
+            "\n" + "9.Số ngày thuê: " + rentDays + "" +
+            "\n" + "10.Loại dịch vụ: " + typeOfService + "" +
+            "\n" + "11.Loại phòng: " + kindOfRoom + "" +
+            "\n" + "12.Số tiền phải trả là: " + totalPay + "");
+    }
+    function edit() {
+        let choose = prompt("1.Tên khách hàng: " + fullName + "" +
+            "\n" + "2.Số CMND: " + idCard + "" +
+            "\n" + "3.Ngày sinh: " + dateOfBirth + "" +
+            "\n" + "4.Email: " + email + "" +
+            "\n" + "5.Địa chỉ: " + address + "" +
+            "\n" + "6.Loại Customer: " + customer + "" +
+            "\n" + "7.Phần trăm giảm giá: " + disCountPercent + "%" +
+            "\n" + "8.Số lượng đi kèm: " + quantityIncluded + "" +
+            "\n" + "9.Số ngày thuê: " + rentDays + "" +
+            "\n" + "10.Loại dịch vụ: " + typeOfService + "" +
+            "\n" + "11.Loại phòng: " + kindOfRoom + "");
+        switch (choose) {
+            case "1":
+                fullName = prompt("Nhập lại tên:");
+                break;
+            case "2":
+                let check2 = true;
+                do {
+                    idCard = prompt("Nhập lại CMND:");
+                    let testCMND = isNaN(idCard);
+                    let test2 = idCard.indexOf("+");
+                    let test3 = idCard.indexOf("-");
+                    if (testCMND || test2 > -1 || test3 > -1 || idCard.length !== 9) {
+                        alert("Định dạng CMND sai !" + "\n" + "CMND phải có 9 số !");
+                    } else check2 = false;
+                } while (check2);
+                break;
+            case "3":
+                do {
+                    dateOfBirth = prompt("Nhập lại ngày sinh:\nTheo định dạng : tháng/ngày/năm\n Ví dụ : 12/31/2001");
+                    let phanCach = dateOfBirth.indexOf("/");
+                    let phanCach2 = dateOfBirth.lastIndexOf("/");
+                    let test = dateOfBirth.indexOf("+");
+                    if (test > -1 || (phanCach != 2) || (phanCach2 != 5) || (phanCach2 + 5 > dateOfBirth.length))
+                        alert("Ngày tháng năm sinh không hợp lệ !");
+                    else {
+                        let catDateOfBirth1 = dateOfBirth.slice(0, 2);
+                        let catDateOfBirth2 = dateOfBirth.slice(3, 5);
+                        let catDateOfBirth3 = dateOfBirth.slice(6);
+                        if (catDateOfBirth1 <= 0 || catDateOfBirth1 > 12 || catDateOfBirth2 <= 0 || catDateOfBirth2 > 31 || catDateOfBirth3 < 1900 || catDateOfBirth3 > 2020) {
+                            alert("Ngày tháng năm sinh không hợp lệ !");
+                            continue;
+                        }
+                        break;
+                    }
+                } while (1);
+                let dateChuan = new Date(dateOfBirth);
+                break;
+            case "4":
+                let check4 = true;
+                do {
+                    email = prompt("Nhập lại Email:");
+                    let aCong = email.indexOf("@");
+                    let dauCham = email.lastIndexOf(".");
+                    if ((aCong > 3) || (aCong < 3) || (dauCham > aCong + 4) || (dauCham < aCong + 4) || (dauCham + 4 > email.length)) {
+                        // aCong<n thì trước @ là n kí tự
+                        // dauCham<aCong+n' thì trước dấu chấm là n'-1 kí tự
+                        alert("Email của bạn không hợp lệ");
+                    } else check4 = false;
+                } while (check4);
+                break;
+            case "5":
+                address = prompt("Nhập lại địa chỉ:\nTên Thành phố:");
+                break;
+            case "6":
+                customer = prompt("Nhập lại loại Customer:\nDiamond, Platinum, Gold, Silver, Member");
+                break;
+            case "7":
+                let check7 = true;
+                do {
+                    disCountPercent = prompt("Nhập lại phần trăm giảm giá:\n1.Giá trị từ 1- 100\n2.Đơn vị (%)");
+                    let testDisCountPercent = isNaN(disCountPercent);
+                    let test2 = disCountPercent.indexOf("-");
+                    if (testDisCountPercent || test2 > -1) {
+                        alert("Số liệu giảm giá của bạn không hợp lý !")
+                    } else check7 = false;
+                } while (check7);
+                break;
+            case "8":
+                let check8 = true;
+                do {
+                    quantityIncluded = prompt("Nhập lại số lượng đi kèm:");
+                    let testQuantityIncluded = isNaN(quantityIncluded);
+                    let test2 = quantityIncluded.indexOf("-");
+                    if (testQuantityIncluded || test2 > -1) {
+                        alert("Số lượng đi kèm của bạn không hợp lý !")
+                    } else check8 = false;
+                } while (check8);
+                break;
+            case "9":
+                let check9 = true;
+                do {
+                    rentDays = prompt("Nhập lại số ngày thuê:");
+                    let testRentDays = isNaN(rentDays);
+                    let test2 = rentDays.indexOf("-");
+                    if (testRentDays || test2 > -1) {
+                        alert("Số ngày thuê của bạn không hợp lý !")
+                    } else check9 = false;
+                } while (check9);
+                break;
+            case "10":
+                typeOfService = prompt("Nhập lại loại dịch vụ:\nVilla: 500$/1 ngày\nHouse: 300$/1 ngày\nRoom: 100$/1 ngày");
+                break;
+            case "11":
+                kindOfRoom = prompt("Nhập lại loại phòng:\nVip, Business,  Normal");
+                break;
+            default:
+                alert("Failed");
+                break;
+        }
+        show()
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính thuế thu nhập cá nhân</title>
+</head>
+<body>
+<script>
+    let mucthue=prompt("Hãy cho biết mức thu nhập của bạn trong khoảng nào: \n" +
+        "1.Mức 1: Đến 5 triệu\n" +
+        "2.Mức 2: Trên 5 triệu đến 10 triệu\n" +
+        "3.Mức 3:Trên 10 triệu đến 18 triệu\n" +
+        "4.Mức 4:Trên 18 triệu đến 32 triệu\n" +
+        "5.Mức 5:Trên 32 triệu đến 52 triệu\n" +
+        "6.Mức 6: Trên 52 triệu đến 80 triệu\n" +
+        "7.Mức 7: Trên 80 triệu");
+    let thuNhapCaNhan=parseInt(prompt("Hãy nhập thu nhập của bạn"));
+    switch (mucthue) {
+        case'1':
+            let thue1=(thuNhapCaNhan*5)/100;
+            alert("Tiền thuế phải nộp là: "+thue1);
+            break;
+        case'2':
+            let thue2=((thuNhapCaNhan*10)/100)-250000;
+            alert("Tiền thuế phải nộp là: "+thue2);
+            break;
+        case'3':
+            let thue3=((thuNhapCaNhan*15)/100)-750000;
+            alert("Tiền thuế phải nộp là: "+thue3);
+            break;
+        case'4':
+            let thue4=((thuNhapCaNhan*20)/100)-1650000;
+            alert("Tiền thuế phải nộp là: "+thue4);
+            break;
+        case'5':
+            let thue5=((thuNhapCaNhan*25)/100)-3250000;
+            alert("Tiền thuế phải nộp là: "+thue5);
+            break;
+        case'6':
+            let thue6=((thuNhapCaNhan*30)/100)-5850000;
+            alert("Tiền thuế phải nộp là: "+thue6);
+            break;
+        case'7':
+            let thue7=((thuNhapCaNhan*35)/100)-9850000;
+            alert("Tiền thuế phải nộp là: "+thue7);
+            break;
+
+    }
+
+</script>
+
+</body>
+</html>

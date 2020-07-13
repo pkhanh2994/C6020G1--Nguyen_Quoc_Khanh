@@ -2,6 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <title>Yêu cầu 2</title>
 </head>
 <body>
@@ -9,9 +16,9 @@
     let name = ("Nguyễn Trần Trùi Trụi");
     let cmnd = (123432234);
     let birthday = ("12-12-1996");
-    let currenyear=new Date().getFullYear();
-    let birthdayCustomer=new Date(birthday).getFullYear();
-    let tuoi=currenyear-birthdayCustomer;
+    let currenyear = new Date().getFullYear();
+    let birthdayCustomer = new Date(birthday).getFullYear();
+    let tuoi = currenyear - birthdayCustomer;
     let address = ("Đà Nẵng");
     let typeService = ("villa");
     let typeRoom = ("vip");
@@ -25,18 +32,6 @@
     let giamgia1;
     let giamgia2;
     let sale;
-
-    if (typeService == "villa") {
-        money = 500;
-    } else if (typeService == "house") {
-        money = 300;
-    } else {
-        money = 100;
-    }
-
-    totalpay = ((parseInt(money) * parseInt(rentDay)) * (1 - (parseInt(discount) / 100));
-    }
-    tinh();
     menu();
 
     function menu() {
@@ -52,8 +47,61 @@
                 break;
         }
     }
-
     function show() {
+        if (typeService === "villa") {
+            money = 500;
+        } else if (typeService === "house") {
+            money = 300;
+        } else {
+            money = 100;
+        }
+        if (address === "Đà Nẵng") {
+            if (tuoi >= 30)
+                giamgia = 22;
+            else {
+                if (tuoi >= 20)
+                    giamgia = 21;
+                else
+                    giamgia = 20;
+            }
+        } else {
+            if (address === "Huế")
+                giamgia = 10;
+            else if (address === "Quảng Nam")
+                giamgia = 5;
+        }
+        if (rentDay >= 7)
+            giamgia1 = 30;
+        else {
+            if (rentDay >= 5) {
+                giamgia1 = 20;
+            } else {
+                if (2 <= rentDay >= 4) {
+                    giamgia1 = 10;
+                }
+            }
+        }
+        if (typeCustomer === "Diamond") {
+            giamgia2 = 15;
+        } else {
+            if (typeCustomer === " Platinum ") {
+                giamgia2 = 10;
+            } else {
+                if (typeCustomer === "Gold") {
+                    giamgia2 = 5;
+                } else {
+                    if (typeCustomer === "Sliver") {
+                        giamgia2 = 2;
+                    } else {
+                        if (typeCustomer === "Member") {
+                            giamgia2 = 0;
+                        }
+                    }
+                }
+            }
+        }
+        sale = parseInt(giamgia) + parseInt(giamgia1) + parseInt(giamgia2);
+        totalpay = ((parseInt(money) * parseInt(rentDay)) * (1 - (parseInt(discount) / 100))) - sale;
         alert(
             "Name: " + name +
             "\n cmnd:  " + cmnd +
@@ -80,7 +128,6 @@
             case "1":
                 name = prompt("Hãy nhập lại tên: ");
                 menu();
-                tinh();
                 break;
             case "2":
                 cmnd = prompt("Hãy nhập lại số chứng minh nhân dân: ");
@@ -89,17 +136,17 @@
             case "3":
                 address = prompt("Hãy nhập lại địa chỉ");
                 menu();
-                tinh();
                 break;
             case "4":
                 birthday = prompt("Hãy nhập lại năm sinh");
                 menu();
-                tinh();
                 break;
 
         }
-
+        show();
     }
 </script>
+</body>
+</html>
 </body>
 </html>

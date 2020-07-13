@@ -1,5 +1,5 @@
 function caculator() {
-    let moneyput = parseInt(document.getElementById("money").value);
+    let moneyput = document.getElementById("money").value;
     let fromcurrency1 = document.getElementById("fromcurrency").value;
     let tocurrency1 = document.getElementById("tocurrency").value;
     let tong;

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Tiền Điện</title>
+</head>
+<body>
+<script>
+    let soChuDienGioBT=parseInt(prompt("Hãy nhập số chữ điện sử dụng giờ bình thường"))
+    let soChuDienGioTD=parseInt(prompt("Hãy nhập số chữ điện giờ thấp điểm"));
+    let soChuDienGioCD=parseInt(prompt("Hãy nhập số chữ điện giờ cao điểm"));
+    let giaGioBT1=2125;
+    let giaGioTD1=1185;
+    let giaGioCD1=3699;
+    let giaGioBT2=2287;
+    let giaGioTD2=1347;
+    let giaGioCD2=3829;
+    let giaGioBT3=2320;
+    let giaGioTD3=1412;
+    let giaGioCD3=3991;
+    let chon=prompt("Hãy chọn cấp điện áp bạn sử dụng: \n"+
+    "1. Cấp điện áp từ 22kV trở lên\n"+
+    "2. Cấp điện áp 6kV đến 22kV\n"+
+    "3.Cấp điện áp dưới 6kV");
+    switch (chon) {
+        case '1':
+            let tienDien1=(soChuDienGioBT*giaGioBT1)+(soChuDienGioTD*giaGioTD1)+(soChuDienGioCD*giaGioCD1);
+            alert("Số tiền điện cần phải trả là: "+tienDien1);
+            break;
+        case '2':
+            let tienDien2=(soChuDienGioBT*giaGioBT2)+(soChuDienGioTD*giaGioTD2)+(soChuDienGioCD*giaGioCD2);
+            alert("Số tiền điện cần phải trả là: "+tienDien2);
+            break;
+        case '3':
+            let tienDien3=(soChuDienGioBT*giaGioBT3)+(soChuDienGioTD*giaGioTD3)+(soChuDienGioCD*giaGioCD3);
+            alert("Số tiền điện cần phải trả là: "+tienDien3);
+            break;
+    }
+
+</script>
+
+</body>
+</html>

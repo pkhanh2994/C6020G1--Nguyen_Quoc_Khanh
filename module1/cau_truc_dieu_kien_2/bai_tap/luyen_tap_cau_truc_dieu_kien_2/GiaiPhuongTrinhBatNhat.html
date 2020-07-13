@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải Phương Trình Bậc Nhất</title>
+</head>
+<body>
+<script>
+    let nhapHeSoA = parseInt(prompt("Hãy nhập hệ số a"));
+    let nhapHeSoB = parseInt(prompt("Hãy nhập hệ số B"));
+    if ((nhapHeSoA == 0) && (nhapHeSoB == 0)) {
+        alert("Phương trình vô số nghiệm ");
+    } else {
+        if ((nhapHeSoA == 0) && (nhapHeSoB != 0)) {
+            alert("Phương trình vô nghiệm");
+        } else {
+            let nghiem = -nhapHeSoB / nhapHeSoA;
+            alert("Nghiệm của phương trình là: " + nghiem);
+        }
+    }
+</script>
+
+</body>
+</html>

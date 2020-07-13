@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hình Chữ Nhật</title>
+</head>
+<body>
+<script>
+    let hang = parseInt(prompt("hãy nhập chiều rộng của hình chữ nhật"));
+    let cot = parseInt(prompt("Hãy nhập chiều dài của hình chữ nhật"));
+    let kq = "";
+    for (i = 1; i <= hang; i++) {
+        for (j = 1; j <= cot; j++)
+            if (i === 1 || i === hang || j === 1 || j === cot) {
+                kq += "*"
+            } else {
+                kq += ("&nbsp;&nbsp;")
+            }
+        kq += "<br>"
+    }
+    document.write(kq)
+</script>
+
+</body>
+</html>

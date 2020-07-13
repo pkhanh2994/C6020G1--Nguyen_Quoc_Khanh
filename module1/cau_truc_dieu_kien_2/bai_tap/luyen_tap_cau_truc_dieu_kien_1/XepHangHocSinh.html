@@ -6,32 +6,29 @@
 </head>
 <body>
 <script>
-    let diemToanKt=parseInt(prompt("Hãy nhập điểm kiểm tra toán"));
-    let diemToanMid=parseInt(prompt("Hãy nhập điểm toán giữa kì"));
-    let diemToanFinal =parseInt(prompt("Hãy nhập điểm toán cuối kì"));
-    let diemTBToan = (diemToanKt+(diemToanMid*2)+(diemToanFinal*3))/6;
-    let diemVanKt=parseInt(prompt("Hãy nhập điểm kiểm tra văn"));
-    let diemVanMid=parseInt(prompt("Hãy nhập điểm văn giữa kì"));
-    let diemVanFinal=parseInt(prompt("Hãy nhập điểm văn cuối kì"));
-    let diemTBVan= (diemVanKt+(diemVanMid*2)+(diemVanFinal*3))/6;
-    let diemAnhKt=parseInt(prompt("Hãy nhập điểm kiểm tra Anh"));
-    let diemAnhMid=parseInt(prompt("Hãy nhập điểm Anh giữa kì"));
-    let diemAnhFinal=parseInt(prompt("Hãy nhập điểm toán cuối kì"));
-    let diemTBAnh= (diemAnhKt+(diemAnhMid*2)+(diemAnhFinal*3))/6;
-    let diemTB=(diemTBToan+diemTBVan+diemTBAnh)/3;
-    if (diemTB>=8){
+    let diemToanKt = parseInt(prompt("Hãy nhập điểm kiểm tra toán"));
+    let diemToanMid = parseInt(prompt("Hãy nhập điểm toán giữa kì"));
+    let diemToanFinal = parseInt(prompt("Hãy nhập điểm toán cuối kì"));
+    let diemTBToan = (diemToanKt + (diemToanMid * 2) + (diemToanFinal * 3)) / 6;
+    let diemVanKt = parseInt(prompt("Hãy nhập điểm kiểm tra văn"));
+    let diemVanMid = parseInt(prompt("Hãy nhập điểm văn giữa kì"));
+    let diemVanFinal = parseInt(prompt("Hãy nhập điểm văn cuối kì"));
+    let diemTBVan = (diemVanKt + (diemVanMid * 2) + (diemVanFinal * 3)) / 6;
+    let diemAnhKt = parseInt(prompt("Hãy nhập điểm kiểm tra Anh"));
+    let diemAnhMid = parseInt(prompt("Hãy nhập điểm Anh giữa kì"));
+    let diemAnhFinal = parseInt(prompt("Hãy nhập điểm toán cuối kì"));
+    let diemTBAnh = (diemAnhKt + (diemAnhMid * 2) + (diemAnhFinal * 3)) / 6;
+    let diemTB = (diemTBToan + diemTBVan + diemTBAnh) / 3;
+    if (diemTB >= 8) {
         alert("Học sinh giỏi")
-    }else{
-        if((6<=diemTB) &&(diemTB>=7)){
-            alert("Học sinh khá")
-        }else {
-            if((5<=diemTB) &&(diemTB<6)){
-                alert("Học sinh trung bình")
-            }else{
-                alert("Ở lại lớp")
-            }
-        }
+    } else if ((6 <= diemTB) && (diemTB >= 7))
+        alert("Học sinh khá")
+    else if ((5 <= diemTB) && (diemTB < 6))
+        alert("Học sinh trung bình")
+    else {
+        alert("Ở lại lớp")
     }
+
 </script>
 </body>
 </html>

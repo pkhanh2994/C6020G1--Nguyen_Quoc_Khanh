@@ -7,24 +7,24 @@
 <body>
 <input type="text"id="cannang">
 <input type="text"id="chieucao">
-<input type="button" onclick="tinhtoan()" value="Chỉ số BMI">
+<input type="button" onclick="tinhToan()" value="Chỉ số BMI">
 <p style="color: cornflowerblue" id="ketQua"></p>
 
 <script>
-    function tinhtoan() {
-        let weight=parseInt(document.getElementById("cannang").value);
-        let hight=parseInt(document.getElementById("chieucao").value);
+    function tinhToan() {
+        let weight=document.getElementById("cannang").value;
+        let hight=document.getElementById("chieucao").value;
         let bmi;
         bmi=weight/(hight*hight);
         if (bmi < 18){
-            document.getElementById("ketQua").innerHTML="Underweight"+bmi;
+            document.getElementById("ketQua").innerHTML="Underweight\n" +bmi;
         }
         else if (bmi < 25.0)
-            document.getElementById("ketQua").innerHTML="Normal"+bmi;
+            document.getElementById("ketQua").innerHTML="Normal\n" +bmi;
         else if (bmi < 30.0)
-            document.getElementById("ketQua").innerHTML="Overweight"+bmi;
+            document.getElementById("ketQua").innerHTML="Overweight\n" +bmi;
         else
-            document.getElementById("ketQua").innerHTML="Obese"+bmi;
+            document.getElementById("ketQua").innerHTML="Obese\n" +bmi;
     }
 
 </script>

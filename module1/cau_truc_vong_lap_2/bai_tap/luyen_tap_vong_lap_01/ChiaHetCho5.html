@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let so1 = 1;
+    let so2 = 1;
+    let so3;
+    while (so1 % 5 !== 0) {
+        so3=so2;
+        so2=so1+so2;
+        so1=so3;
+    }document.write(so1)
+</script>
+</body>
+</html>

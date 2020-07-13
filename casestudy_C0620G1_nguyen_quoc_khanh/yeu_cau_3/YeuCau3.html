@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let name = ("Nguyễn Trần Trùi Trụi");
+    let idCard = (123432234);
+    let birthday = ("12-12-1995");
+    let email = "abcd@gmail.com";
+    let address = ("Đà Nẵng");
+    let typeService = ("villa");
+    let typeRoom = ("vip");
+    let typeCustomer = ("Diamond");
+    let discount = 20;
+    let quantityIncluded = 5;
+    let rentDay = 10;
+    let totalpay;
+    let money;
+    let saleOff;
+    let saleOff1;
+    let saleOff2;
+    let sale;
+    menu();
+
+    function menu() {
+        let choose1 = prompt("Nhập yêu cầu của bạn: \n" +
+            "1.Show\n" +
+            "2.Edit");
+        switch (choose1) {
+            case "1":
+                show();
+                break;
+            case"2":
+                edit();
+                break;
+        }
+    }
+
+    function fixTheString(fix) {
+        fix = fix.replace(/\s+/g, ' ');
+        fix = fix.toLocaleLowerCase();
+        let fix1 = "";
+        for (let i = 0; i <= fix.length; i++) {
+            if (i === 0 || fix.charAt(i - 1) === (" ")) {
+                fix1 += fix.charAt(i).toLocaleUpperCase();
+                continue;
+            }
+            fix1 += fix.charAt(i);
+        }
+        return fix1;
+    }
+    function show() {
+        let currenyear = new Date().getFullYear();
+        let birthdayCustomer = new Date(birthday).getFullYear();
+        let age = currenyear - birthdayCustomer;
+        if (typeService === "villa") {
+            money = 500;
+        } else if (typeService === "house") {
+            money = 300;
+        } else {
+            money = 100;
+        }
+        if (address === "Đà Nẵng") {
+            if (age >= 30)
+                saleOff = 22;
+            else {
+                if (age >= 20)
+                    saleOff = 21;
+                else {
+                    if (0 <= age && age < 20) {
+                        saleOff = 20;
+                    } else saleOff = 0;
+                }
+            }
+        } else {
+            if (address === "Huế")
+                saleOff = 10;
+            else if (address === "Quảng Nam") {
+                saleOff = 5;
+            } else {
+                saleOff = 0
+            }
+        }
+        if (rentDay >= 7)
+            saleOff1 = 30;
+        else {
+            if (rentDay >= 5) {
+                saleOff1 = 20;
+            } else {
+                if (2 <= rentDay >= 4) {
+                    saleOff1 = 10;
+                }
+            }
+        }
+        if (typeCustomer === "Diamond") {
+            saleOff2 = 15;
+        } else {
+            if (typeCustomer === " Platinum ") {
+                saleOff2 = 10;
+            } else {
+                if (typeCustomer === "Gold") {
+                    saleOff2 = 5;
+                } else {
+                    if (typeCustomer === "Sliver") {
+                        saleOff2 = 2;
+                    } else {
+                        if (typeCustomer === "Member") {
+                            saleOff2 = 0;
+                        }
+                    }
+                }
+            }
+        }
+        sale = parseInt(saleOff) + parseInt(saleOff1) + parseInt(saleOff2);
+        totalpay = ((parseInt(money) * parseInt(rentDay)) * (1 - (parseInt(discount) / 100))) - sale;
+        alert(
+            "Name: " + name +
+            "\n cmnd:  " + idCard +
+            "\n birthday:  " + birthday +
+            "\n address:  " + address +
+            "\n email:" + email +
+            "\n typeService: " + typeService +
+            "\n typeroom:  " + typeRoom +
+            "\n typeCustomer:  " + typeCustomer +
+            "\n discount:  " + discount +
+            "\n qualityIncluded:  " + quantityIncluded +
+            "\n rentDay:  " + rentDay +
+            "\n totalPay:  " + totalpay);
+        menu();
+    }
+
+    function edit() {
+        let choose = prompt("Bạn muốn sửa thông tin gì: \n" +
+            "1.Sữa tên \n" +
+            "2.Sữa cmnd\n" +
+            "3.Sữa địa chỉ:\n" +
+            "4.Sửa ngày sinh \n" +
+            "5.Sửa địa chỉ email\n" +
+            "6.discount\n" +
+            "7.Số ngày thuê \n" +
+            "8.Số người đi kèm\n" +
+            "9.Loại khách hạng");
+        switch (choose) {
+            case "1":
+                name = prompt("Hãy nhập lại tên: ");
+                name = fixTheString(name);
+                break;
+            case "2":
+                do {
+                    idCard = prompt("Hãy nhập lại số chứng minh nhân dân: ");
+                    let check = isNaN(idCard);
+                    let check2 = idCard.indexOf("+");
+                    let check3 = idCard.indexOf("-");
+                    let check4 = idCard.indexOf(".");
+                    if ((check) || (idCard.length !== 9) ||
+                        (check2 > -1) ||
+                        (check3 > -1) ||
+                        (check4 > -1)) {
+                        alert("Chứng minh nhân  dân phải định dạng kiểu số và có 9 kí tự");
+                        continue;
+                    }
+                    break;
+                } while (1);
+                break;
+            case "3":
+                address = prompt("Hãy nhập lại địa chỉ");
+                address = fixTheString(address);
+                break;
+            case "4":
+                do {
+                    birthday = prompt("Nhập lại ngày sinh:\nTheo định dạng : tháng/ngày/năm\n Ví dụ : 12/31/2001");
+                    let currenyear1 = new Date().getFullYear();
+                    let slash = birthday.indexOf("/");
+                    let slash2 = birthday.lastIndexOf("/");
+                    let test = birthday.indexOf("+");
+                    let test1 = birthday.indexOf(".");
+                    let cut1 = birthday.slice(0, 2);
+                    let cut2 = birthday.slice(3, 5);
+                    let cut3 = birthday.slice(6);
+                    if (test > -1 || (slash !== 2) || (slash2 !== 5) || (slash2 + 5 > birthday.length) || test1 > -1 ||
+                        isNaN(cut1) === true || isNaN(cut2) === true || isNaN(cut3) === true)
+                        alert("Sai định dạng ngày tháng năm");
+                    else {
+                        if (cut1 < 0 || cut1 > 12 || cut2 < 0 || cut2 > 31 ||
+                            (cut2 === "31" && cut1 === "2") ||
+                            (cut2 === "30" && cut1 === "2")
+                            || (cut3 < 1900) || (cut3 > currenyear1) ||
+                            (cut2 === "31" && cut1 === "4") ||
+                            (cut2 === "31" && cut1 === "6") ||
+                            (cut2 === "31" && cut1 === "9") ||
+                            (cut2 === "31" && cut1 === "11")) {
+                            alert("Sai định dạng ngày tháng năm");
+                            continue;
+                        }
+                        break;
+                    }
+                } while (1);
+                break;
+            case '5':
+                do {
+                    email = prompt("Vui lòng nhập lại địa chỉ email");
+                    let aT = email.indexOf("@");
+                    let period = email.lastIndexOf(".");
+                    if ((aT < 3) || (period < aT + 2) || (period + 2 > email.length)) {
+                        //acong<n thì trước @ phải ít nhát n kí tự
+                        //dấuchấm<acong+m thì trước dấu chấm phải ít nhát m-1 kí tự
+                        alert("Email bạn điền không chính xác");
+                        continue;
+                    }
+                    break;
+                } while (1);
+                break;
+            case '6':
+                do {
+                    discount = prompt("Hãy nhập lại discount: ");
+                    let checkDS = isNaN(discount);
+                    let checkDS2 = discount.indexOf("-");
+                    let checkDS3 = discount.indexOf(".");
+                    let checkDS4 = discount.indexOf(",")
+                    if ((checkDS) || (checkDS2 > -1) || checkDS3 > -1 || checkDS4 > -1) {
+                        alert("Discount nhập sai định dạng");
+                        continue;
+                    }
+                    break;
+                } while (1);
+                break;
+            case '7':
+                do {
+                    rentDay = prompt("Hãy nhập lại số ngày thuê ");
+                    let checkRD = isNaN(rentDay);
+                    let checkRD2 = rentDay.indexOf("-");
+                    if ((checkRD) || (checkRD2 > -1)) {
+                        alert("Số ngày thuê nhập sai định dạng");
+                        continue;
+                    }
+                    break;
+                } while (1);
+                break;
+            case '8':
+                do {
+                    quantityIncluded = prompt("Hãy nhập lại số lượng đi kèm: ");
+                    let checkIN = isNaN(quantityIncluded);
+                    let checkIN2 = quantityIncluded.indexOf("-");
+                    if (checkIN || checkIN2 > -1) {
+                        alert("Số lượng đi kèm nhập sai định dạng");
+                        continue;
+                    }
+                    break;
+                } while (1);
+                break;
+            case '9':
+                typeCustomer = prompt("Hãy nhập lại loại khách hàng");
+                typeCustomer = fixTheString(typeCustomer);
+                break;
+        }
+        show();
+    }
+</script>
+</body>
+</html>

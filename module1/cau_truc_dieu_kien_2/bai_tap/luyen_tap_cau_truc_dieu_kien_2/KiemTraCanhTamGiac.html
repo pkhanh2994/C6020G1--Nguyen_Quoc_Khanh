@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra Cạnh Tam Giác</title>
+</head>
+<body>
+<script>
+    let nhapSoA=parseFloat(prompt("Nhập số a"));
+    let nhapSoB=parseFloat(prompt("Nhập số b"));
+    let nhapSoC=parseFloat(prompt("Nhập số c"));
+    if ((nhapSoA>0)&&(nhapSoB>0)&&(nhapSoC>0)) {
+        if (((nhapSoA + nhapSoB) > nhapSoC) || ((nhapSoB + nhapSoC) > nhapSoA) || ((nhapSoA + nhapSoC) > nhapSoB)) {
+            alert("Đây là độ dài 3 cạnh của tam giác");
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

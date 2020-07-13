@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Đoán Số</title>
+</head>
+<body>
+<input type="button" onclick="play()" value="Play" style="color: blue;width: 80px;height: 80px">
+<p id="ketQua" style="color: pink"></p>
+</body>
+<script>
+    function play() {
+        let soMin = parseInt(prompt("hãy giá trị min"));
+        let soMax = parseInt(prompt("Hãy nhập giá trị max"));
+        let soDuDoan;
+        let soNgauNhien = Math.round(Math.random() * (soMax - soMin) + soMin);
+        for (let i = 0; i < 3; i++) {
+            soDuDoan= parseInt(prompt("Hãy nhập số bạn dự đoán"));
+            if (soDuDoan===soNgauNhien) {
+                document.getElementById("ketQua").innerHTML="chúc Mừng Bạn đã đoán đúng";
+                break;
+            }else {
+                alert("Bạn đã dự đoán không đúng");
+                document.getElementById("ketQua").innerHTML="Bạn Đã Thua";
+            }
+
+        }
+
+    }
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải Phương Trình Bậc Hai</title>
+</head>
+<body>
+<script>
+    let nhapHeSoA = parseFloat(prompt("Hãy nhập hệ số a"));
+    let nhapHeSoB = parseFloat(prompt("Hãy nhập hệ số b"));
+    let nhapHeSoC = parseFloat(prompt("Hãy nhập hệ số c"));
+    let heSoDelta=Math.pow(nhapHeSoB,2 )-(4*nhapHeSoA*nhapHeSoC);
+    if (heSoDelta>0){
+        let nghiem1=(-nhapHeSoB-Math.sqrt(heSoDelta)/2*nhapHeSoA);
+        let nghiem2=(-nhapHeSoB+Math.sqrt(heSoDelta)/2*nhapHeSoA);
+     alert("Phương trình có 2 nghiệm là: "+nghiem1 +nghiem2);
+    }else {
+        if(heSoDelta==0){
+            let nghiem3=-nhapHeSoB/(2*nhapHeSoA);
+            alert("phương trình có nghiệm kép là: "+nghiem3);
+        }else {
+            alert("Phương trình vô nghiệm");
+        }
+    }
+</script>
+
+</body>
+</html>

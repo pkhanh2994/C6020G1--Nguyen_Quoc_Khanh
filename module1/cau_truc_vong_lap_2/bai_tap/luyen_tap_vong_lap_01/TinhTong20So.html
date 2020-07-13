@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Tổng 20 Số</title>
+</head>
+<body>
+<script>
+    let so1 = 0;
+    let so2 = 1;
+    let so3;
+    //let soLuongDay = prompt("Hãy nhập số lượng dãy");
+    //document.write(so1+"\t");
+    //document.write(so2+"\t");
+    let tong=1;
+    for (let i = 2; i < 20; i++) {
+        so3 = so1 + so2;
+        so1 = so2;
+        so2 = so3;
+        //document.write(so3+"\t")
+        tong=tong+so3;
+    }
+    document.write("tổng là: "+tong);
+</script>
+
+</body>
+</html>

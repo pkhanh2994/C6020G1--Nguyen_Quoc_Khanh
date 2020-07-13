@@ -7,7 +7,7 @@
 <body>
 <script>
     let name;
-    let cmnd;
+    let idCard;
     let birthday;
     let address;
     let typeService;
@@ -17,7 +17,6 @@
     let qualityIncluded;
     let rentDay;
     let totalpay;
-    let money;
     name = prompt("input name: ");
     cmnd = prompt("input CMND: ");
     birthday = prompt("input birthday: ");
@@ -28,17 +27,10 @@
     discount = prompt("input d iscount:");
     qualityIncluded = prompt("input quality included: ");
     rentDay = prompt("input rent day: ");
-    if (typeService == "villa") {
-        money = 500;
-    } else if (typeService == "house") {
-        money = 300;
-    } else {
-        money = 100;
-    }
-    totalpay = (parseInt(money) * parseInt(rentDay)) * (1 - (parseInt(discount) / 100));
+    totalpay = 300 * parseInt(rentDay) * (1 - (parseInt(discount) / 100));
     alert(
         "Name: " + name +
-        "\n cmnd:  " + cmnd +
+        "\n cmnd:  " + idCard +
         "\n birthday:  " + birthday +
         "\n address:  " + address +
         "\n typeService: " + typeService +
