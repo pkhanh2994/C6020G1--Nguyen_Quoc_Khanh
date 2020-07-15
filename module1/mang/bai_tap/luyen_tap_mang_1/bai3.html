@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [-3, 5, 1, 3, 2, 10,12,13,14,15];
+    let max = array[0];
+    let sum = 0;
+    let average=0;
+    for (let i = 1; i < array.length; i++) {
+        if (array[i] > max) {
+            max = array[i];
+        }
+        sum+=array[i];
+    }
+    average=sum/array.length;
+    document.write("Giá trị lớn nhất là: "+max+"\x0a"+"trung bình cộng là: "+average)
+</script>
+</body>
+</html>

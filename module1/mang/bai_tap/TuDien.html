@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tu dien</title>
+</head>
+<body>
+<script>
+    let str = prompt("Nhập từ bạn cần tìm kiếm");
+    let english = ["use", "learn", "school", "name", "story"];
+    let vietnam = ["sử dụng", "học", "trường học", "tên", "câu chuyện"];
+    let count = 0;
+    for (let i = 0; i < english.length; i++) {
+        if (str === english[i]) {
+            alert(vietnam[i]);
+            count++;
+            break;
+        }
+    }
+    if (count === 0) {
+        alert("Không tìm thấy từ yêu cầu")
+    }
+
+
+</script>
+
+</body>
+</html>

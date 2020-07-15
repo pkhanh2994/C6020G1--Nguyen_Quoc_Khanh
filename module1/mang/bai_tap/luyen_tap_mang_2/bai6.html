@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str=prompt("nhập chuỗi");
+    for (i=0;i<str.length;i++) {
+      str.replace('-', '_');
+    }
+    document.writeln(str)
+    /*let array=new Array(str.length);
+    let count=0;
+    for (let i=0;i<str.length;i++){
+        array[i]=str[i];
+       if (str[i]==="-"){
+           count++;
+         array[i]="_"
+       }
+    }
+document.writeln(array.join(""))
+     */
+</script>
+
+</body>
+</html>

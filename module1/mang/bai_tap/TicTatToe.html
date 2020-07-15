@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+</head>
+<body>
+<h3>Caro Game Simple</h3>
+<p id="carogame "></p>
+<input type="button" value="Player 1" onclick="changeValue1()">
+<br>
+<input type="button" value="Player 2" onclick="changeValue2()">
+<p id="win"></p>
+<script>
+    let b = document.getElementById("carogame ");
+    let board = [];
+    let data = "";
+    for (let i = 0; i < 5; i++) {
+        board[i] = new Array(0, 0, 0, 0, 0);
+    }
+    for (let i = 0; i < 5; i++) {
+        data += "<br/>";
+        for (let j = 0; j < 5; j++) {
+            data += board[i][j] + "&nbsp;&nbsp;";
+        }
+    }
+    b.innerHTML = data;
+
+    function changeValue1() {
+        let positionX = prompt("X: ");
+        let positionY = prompt("Y: ");
+        data = "";
+        board[positionX][positionY] = "*";
+        for (let i = 0; i < 5; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j] + "&nbsp;&nbsp";
+            }
+        }
+        b.innerHTML = "<hr/>" + data;
+        check1();
+        check();
+    }
+
+    function changeValue2() {
+        let positionX = prompt("X: ");
+        let positionY = prompt("Y: ");
+        data = "";
+        board[positionX][positionY] = "@";
+        for (let i = 0; i < 5; i++) {
+            data += "<br/>";
+            for (let j = 0; j < 5; j++) {
+                data += board[i][j] + "&nbsp;&nbsp;";
+            }
+        }
+        b.innerHTML = "<hr/>" + data;
+        check2();
+        check();
+    }
+function check () {
+    for (let i = 0; i < 5; i++)
+        for (let j = 0; j < 5; j++){
+            if(board[i][j]==="*"||board[i][j]==="@"){
+                alert("This locations was checked")
+            }
+        }
+}
+    function check1() {
+        let win = "";
+        for (let i = 0; i < 5; i++)
+            for (let j = 0; j < 5; j++) {
+                if (board[i][j] === "*" && board[i][j + 1] === "*" && board[i][j + 2] === "*") {
+                    win += "you win";
+                } else {
+                    if (board[i] === "*" && board[i + 1] === "*" && board[i + 2] === "*") {
+                        win += "you win";
+                    } else {
+                        if (board[i][j] === "*" && board[i + 1][j + 1] === "*" && board[i + 2][j + 2] === "*") {
+                            win += "you win";
+                        } else {
+                            if (board[i][j + 4] === "*" && board[i + 1][j + 3] === "*" && board[i + 2][j + 2] === "*") {
+                                win += "you win"
+                            }
+                        }
+                    }
+                }
+            }
+        document.getElementById("win").innerHTML = win;
+    }
+
+    function check2() {
+        let win = "";
+        for (let i = 0; i < 5; i++)
+            for (let j = 0; j < 5; j++) {
+                if (board[i][j] === "@" && board[i][j + 1] === "*" && board[i][j + 2] === "@") {
+                    win += "you win";
+                } else {
+                    if (board[i] === "@" && board[i + 1] === "@" && board[i + 2] === "@") {
+                        win += "you win";
+                    } else {
+                        if (board[i][j] === "@" && board[i + 1][j + 1] === "@" && board[i + 2][j + 2] === "@") {
+                            win += "you win";
+                        } else {
+                            if (board[i][j + 4] === "@" && board[i + 1][j + 3] === "@" && board[i + 2][j + 2] === "@") {
+                                win += "you win"
+                            }
+                        }
+                    }
+                }
+            }
+        document.getElementById("win").innerHTML = win;
+    }
+
+</script>
+</body>
+</html>

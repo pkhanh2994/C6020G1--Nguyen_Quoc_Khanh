@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [-3, 5, 1, 3, 2,2,2,2,10,12,13,14,15];
+    let nums=parseInt(prompt("Hãy nhập số cần kiểm tra"));
+    let viTri=0;
+    for(let i=0;i<array.length;i++){
+        if (nums===array[i]) {
+            viTri=i;
+            for(let i=viTri;i<array.length;i++){
+                array[i]=array[i+1];
+            }
+          array[array.length-1]=0;
+            i--;
+        }
+    }
+    document.write(array)
+</script>
+</body>
+</html>
