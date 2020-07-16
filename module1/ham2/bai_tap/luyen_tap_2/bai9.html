@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nums = prompt("nhập số phần tử của mảng")
+    let array = new Array()
+    for (let i = 0; i < nums; i++) {
+        array[i] = prompt("nhập vào phần tử của mảng")
+    }
+    let a = prompt("nhập vào kí tự cần tìm");
+
+    function check(a) {
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (a === array[i]) {
+                count++;
+            }
+        }
+        if (count > 0) {
+            return ("số lần số hiện của kí tự "+a+" là: " + count)
+        } else
+            return -1
+    }
+    document.writeln(check(a))
+</script>
+</body>
+</html>

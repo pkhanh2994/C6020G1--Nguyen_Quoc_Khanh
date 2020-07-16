@@ -7,17 +7,17 @@
 <body>
 <script>
     let numbers=parseInt(prompt("Mời nhập số lượng dãy số để in ra số nguyên tố"));
-    let N=0;
         for(let i=2;i<numbers;i++) {
-            N=0;
+            let count=0;
             for(let j=2;j<i;j++)
                 if(i%j==0){
-                    N++;
+                    count++;
         }
-          if(N==0){
-              document.write("số nguyên tố là: "  +i)
+          if(count==0){
+              document.write("số nguyên tố là: "  +i+"\t")
           }
  }
+
 </script>
 </body>
 </html>

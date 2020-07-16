@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let count = 0;
+    let name = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let stars = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let str = prompt("Hay nhap")
+
+    function star(str) {
+        for (let i = 0; i < name.length; i++) {
+            if (str === name[i]) {
+                count++;
+                return stars[i];
+            }
+        }
+        if (count === 0) {
+            return "can not find the star";
+        }
+    }
+
+    alert(star(str))
+</script>
+
+</body>
+</html>

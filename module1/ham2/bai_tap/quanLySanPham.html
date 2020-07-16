@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Làm Chơi Chơi</title>
+</head>
+<body>
+<input type="text" id="sanPham">
+<input type="button" onclick="themSanPham()" value="Thêm Sản Phẩm">
+
+<form id="table">
+
+</form>
+<script>
+    let danhSachSP = ["durex", "ok", "Sagami Exceed 2000"];
+    hienthi();
+
+    function hienthi() {
+        let bang = "<table border='1'><tr>" +
+            "<th>" + "Số thứ tự</th>" +
+            "<th>" + "Tên sản phẩm</th>" +
+            "<th>" + "Chức năng</th></tr>"
+        for (let i = 0; i < danhSachSP.length; i++) {
+            bang += ' <tr>' +
+                '        <td> ' + (i + 1) + '</td>' +
+                '        <td> ' + danhSachSP[i] + '</td>' +
+                '        <td><input type="button" onclick="Sua" value="Sửa">' +
+                '   <input type="button" onclick="Xoa()" value="Xóa"></td>' +
+                '    </tr>'
+        }
+        bang += "</table>"
+        document.getElementById("table").innerHTML = bang + "Tổng số lượng sản phẩm là: " + danhSachSP.length;
+    }
+
+    function themSanPham() {
+        let tenSP = document.getElementById("sanPham").value;
+        if (tenSP == "") {
+            alert("Bạn chưa nhập tên sản phẩm")
+        } else {
+            document.getElementById("sanPham").value = "";
+            danhSachSP.push(tenSP)
+        }
+        hienthi();
+    }
+
+    function Xoa(id) {
+        let check = confirm("Bạn có chắc chắn muốn xóa không?")
+        if (check) {
+            danhSachSP.splice(id, 1)
+        } else alert("Bạn đã không xóa sản phẩm này");
+        hienthi();
+    }
+
+    function Sua(id) {
+        let tenMoi = prompt("Nhập tên bạn muốn thây đổi")
+        if (tenMoi == null) {
+            alert("Bạn chưa nhập tên")
+        } else if (ten == "") {
+            alert("Bạn không được bỏ trống tên")
+        } else {
+            danhSachSP[id] = tenMoi;
+        }
+        hienthi();
+
+    }
+</script>
+</table>
+</body>
+</html>

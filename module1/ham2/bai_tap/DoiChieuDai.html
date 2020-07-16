@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi chiều dài</title>
+</head>
+<body>
+<label>input meter</label><input type="text" placeholder="input meter"
+                                 oninput="feetChange(this.value)"
+                                 onchange="feetChange(this.value)">
+<p id="outputfeet"></p>
+<label>input feet</label><input type="text" placeholder="input feet"
+                                oninput="meterChange(this.value)"
+                                onchange="meterChange(this.value)">
+<p id="outputmeter"></p>
+<script>
+    function feetChange(meter) {
+        meter = parseFloat(meter);
+        document.getElementById("outputfeet").innerHTML = (meter * 3.279) + "\tfeet";
+    }
+
+    function meterChange(feet) {
+        feet = parseFloat(feet);
+        document.getElementById("outputmeter").innerHTML = (feet * 0.305) + "\tm";
+    }
+</script>
+
+</body>
+</html>

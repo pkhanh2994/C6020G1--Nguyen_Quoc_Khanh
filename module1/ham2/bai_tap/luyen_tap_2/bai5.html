@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseFloat(prompt("nhập số a"));
+    let b = parseFloat(prompt("nhập số b"));
+    let c = parseFloat(prompt("nhập số c"));
+    alert("số nhỏ nhất là" + check(a, b, c));
+
+    function check(a, b, c) {
+     let min;
+        if (a < b) {
+            if (a < c) {
+                min = a;
+                return min;
+            } else {
+                min = c;
+                return min;
+            }
+        } else {
+            if (b < c) {
+                min = b;
+                return min;
+            } else {
+                min = c;
+                return min;
+            }
+        }
+    }
+
+</script>
+
+</body>
+</html>

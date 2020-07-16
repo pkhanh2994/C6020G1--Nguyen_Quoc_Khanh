@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<body onload="str=prompt('nhập vào tên ngôi sao');alert(starInGalaxy(str));">
+
+
+
+</body>
+
+<script>
+
+    let arr= ["Polaris","Aldebaran", "Deneb", "Vega", "Altair", "Dubhe","Regulus"];
+
+    let arr2= ["Ursa Minor","Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major","Leo"];
+
+    function starInGalaxy(str) {
+
+        for(let i=0;i<arr.length;i++){
+
+            if(arr[i]===str){
+
+                return arr2[i];
+
+            }
+
+        }
+
+        return "không tìm thấy ngôi sao nào";
+
+    }
+
+</script>
+</body>
+</html>
