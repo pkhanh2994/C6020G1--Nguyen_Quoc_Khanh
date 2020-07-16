@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" onclick="addNewInFor()" value="Add new Customers">
+<p id="nameCustomers"></p>
+<script>
+    function addNewInFor() {
+        let nums = prompt("nhập số lượng khách hàng muốn thêm thông tin");
+        let array = new Array()
+        for (let i = 0; i < nums; i++) {
+            array[i] = prompt("hãy nhập tên khách hàng")
+        }
+        document.getElementById("nameCustomers").innerHTML = array.sort().join("<br>");
+    }
+</script>
+
+</body>
+</html>

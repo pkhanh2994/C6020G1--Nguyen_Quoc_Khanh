@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nameCustomer = ["1.Nguyễn Quốc Khánh\n", "2.Nguyễn văn A\n", "3.Nguyễn văn B\n", "4.Nguyễn văn C\n", "5.Nguyễn văn D\n", "6.Nguyễn văn E\n",
+        "7.Nguyễn văn F\n", "8.Nguyễn văn G\n", "9.Nguyễn văn H\n", "10.Nguyễn văn I\n",];
+
+    function menu() {
+        let chon = prompt("Mời nhập yêu cầu:\n" +
+            "1.Xem thông tin khách hàng \n" +
+            "2.Xóa thông tin khách hàng");
+        switch (chon) {
+            case "1":
+                showInfor();
+                break;
+            case "2":
+                deleteName();
+                break;
+        }
+    }
+    function showInfor() {
+        alert(nameCustomer.join(""));
+    }
+
+    function deleteName() {
+        showInfor()
+        let choose = (prompt("nhập thứ thự khách hàng muốn xóa"));
+        switch (choose) {
+            case '1':
+                nameCustomer.splice(0, 1);
+                break;
+            case '2':
+                nameCustomer.splice(1, 1);
+                break;
+            case '3':
+                nameCustomer.splice(3, 1);
+                break;
+            case '4':
+                nameCustomer.splice(3, 1);
+                break;
+            case '5':
+                nameCustomer.splice(4, 1);
+                break;
+            case '6':
+                nameCustomer.splice(5, 1);
+                break;
+            case '7':
+                nameCustomer.splice(6, 1);
+                break;
+            case '8':
+                nameCustomer.splice(7, 1);
+                break;
+            case '9':
+                nameCustomer.splice(8, 1);
+                break;
+            case '10':
+                nameCustomer.splice(9, 1);
+                break;
+        }
+        showInfor()
+    }
+
+    menu();
+</script>
+</body>
+</html>
