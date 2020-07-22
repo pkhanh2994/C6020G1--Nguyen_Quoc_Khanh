@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<script>
+    let so1 = parseInt(prompt("nhập sô thứ 1"));
+    let so2 = parseInt(prompt("nhập số thứ 2"));
+    let ucln;
+    function tinhToan(a, b) {
+        let tam;
+        while (b !== 0) {
+            tam = a % b;
+            a = b;
+            b = tam;
+        }
+        return a;
+    }
+    ucln = tinhToan(so1, so2);
+    alert(ucln);
+    let bcnn;
+    bcnn = (so1 * so2) / ucln;
+    alert(bcnn)
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vẽ Hình Chữ Nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="800px" height="800px" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+    class veHinhChuNhat {
+        constructor(x, y, chieuDai, chieuRong) {
+            this.chieuDai = chieuDai;
+            this.chieuRong = chieuRong;
+            this.x = x;
+            this.y = y
+        }
+
+        getChieuDai() {
+            return this.chieuDai;
+        }
+
+        setChieuDai(chieuDai) {
+            this.chieuDai = chieuDai;
+        }
+
+        getChieuRong() {
+            return this.chieuRong;
+        }
+
+        setChieuRong(chieuRong) {
+            this.chieuRong = chieuRong;
+        }
+
+        getx() {
+            return this.x
+        }
+
+        setx(x) {
+            this.x = x;
+        }
+
+        gety() {
+            return this.y
+        }
+
+        sety(y) {
+            this.y = y;
+        }
+
+        dienTich() {
+            return (this.chieuRong * this.chieuDai)
+        }
+
+        chuVi() {
+            return (this.chieuDai + this.chieuRong) * 2;
+
+
+        }
+
+        ve() {
+            let c = document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+            ctx.strokeRect(this.x, this.y, this.chieuDai, this.chieuRong);
+        }
+    }
+
+    let hinhChuNhat = new veHinhChuNhat();
+    let x1 = hinhChuNhat.setx(parseInt(prompt("nhập x")));
+    hinhChuNhat.getx(x1);
+    let y1 = hinhChuNhat.sety(parseInt(prompt("nhập y")));
+    hinhChuNhat.gety(y1);
+    let chieuDai1 = hinhChuNhat.setChieuDai(parseInt(prompt("nhập chiều dài")));
+    hinhChuNhat.getChieuDai(chieuDai1);
+    let chieurong1 = hinhChuNhat.setChieuRong(parseInt(prompt("nhập chiều rộng")));
+    hinhChuNhat.getChieuRong(chieurong1);
+    hinhChuNhat.ve(x1, y1, chieuDai1, chieurong1);
+    document.writeln("<br>");
+    document.writeln("Chu vi hình chữ nhật là: " + hinhChuNhat.chuVi(chieurong1, chieuDai1));
+    document.writeln("<br>");
+    document.writeln("Diện tích hình chữ nhật là " + hinhChuNhat.dienTich(chieuDai1, chieurong1));
+
+
+</script>
+
+</body>
+</html>

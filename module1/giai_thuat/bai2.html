@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let thang = prompt("nhap thang can in ra so ngay")
+    if (thang == 4 || thang == 6 || thang == 9 || thang == 11) {
+        alert("thang co 31 ngay")
+    } else {
+        if (thang!=2)
+        alert("thang co 30 ngay")
+    }
+    let year = parseInt(prompt("nhập năm: "));
+    if (year % 4 == 0) {
+        if (year % 100 == 0) {
+            if (year % 400 == 0) {
+                alert("Năm là có 366 ngày");
+                if (thang == 2) {
+                    alert("tháng có 29 ngày")
+                }
+            } else {
+                alert("Năm có 365 ngày");
+                if (thang == 2) {
+                    alert("tháng có 28 ngày")
+                }
+            }
+        } else {
+            alert("Năm có 366 ngày");
+            if (thang == 2) {
+                alert("tháng có 29 ngày")
+            }
+        }
+    } else {
+        alert("Năm có 365 ngày");
+        if (thang == 2) {
+            alert("tháng có 28 ngày")
+        }
+    }
+</script>
+</body>
+</html>

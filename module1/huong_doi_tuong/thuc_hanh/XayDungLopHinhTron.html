@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   class hinhTron{
+       constructor(banKinh) {
+           this.banKinh=banKinh;
+       }
+       getBankinh(){
+           return this.banKinh;
+       }
+       setBankinh(banKinh){
+           this.banKinh=banKinh;
+
+       }
+       tinhDienTich(banKinh){
+           this.tinhDienTich=(Math.PI*Math.pow(banKinh,2));
+           return this.tinhDienTich;
+   }
+   }
+   let soBanKinh=prompt("nhập bán kính");
+    let dienTich=new hinhTron(soBanKinh);
+   let ketQua=dienTich.tinhDienTich(soBanKinh);
+    alert(ketQua)
+
+</script>
+
+</body>
+</html>

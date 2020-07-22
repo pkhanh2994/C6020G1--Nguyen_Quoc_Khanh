@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam và Eva</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        decrease() {
+            if (this.weight > 0) {
+                this.weight--;
+            }
+        }
+
+        isEmpty() {
+            if (this.weight > 0) {
+                return false;
+            } else {
+                return true
+            }
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weightHuman) {
+            this.name = name;
+            this.gender = gender;
+            this.weightHuman = weightHuman;
+        }
+
+        setWeightHuman(weightHuman) {
+            this.weightHuman = weightHuman;
+        }
+
+        getWeightHuman() {
+            return this.weightHuman;
+        }
+
+        say(str) {
+            alert(str);
+        }
+
+        isMale() {
+            if (this.gender == "male") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        check(apple) {
+            if (!apple.isEmpty()) {
+                return alert("còn táo nhé anh")
+            } else {
+                return alert("hết táo rồi anh")
+            }
+        }
+
+        eat(apple) {
+            if (!apple.isEmpty()) {
+                apple.decrease();
+                this.weightHuman++;
+            } else {
+                alert("táo không còn")
+            }
+        }
+    }
+
+    let human1 = new Human("Nguyễn Trần Trùi Trụi", "bê đê", 10);
+    let human2 = new Human("Nguyễn Trần Thị Trùi Trụi", "bê đê", 10);
+    human1.say("bê đê không bạn");
+    human2.say("bê đê bạn");
+    human1.setWeightHuman(10);
+    let apple1 = new Apple();
+    apple1.setWeight(10);
+    human1.eat(apple1);
+    human1.check(apple1);
+    document.writeln("cân nặng tăng: " + human1.getWeightHuman());
+    human2.setWeightHuman(10);
+    human2.eat(apple1);
+    document.writeln("<br>");
+    document.writeln("cân nặng bê đê tăng: " + human2.getWeightHuman());
+    document.writeln("<br>");
+    document.writeln("cân nặng của táo còn lại là: " + apple1.getWeight())
+
+</script>
+
+</body>
+</html>

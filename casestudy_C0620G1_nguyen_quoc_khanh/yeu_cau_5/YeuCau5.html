@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu Cầu 5</title>
+</head>
+<body>
+<script>
+
+    let arrListCustomer = [];
+
+    function displayMainMenu() {
+        let menu = prompt("Hãy nhập lựa chọn của bạn:\n" +
+            "1.Add new customer\n" +
+            "2.Display information customer\n" +
+            "3.Edit information customer\n" +
+            "4.Delete customer\n" +
+            "Exit");
+        switch (menu) {
+            case'1':
+                addNewCustomer();
+                break;
+            case'2':
+                displayCustomer();
+                break;
+            case'3':
+                Edit();
+                break;
+            case'4':
+                deleteCustomer();
+                break;
+
+        }
+    }
+
+    function displayCustomer() {
+        let temp = "";
+        for (let i = 0; i < arrListCustomer.length; i++) {
+            temp += i + ".name: " + arrListCustomer[i][0] + "\n";
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        alert("Name: " + arrListCustomer[chooseDisplay][0] +
+            "\n cmnd:  " + arrListCustomer[chooseDisplay][1] +
+            "\n birthday:  " + arrListCustomer[chooseDisplay][2] +
+            "\n address:  " + arrListCustomer[chooseDisplay][3] +
+            "\n typeService: " + arrListCustomer[chooseDisplay][4] +
+            "\n typeroom:  " + arrListCustomer[chooseDisplay][5] +
+            "\n typeCustomer:  " + arrListCustomer[chooseDisplay][6] +
+            "\n discount:  " + arrListCustomer[chooseDisplay][7] +
+            "\n qualityIncluded:  " + arrListCustomer[chooseDisplay][8] +
+            "\n rentDay:  " + arrListCustomer[chooseDisplay][9]);
+        displayMainMenu();
+    }
+
+    function addNewCustomer() {
+        let cusinfo = [];
+        let name = prompt("input name: ");
+        let idcard = prompt("input CMND: ");
+        let address = prompt("input address: ");
+        let typeService = prompt("input type service: ");
+        let typeRoom = prompt("input type room: ");
+        let typeCustomer = prompt("input type customer: ");
+        let discount = prompt("input d iscount:");
+        let quatityIncluded = prompt("input quality included: ");
+        let rentDay = prompt("input rent day: ");
+        cusinfo.push(name);
+        cusinfo.push(idcard);
+        cusinfo.push(address);
+        cusinfo.push(typeService);
+        cusinfo.push(typeRoom);
+        cusinfo.push(typeCustomer);
+        cusinfo.push(discount);
+        cusinfo.push(quatityIncluded);
+        cusinfo.push(rentDay);
+        arrListCustomer.push(cusinfo);
+        alert("input successed");
+        displayMainMenu();
+    }
+
+    displayMainMenu();
+
+
+</script>
+</body>
+</html>

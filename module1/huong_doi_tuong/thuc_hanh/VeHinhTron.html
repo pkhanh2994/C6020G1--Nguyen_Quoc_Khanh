@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="500px" height="500px" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+    class hinhTron {
+        constructor(x, y, banKinh) {
+            this.x = x;
+            this.y = y;
+            this.banKinh = banKinh
+        }
+
+        getBanKinh() {
+            return this.banKinh
+        }
+
+        setbanKinh(banKinh) {
+            this.banKinh = banKinh;
+
+
+        }
+
+        getx() {
+            return this.x
+        }
+
+        setx(x) {
+            this.x = x;
+        }
+
+        gety() {
+            return this.y;
+        }
+
+        sety(y) {
+            this.y = y;
+        }
+
+        getRandomHex() {
+            return Math.floor(Math.random() * 255);
+        }
+
+        getRandomColor() {
+            let red = this.getRandomHex();
+            let green = this.getRandomHex();
+            let blue = this.getRandomHex();
+            return "rgb(" + red + "," + blue + "," + green + ")";
+        }
+
+        veHinhTron() {
+            let ctx = document.getElementById("myCanvas").getContext("2d");
+            ctx.beginPath();
+            let color = this.getRandomColor();
+            ctx.arc(this.x, this.y, this.banKinh, 0, 2 * Math.PI);
+            ctx.fillStyle = color;
+            ctx.fill();
+
+        }
+
+    }
+
+    let hinhTron1 = new hinhTron();
+    let r = hinhTron1.setbanKinh(parseInt(prompt("nhập r")));
+    hinhTron1.getBanKinh(r);
+    let x1 = hinhTron1.setx(parseInt(prompt("nhap x")));
+    hinhTron1.getx(x1);
+    let y1 = hinhTron1.sety(parseInt(prompt("nhap y")));
+    hinhTron1.gety(y1);
+    hinhTron1.veHinhTron(x1, y1, r);
+
+
+</script>
+</body>
+</html>

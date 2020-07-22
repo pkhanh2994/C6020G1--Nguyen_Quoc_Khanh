@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img id="hinh" src="off.jpg">
+<input type="button"onclick="ketNoi();" value="KẾT NỐI" >
+<input type="button"onclick="onOff();" value="BẬT/TẮT" >
+<script>
+    class Lamp{
+        constructor(status) {
+            this.status=status;
+        }
+        getStatus(){
+            return this.status;
+        }
+        turnOn(){
+            this.status= "off.jpg"
+        }
+        turnOff(){
+            this.status= "on.jpg"
+        }
+    }
+
+    class SwitchButtun {
+        constructor(status) {
+            this.status=status;
+            this.lamp ="";
+        }
+        conectToLamp(lamp) {
+            this.lamp = lamp;
+        }
+        getStatus(){
+            return this.status;
+        }
+        switchOff() {
+            this.status=false;
+            this.lamp.turnOff();
+        }
+
+        SwitchOn() {
+            this.status=true;
+            this.lamp.turnOn();
+        }
+
+    }
+    let congtac = new SwitchButtun(false);
+    let bongden=new Lamp("off.jpg");
+    function ketNoi() {
+        congtac.conectToLamp(bongden);
+        alert("ĐÃ KẾT NỐI")
+    }
+    function onOff(){
+        if (congtac.getStatus()){
+            congtac.switchOff();
+            document.getElementById("hinh").src=bongden.getStatus();
+        }else {
+            congtac.SwitchOn();
+            document.getElementById("hinh").src=bongden.getStatus();
+        }
+    }
+
+
+</script>
+</body>
+</html>

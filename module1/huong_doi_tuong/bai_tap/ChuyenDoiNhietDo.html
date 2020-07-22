@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class temperature{
+        constructor(doC) {
+            this.doC=doC;
+        }
+        chuyenDoiSangF(doC){
+           this.doF=doC*1.8+32;
+           return this.doF;
+        }
+        chuyenDoiSangK(doC){
+            this.doK=doC+273.15;
+            return this.doK;
+        }
+    }
+    let nhietDoC=parseInt(prompt("độ c đi cu"));
+    let doiDo=new temperature(nhietDoC);
+    let nhietDoF=doiDo.chuyenDoiSangF(nhietDoC);
+    alert(nhietDoF);
+    let  doiDoK=doiDo.chuyenDoiSangK(nhietDoC);
+    alert(doiDoK)
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt("nhập đi em");
+
+    // function inRa(a) {
+    //     a = a.split(" ");;
+    //     for (let i = 0; i < a.length; i++) {
+    //         document.write(a[i] + "<br>");
+    //     }
+    // }
+    //
+    // inRa(str);
+    // alert(inRa(str));
+    //
+    function tapDem(b) {
+        let dem = 0;
+        b = b.split(" ");
+        for (let i = 0; i < b.length; i++) {
+            if (b[i] !== " ") {
+                dem++;
+            }
+        }
+        return dem;
+    }
+
+    alert(tapDem(str));
+
+    // function tanSuat(c) {
+    //     c = c.split(" ");
+    //     let tam = [];
+    //     for (let i = 0; i < c.length; i++) {
+    //         let dem = 1;
+    //         for (let j = i + 1; j < c.length; j++) {
+    //             if (c[i] === c[j]) {
+    //                 dem++;
+    //                 tam[j] = 0;
+    //             }
+    //         }
+    //         if (tam[i] !== 0) {
+    //             tam[i] = dem;
+    //         }
+    //     }
+    //     for (let i = 0; i < c.length; i++) {
+    //         if (tam[i] !== 0) {
+    //             document.writeln("số lần xuất hiện của \t" + c[i] + "\tlà\t" + tam[i] + "<br>")
+    //         }
+    //     }
+    // }
+    //
+    // document.writeln("chuỗi nhập vào là: \t" + str);
+    // document.writeln("<br>");
+    // tanSuat(str);
+</script>
+
+</body>
+</html>

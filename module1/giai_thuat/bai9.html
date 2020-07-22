@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt("nhập chuỗi đi em");
+    // function daoNguoc(chuoi) {
+    //     chuoi = "";
+    //     for (let i = str.length - 1; i >= 0; i--) {
+    //         chuoi += str.charAt(i)
+    //     }
+    //     return chuoi;
+    // }
+    // // alert(daoNguoc(str));
+    // function chuThuong(a) {
+    //     let upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    //
+    //     let chuoi1 = "";
+    //     for (let i = 0; i < a.length; i++) {
+    //         if (upper.indexOf(str.charAt(i)) !== -1) {
+    //             chuoi1 += a.charAt(i).toLowerCase();
+    //         } else
+    //             chuoi1 += a.charAt(i);
+    //     }
+    //     return chuoi1;
+    // }
+    //
+    // // alert(chuThuong(str));
+    //
+    // function chuHoa(b) {
+    //     let lower = 'abcdefghijklmnopqrstuvwxyz';
+    //
+    //     let chuoi12 = "";
+    //     for (let i = 0; i < b.length; i++) {
+    //         if (lower.indexOf(b.charAt(i)) !== -1) {
+    //             chuoi12 += b.charAt(i).toUpperCase();
+    //         } else
+    //             chuoi12 += b.charAt(i)
+    //     }
+    //     return chuoi12;
+    // }
+    //
+    // alert(chuHoa(str));
+    //
+    // function hoaThuong(c) {
+    //     let upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    //     let lower = 'abcdefghijklmnopqrstuvwxyz';
+    //
+    //     let chuoi2 = "";
+    //
+    //     for (let i = 0; i < c.length; i++) {
+    //         if (upper.indexOf(c.charAt(i)) !== -1) {
+    //             chuoi2 += c.charAt(i).toLowerCase();
+    //         } else if (lower.indexOf(str.charAt(i)) !== -1) {
+    //             chuoi2 += c.charAt(i).toUpperCase();
+    //
+    //         } else {
+    //             chuoi2 += c.charAt(i);
+    //         }
+    //     }
+    //     return chuoi2;
+    // }
+    function doiChuoiChoiChoi(d) {
+        let charcode = "";
+        let tam = "";
+        for (let i = 0; i <= d.length; i++) {
+            charcode = d.charAt(i).charCodeAt(0);
+            if (charcode >= 65 && charcode <= 90) {
+                tam += d.charAt(i).toLowerCase()
+            } else if (charcode >= 97 && charcode <= 122) {
+                tam += d.charAt(i).toUpperCase()
+            } else {
+                tam += d.charAt(i)
+            }
+        }
+        return tam;
+    }
+
+    alert(doiChuoiChoiChoi(str));
+</script>
+
+</body>
+</html>
