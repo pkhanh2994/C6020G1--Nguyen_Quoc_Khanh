@@ -7,14 +7,16 @@
 <body>
 <script>
     let str = prompt("nhập chuỗi đi em");
-    // function daoNguoc(chuoi) {
-    //     chuoi = "";
-    //     for (let i = str.length - 1; i >= 0; i--) {
-    //         chuoi += str.charAt(i)
-    //     }
-    //     return chuoi;
-    // }
-    // // alert(daoNguoc(str));
+
+    function daoNguoc(chuoi) {
+        chuoi = "";
+        for (let i = str.length - 1; i >= 0; i--) {
+            chuoi += str.charAt(i)
+        }
+        return chuoi;
+    }
+
+    alert(daoNguoc(str));
     // function chuThuong(a) {
     //     let upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     //
@@ -64,13 +66,13 @@
     //     return chuoi2;
     // }
     function doiChuoiChoiChoi(d) {
-        let charcode = "";
+        let chartcode = "";
         let tam = "";
         for (let i = 0; i <= d.length; i++) {
-            charcode = d.charAt(i).charCodeAt(0);
-            if (charcode >= 65 && charcode <= 90) {
+            chartcode = d.charAt(i).charCodeAt(0);
+            if (chartcode >= 65 && chartcode <= 90) {
                 tam += d.charAt(i).toLowerCase()
-            } else if (charcode >= 97 && charcode <= 122) {
+            } else if (chartcode >= 97 && chartcode <= 122) {
                 tam += d.charAt(i).toUpperCase()
             } else {
                 tam += d.charAt(i)

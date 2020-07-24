@@ -6,7 +6,64 @@
 </head>
 <body>
 <script>
+    let arr = new Array();
+    let n = prompt("nhập số phần tử của mảng đi em");
+    let sum = 0;
+    let sum2 = 0;
+    let k = parseInt(prompt("nhập số k "));
+    let count = 0;
+    //tính tổng
+    for (let i = 0; i < n; i++) {
+        arr[i] = parseInt(prompt("nhập số nguyên đi em"));
+        if (arr[i] % 2 !== 0) {
+            sum += arr[i]
+        }
+        if (i % 2 === 0) {
+            if (check1(arr[i] && arr[i] !== 1)) {
+                sum2 += arr[i]
+            }
+        }
+        //tìm k
+        if (k === arr[i]) {
+            count++;
+        }
+    }
+    if (count > 0) {
+        alert(arr.indexOf(k));
+    } else alert(k + "\tkhông xuất hiện trong chuỗi");
 
+    function sapXep(a) {
+        for (let i = 0; i < a.length; i++) {
+            for (let j = i + 1; j < a.length; j++) {
+                if (a[i] > a[j]) {
+                    let tam = a[j];
+                    a[j] = a[i];
+                    a[i] = tam;
+                }
+            }
+        }
+        return a;
+    }
+
+    // alert(sapXep(arr));
+    //alert(sum);
+   // alert(sum2);
+    //push x vào
+    let x=prompt("nhập số x vào đi em");
+    arr.push(x);
+    sapXep(arr);
+    alert(arr);
+    function check1(number) {
+        let count = 0;
+        for (let i = 2; i < number; i++) {
+            if (number % i === 0) {
+                count++;
+                break;
+            }
+        }
+        if (count === 0)
+            return number;
+    }
 </script>
 </body>
 </html>

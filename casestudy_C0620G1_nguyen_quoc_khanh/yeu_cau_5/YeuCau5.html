@@ -7,7 +7,7 @@
 <body>
 <script>
 
-    let arrListCustomer = [];
+    let listCustomer = [];
 
     function displayMainMenu() {
         let menu = prompt("Hãy nhập lựa chọn của bạn:\n" +
@@ -35,20 +35,20 @@
 
     function displayCustomer() {
         let temp = "";
-        for (let i = 0; i < arrListCustomer.length; i++) {
-            temp += i + ".name: " + arrListCustomer[i][0] + "\n";
+        for (let i = 0; i < listCustomer.length; i++) {
+            temp += i + ".name: " + listCustomer[i][0] + "\n";
         }
         let chooseDisplay = parseInt(prompt(temp));
-        alert("Name: " + arrListCustomer[chooseDisplay][0] +
-            "\n cmnd:  " + arrListCustomer[chooseDisplay][1] +
-            "\n birthday:  " + arrListCustomer[chooseDisplay][2] +
-            "\n address:  " + arrListCustomer[chooseDisplay][3] +
-            "\n typeService: " + arrListCustomer[chooseDisplay][4] +
-            "\n typeroom:  " + arrListCustomer[chooseDisplay][5] +
-            "\n typeCustomer:  " + arrListCustomer[chooseDisplay][6] +
-            "\n discount:  " + arrListCustomer[chooseDisplay][7] +
-            "\n qualityIncluded:  " + arrListCustomer[chooseDisplay][8] +
-            "\n rentDay:  " + arrListCustomer[chooseDisplay][9]);
+        alert("Name: " + listCustomer[chooseDisplay][0] +
+            "\n cmnd:  " + listCustomer[chooseDisplay][1] +
+            "\n birthday:  " + listCustomer[chooseDisplay][2] +
+            "\n address:  " + listCustomer[chooseDisplay][3] +
+            "\n typeService: " + listCustomer[chooseDisplay][4] +
+            "\n typeroom:  " + listCustomer[chooseDisplay][5] +
+            "\n typeCustomer:  " + listCustomer[chooseDisplay][6] +
+            "\n discount:  " + listCustomer[chooseDisplay][7] +
+            "\n qualityIncluded:  " + listCustomer[chooseDisplay][8] +
+            "\n rentDay:  " + listCustomer[chooseDisplay][9]);
         displayMainMenu();
     }
 
@@ -72,7 +72,7 @@
         cusinfo.push(discount);
         cusinfo.push(quatityIncluded);
         cusinfo.push(rentDay);
-        arrListCustomer.push(cusinfo);
+        listCustomer.push(cusinfo);
         alert("input successed");
         displayMainMenu();
     }
