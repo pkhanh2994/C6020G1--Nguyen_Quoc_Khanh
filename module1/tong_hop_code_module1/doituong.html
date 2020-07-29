@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class HocSinh {
+        constructor(soThuTu, hoVaTen, ngaySinh, diemTrungBinh) {
+            this.soThuTu = soThuTu;
+            this.hoVaTen = hoVaTen;
+            this.ngaySinh = ngaySinh;
+            this.diemTrungBinh = diemTrungBinh;
+        }
+
+        getSoThuTu() {
+            return this.soThuTu;
+        }
+
+        getHoVaTen() {
+            return this.hoVaTen;
+        }
+
+        getNgaySinh() {
+            return this.ngaySinh;
+        }
+
+        getDiemTrungBinh() {
+            return this.diemTrungBinh;
+        }
+
+        setSoThuTu(soThuTu) {
+            this.soThuTu = soThuTu;
+        }
+
+        setHoVaTen(hoVaTen) {
+            this.hoVaTen = hoVaTen;
+        }
+
+        setNgaySinh(ngaySinh) {
+            this.ngaySinh = ngaySinh;
+        }
+
+        setDiemTrungBinh(diemTrungBinh) {
+            this.diemTrungBinh = diemTrungBinh;
+        }
+
+        xepLoai() {
+            if (this.diemTrungBinh > 8) {
+                return "Học Sinh Giỏi"
+            } else {
+                if (this.diemTrungBinh >= 6.5 && this.diemTrungBinh < 8) {
+                    return "Học Sinh Khá"
+                } else {
+                    if (this.diemTrungBinh >= 5.5 && this.diemTrungBinh < 6.5) {
+                        return "Học sinh Trung Bình"
+                    } else {
+                        return "Học Sinh Yếu"
+                    }
+                }
+            }
+        }
+    }
+
+    let hocSinh1 = new HocSinh("1", "Nguyễn Quốc Khánh", "02/09/1994", 9);
+    let soThuTu1 = hocSinh1.getSoThuTu();
+    let ten1 = hocSinh1.getHoVaTen();
+    let ngaySinh1 = hocSinh1.getNgaySinh();
+    let diemTB = hocSinh1.getDiemTrungBinh();
+    document.writeln("Số thứ tự:\t" + soThuTu1);
+    document.writeln("<br>");
+    document.writeln("Họ và tên:\t" + ten1);
+    document.writeln("<br>");
+    document.writeln("Ngày Sinh:\t" + ngaySinh1);
+    document.writeln("<br>");
+    document.writeln("Điểm trung bình là:\t" + diemTB);
+    document.writeln("<br>");
+    document.writeln("Xếp loại học sinh:\t" + hocSinh1.xepLoai())
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Kiểm tra năm nhuận
+            // let a = prompt("nhập số năm để kiểm tra");
+            // checkYear(a);
+            //
+            // function checkYear(year) {
+            //
+            //     if (year % 4 === 0) {
+            //         if (year % 100 === 0) {
+            //             if (year % 400 === 0) {
+            //                 alert("Năm là năm nhuận");
+            //             } else {
+            //                 alert("Năm không phải là năm nhuận");
+            //             }
+            //         } else {
+            //             alert("Năm là năm nhuận");
+            //         }
+            //     } else {
+            //         alert("Năm không phải là năm nhuận");
+            //     }
+            // }
+    //Dãy số fibonaci
+    // let so1 = 0;
+    // let so2 = 1;
+    // let so3;
+    // //let soLuongDay = prompt("Hãy nhập số lượng dãy");
+    // document.write(so1+"\t");
+    // document.write(so2+"\t");
+    // for (let i = 2; i <20; i++) {
+    //     so3 = so10374934170 + so2;
+    //     so1 = so2;
+    //     so2 = so3;
+    //     document.write(so3+"\t")
+    // }
+    // kiểm tra số hoàn hảo
+        //   let nums=prompt("Nhập số cần kiểm tra");
+        //   function checkNumber(a) {
+        //       let sum=0;
+        //       for(let i=1;i<=a/2;i++){
+        //           if(a%i==0){
+        //               sum+=i;
+        //           }
+        //   }
+        //       if(sum==a){
+        //           return true;
+        //       }else {
+        //          return false;
+        //       }
+        //   }
+        // if(checkNumber(nums)){
+        //     alert("Sô\t"+nums+"\tlà số hoàn hảo")
+        // }else {
+        //     alert("số\t"+nums+"\tkhông phải là số hoàn hảo")
+        // }
+    // kiểm tra số chính phương
+        // let nums = parseInt(prompt("nhập số cần kiểm tra"));
+        //
+        // function checkNums(a) {
+        //     let sqr = Math.sqrt(a);
+        //     if (sqr * sqr === a) {
+        //         return true;
+        //     } else {
+        //         return false;
+        //     }
+        // }
+        // if (checkNums(nums)){
+        //     alert(nums+"\tlà số chính phương")
+        // }else {
+        //     alert(nums+"\tkhông phải là số chính phương")
+        // }
+
+    // //kiểm tra số chính phương trong mảng
+        // let a = prompt("Nhập số phần tử của mảng");
+        // let arr = new Array();
+        // let prt=[];
+        // for (let i = 0; i < a; i++) {
+        //     arr[i] = parseInt(prompt("nhập phần tử của mảng"));
+        //     if (checkNums(arr[i])) {
+        //         prt.push(arr[i])
+        //     }
+        // }
+        // document.writeln("Mảng khởi tạo là\t" + arr);
+        // document.writeln("<br>");
+        // document.writeln("số chính phương có trong mảng là\t"+prt);
+        // function checkNums(a) {
+        //     let sqr = Math.sqrt(a);
+        //     if (sqr * sqr === a) {
+        //         return true;
+        //     } else {
+        //         return false;
+        //     }
+        // }
+    //kiểm tra số nguyên tố
+        // let nums=parseInt(prompt("nhập số cần kiểm tra"));
+        // if(checkNums(nums)){
+        //     alert(nums+"\tlà số nguyên tố")
+        // }else {
+        //     alert(nums+"\tkhông phải là số nguyên tố")
+        // }
+        // function checkNums(a) {
+        //     let count=0;
+        //     if(a<2){
+        //        return false
+        //     }else {
+        //         for(let i=2;i<a;i++){
+        //             if(a%i===0) {
+        //                 count++
+        //             }
+        //         }
+        //         if(count===0){
+        //             return true;
+        //         }else {
+        //             return false
+        //
+        //         }
+        //     }
+        //
+        // }
+    //Đảo ngược phần tử của mảng
+        // let nums = prompt("nhập số phần tử của mảng ");
+        // let array = new Array();
+        // for (let i = 0; i < nums; i++) {
+        //     array[i] = prompt("nhập phần tử của mảng")
+        // }
+        // document.writeln("Mảng được khởi tạo là\t" + array);
+        // document.writeln("<br>");
+        // document.writeln("mảng sau khi đảo ngược là\t"+swap(array));
+        //
+        // function swap(a) {
+        //     let first = 0;
+        //     let last = a.length - 1;
+        //     while (first < last) {
+        //         let temp = a[first];
+        //         a[first] = a[last];
+        //         a[last] = temp;
+        //         first++;
+        //         last--;
+        //     }
+        //     return a;
+        // }
+    //Tìm giá trị lớn nhất của số trong mảng
+        //     let nums = prompt("nhập số phần tử của mảng ");
+        //     let array = new Array();
+        //     for (let i = 0; i < nums; i++) {
+        //         array[i] = prompt("nhập phần tử của mảng");
+        //         max(array);
+        //     }
+        //     document.writeln("Mảng được khởi tạo là:\t" + array);
+        //     document.writeln("<br>");
+        //     document.writeln("Phần tử có giá trị lớn nhất trong mảng là:\t" + max(array)+"ở vị trí thứ:"+positionMax(array));
+        //
+        //     function max(a) {
+        //         let max = a[0];
+        //         for (let i = 1; i < a.length; i++) {
+        //             if (max < a[i]) {
+        //                 max = a[i];
+        //             }
+        //         }
+        //         return (max);
+        //     }
+        //     function positionMax(b) {
+        //         for(let i=b.length-1;i>=0;i--){
+        //             if(b[i]===max(b)){
+        //                 return i;
+        //             }
+        //
+        //         }return -1;
+        //     }
+    //khởi tạo mảng 2 chiều
+        // let n=parseInt(prompt("nhập số hàng"));
+        // let m=parseInt(prompt("nhập số cột"));
+        // let arr=new Array(n);
+        // for(let i=0;i<n;i++){
+        //     arr[i]=new Array(m);
+        //     for (let j=0;j<m;j++){
+        //         arr[i][j]=prompt("nhập phần tử")
+        //
+        //     }
+        // }
+
+    var day = "Mon";
+    var message = "";
+
+    switch(day){
+        case "Mon": message = "Ngày đầu tuần";
+        case "Wed": message = "Ngày giữa tuần";
+        case "Sat":
+        case "Sun": message = "Ngày nghỉ";
+    }
+alert(message)
+
+
+</script>
+
+
+</body>
+</html>

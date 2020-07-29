@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nums = prompt("nhập số phần tử của mảng điểm thi ");
+        let array = new Array();
+        for (let i = 0; i < nums; i++) {
+            array[i] = prompt("Bạn hãy nhập điểm thi");
+            max(array);
+
+        }
+        document.writeln("Điểm thi là:\t" + array);
+        document.writeln("<br>");
+        document.writeln("Điểm thi cao nhất là:\t" + max(array));
+
+        function max(a) {
+            let max = a[0];
+            let doDai=a.length;
+            for (let i = 1; i < doDai; i++) {
+                if (max < a[i]) {
+                    max = a[i];
+                }
+            }
+            return (max);
+        }
+</script>
+
+</body>
+</html>

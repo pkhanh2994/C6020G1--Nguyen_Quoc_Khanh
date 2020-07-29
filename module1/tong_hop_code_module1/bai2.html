@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nums = parseInt(prompt("nhập số phần tử của mảng "));
+    let array = new Array();
+    let x = parseInt(prompt("nhập vào số nguyên x"));
+    for (let i = 0; i < nums; i++) {
+        array[i] = parseInt(prompt("nhập phần tử của mảng"));
+    }
+    document.writeln("Mảng khởi tạo là\t" + array);
+
+    for (let i = 0; i < nums; i++) {
+        tryRemoveFromArray(array, x)
+    }
+    document.writeln("<br>");
+    document.writeln("Các phần tử của mảng sau khi thực hiện tao tác thử tìm và xóa là\t" + array);
+
+    function tryRemoveFromArray(a, b) {
+        let viTri = 0;
+        let doDai = a.length;
+        let count = 0;
+        for (let i = 0; i < doDai; i++) {
+            if (b === a[i]) {
+                count++;
+                viTri = i;
+                if (count > 0) {
+                    for (let i = viTri; i < doDai; i++) {
+                        a[i] = a[i + 1];
+                    }
+                    a[doDai - 1] = 0;
+                    a.pop();
+                    i--;
+                }
+            }
+        }
+        if (count === 0) {
+            return a;
+        }
+    }
+
+</script>
+
+</body>
+</html>

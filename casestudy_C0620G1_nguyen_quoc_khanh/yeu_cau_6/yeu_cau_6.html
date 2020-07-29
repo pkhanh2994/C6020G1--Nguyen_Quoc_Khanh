@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yêu cầu 6</title>
+</head>
+<body>
+<script>
+    class Customer {
+        constructor(name, identityCardNumber, birthday, address, typeService, typeRoom, typeCustomer, discount, quantityIncluded, rentDay, email) {
+            this.name = name;
+            this.identityCardNumber = identityCardNumber;
+            this.birthday = birthday;
+            this.address = address;
+            this.typeService = typeService;
+            this.typeRoom = typeRoom;
+            this.typeCustomer = typeCustomer;
+            this.discount = discount;
+            this.quatityIncluded = quantityIncluded;
+            this.rentDay = rentDay;
+            this.email = email;
+        }
+
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setIdentityCardNumber(identityCardNumber) {
+            this.identityCardNumber = identityCardNumber;
+        }
+
+        getIdentityCardNumber() {
+            return this.identityCardNumber;
+        }
+
+        setBirthday(birthday) {
+            this.birthday = birthday;
+        }
+
+        getBirthday() {
+            return this.birthday;
+        }
+
+        setAddRess(address) {
+            this.address = address;
+        }
+
+        getAddRess() {
+            return this.address;
+        }
+
+        setTypeService(typeService) {
+            this.typeService = typeService;
+        }
+
+        getTypeService() {
+            return this.typeService;
+        }
+
+        setTypeRoom(typeRoom) {
+            this.typeRoom = typeRoom;
+        }
+
+        getTypeRoom() {
+            return this.typeRoom;
+        }
+
+        setTypeCustomer(typeCustomer) {
+            this.typeCustomer = typeCustomer;
+        }
+
+        getTypeCustomer() {
+            return this.typeCustomer;
+        }
+
+        setDiscount(discount) {
+            this.discount = discount;
+        }
+
+        getDiscount() {
+            return this.discount;
+        }
+
+        setQuatityIncluded(quatityIncluded) {
+            this.quatityIncluded = quatityIncluded;
+        }
+
+        getQuatityIncluded() {
+            return this.quatityIncluded;
+        }
+
+        setRentday(rentDay) {
+            this.rentday = rentDay;
+        }
+
+        getRentday() {
+            return this.rentday;
+        }
+
+        setEmail(email) {
+            this.email = email;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+
+
+        getTotalPay() {
+            let money;
+            if (this.typeService === "villa") {
+                money = 500;
+            } else if (this.typeService === "house") {
+                money = 300;
+            } else if (this.typeService === "room") {
+                money = 100;
+            }
+
+            return (money * this.rentDay * (1 - (this.discount / 100)));
+        }
+
+        getInfor() {
+            return "1.Name\t" + this.name + "\n2.Identity card number\t" + this.identityCardNumber +
+                "\n3.Address\t" + this.address + "\n4.Date of birth\t" + this.birthday +
+                "\n5.Type of service\t" + this.typeService
+                + "\n6.Type of room\t" + this.typeRoom + "\n7.Type of customer\t" + this.typeCustomer + "" +
+                "\n8.Discount\t" + this.discount + "\n9.QuantityIncluded\t" + this.quatityIncluded +
+                "\n10.Rentday\t" + this.rentDay + "\n11.Email\t" + this.email;
+        }
+
+    }
+
+    class employee {
+        constructor(nameEmployee, jobPosition, identityCardNumberEm, numberOfPhone, emailEmployee, level, birthdayOfEmployee) {
+            this.nameEmployee = nameEmployee;
+            this.jobPosition = jobPosition;
+            this.identityCardNumberEm = identityCardNumberEm;
+            this.numberOfPhone = numberOfPhone;
+            this.emailEmployee = emailEmployee;
+            this.level = level;
+            this.birthdayOfEmployee = birthdayOfEmployee;
+        }
+
+        getNameEmployee() {
+            return this.nameEmployee;
+        }
+
+        getJobPosition() {
+            return this.jobPosition;
+        }
+
+        getIdentityCardNumberEm() {
+            return this.identityCardNumberEm;
+        }
+
+        getNumberOfPhone() {
+            return this.numberOfPhone;
+        }
+
+        getEmailEmployee() {
+            return this.emailEmployee;
+        }
+
+        getLevel() {
+            return this.level;
+        }
+
+        getSalary() {
+            if (this.jobPosition === "Manager") {
+                return this.salary = "500$";
+            } else {
+                if (this.jobPosition === "Sale") {
+                    return this.salary = "300$";
+
+                } else {
+                    if (this.jobPosition === "Marketing") {
+                        return this.salary = "200$";
+
+                    }
+                }
+            }
+        }
+
+        getBirthdayOfEmployee() {
+            return this.birthdayOfEmployee;
+        }
+
+        setNameEmployee(nameEmployee) {
+            this.nameEmployee = nameEmployee;
+        }
+
+        setJobPosition(jobPosition) {
+            this.jobPosition = jobPosition;
+        }
+
+        setIdentityCardNumberEm(identityCardNumberEm) {
+            this.identityCardNumberEm = identityCardNumberEm;
+        }
+
+        setNumberOfPhone(numberOfPhone) {
+            this.numberOfPhone = numberOfPhone;
+        }
+
+        setEmailEmployee(emailEmployee) {
+            this.emailEmployee = emailEmployee;
+        }
+
+        setLevel(level) {
+            this.level = level;
+        }
+
+        setSalary(salary) {
+            this.salary = salary;
+        }
+
+        setBirthdayOfEmployee(birthdayOfEmployee) {
+            this.birthdayOfEmployee = birthdayOfEmployee;
+        }
+
+        getInforEmployee() {
+            return "Name\t" + this.nameEmployee + "\nJob's position\t" + this.jobPosition + "\nIdentity Card\t" + this.identityCardNumberEm +
+                "\nPhone number\t" + this.numberOfPhone + "\nEmail address\t" + this.emailEmployee +
+                "\nLevel\t" + this.level + "\nDate of birth\t" + this.birthdayOfEmployee + "\nThe salary\t" + this.salary;
+        }
+
+        getCharge() {
+            return displayTotalpayOfCustomer();
+
+        }
+    }
+
+    let listCustomer = [];
+    let arrEmployees = [];
+
+    function displayMainMenu() {
+        let menu = prompt("Select your option:\n" +
+            "1.Add new customer\n" +
+            "2.Display information customer\n" +
+            "3.Edit information customer\n" +
+            "4.Delete customer\n" +
+            "5.Display totalpay of customer\n" +
+            "6.Add new employee\n" +
+            "7.Display employee\n" +
+            "8.Charge\n" +
+            "9.Exit");
+        switch (menu) {
+            case'1':
+                addNewCustomer();
+                break;
+            case'2':
+                displayCustomer();
+                break;
+            case'3':
+                EditInformationCustomer();
+                break;
+            case'4':
+                deleteCustomer();
+                break;
+            case '5':
+                displayTotalpayOfCustomer();
+                break;
+            case '6':
+                addNewEmployee();
+                break;
+            case'7':
+                displayEmployee();
+                break;
+            case '8':
+                charge();
+                break;
+            case '9':
+                break;
+            default:
+                alert("You must select the option");
+                displayMainMenu();
+        }
+    }
+
+    //hàm addNewEmployee
+    function addNewEmployee() {
+        let nameEmployee = prompt("Enter the name: ");
+        let jobPosition;
+        let checkInfor = false;
+        do {
+            jobPosition = prompt("Enter the job's position:" + "\nManager" + "\nSale" + "\nMarketing");
+            if (jobPosition === "Manager" || jobPosition === "Sale" || jobPosition === "Marketing") {
+                checkInfor = true;
+            } else {
+                alert("Enter the job's position again");
+            }
+        } while (!checkInfor);
+        let idCardEmployee;
+        do {
+            idCardEmployee = prompt("Enter the identity card number: ");
+            let check = isNaN(idCardEmployee);
+            let check2 = idCardEmployee.indexOf("+");
+            let check3 = idCardEmployee.indexOf("-");
+            let check4 = idCardEmployee.indexOf(".");
+            if ((check) || (idCardEmployee.length !== 9) ||
+                (check2 > -1) ||
+                (check3 > -1) ||
+                (check4 > -1)) {
+                alert("Identity card must be numeric format and have 9 characters");
+                continue;
+            }
+            break;
+        } while (1);
+        let numberOfPhone;
+        let check = false;
+        do {
+            numberOfPhone = prompt("Enter the phone number");
+            if (!isNaN(numberOfPhone)) {
+                numberOfPhone = Number.parseInt(numberOfPhone);
+                check = true;
+            } else {
+                alert("Enter again")
+            }
+        } while (!check);
+        let emailEmployee;
+        do {
+            emailEmployee = prompt("Enter the email");
+        } while (!checkEmail(emailEmployee));
+        let level;
+        let checkInfor2 = false;
+        do {
+            level = prompt("Enter the level:" + "\nSau Đại Học" + "\nĐại Học" + "\nCao Đẳng" + "\nTrung Cấp");
+            if (level === "Sau Đại Học" || level === "Đại Học" || level === "Cao Đẳng" || level === "Trung Cấp") {
+                checkInfor2 = true;
+            } else {
+                alert("Enter the level again");
+            }
+        } while (!checkInfor2);
+        let birthdayOfEmployee;
+        do {
+            birthdayOfEmployee = prompt("Enter the day of birth")
+        } while (!checkDay(birthdayOfEmployee));
+        let employee1 = new employee(nameEmployee, jobPosition, idCardEmployee, numberOfPhone, emailEmployee, level, birthdayOfEmployee);
+        employee1.getSalary();
+        arrEmployees.push(employee1);
+        displayMainMenu();
+    }
+
+    //hàm hiển thị nhân viên
+    function displayEmployee() {
+        let chooseDisplay = prompt("Select your option:\n 1.Back to the main menu\n" + " 2.Employ's information");
+        switch (chooseDisplay) {
+            case '1':
+                displayMainMenu();
+                break;
+            case '2':
+                let temp = "";
+                for (let i = 0; i < arrEmployees.length; i++) {
+                    temp += i + ".Name: " + arrEmployees[i].getNameEmployee() + "\t" +
+                        "Job's position: " + arrEmployees[i].getJobPosition() + "\n"
+                }
+                let choose1 = parseInt(prompt(temp));
+                alert(arrEmployees[choose1].getInforEmployee());
+                break;
+        }
+        displayMainMenu();
+    }
+
+    //hàm nhân viên tính tiền
+    function charge() {
+        alert("Please select a staff to charge ");
+        let temp = "";
+        for (let i = 0; i < arrEmployees.length; i++) {
+            temp += i + ".name: " + arrEmployees[i].getNameEmployee() + "\t" +
+                "Job's position: " + arrEmployees[i].getJobPosition() + "\n"
+        }
+        let choose1 = parseInt(prompt(temp));
+        alert("Please select a customer to charge ");
+        alert(arrEmployees[choose1].getCharge());
+    }
+
+    //hiển thị khách hàng
+    function displayCustomer() {
+        let chooseDisplay = prompt("Select your option:\n 1.Back to the main menu\n" + " 2.Customer's information");
+        switch (chooseDisplay) {
+            case '1':
+                displayMainMenu();
+                break;
+            case '2':
+                let temp = "";
+                for (let i = 0; i < listCustomer.length; i++) {
+                    temp += i + ".Name: " + listCustomer[i].getName() + "\t" +
+                        "Identity card: " + listCustomer[i].getIdentityCardNumber() + "\n"
+                }
+                let choose1 = parseInt(prompt(temp));
+                alert(listCustomer[choose1].getInfor());
+                break;
+
+        }
+        displayMainMenu();
+    }
+
+    //thêm mới khách hàng
+    displayMainMenu();
+
+    function addNewCustomer() {
+        let name = prompt("Enter the name: ");
+        let idcard;
+        do {
+            idcard = prompt("Enter the identity card number: ");
+            let check = isNaN(idcard);
+            let check2 = idcard.indexOf("+");
+            let check3 = idcard.indexOf("-");
+            let check4 = idcard.indexOf(".");
+            if ((check) || (idcard.length !== 9) ||
+                (check2 > -1) ||
+                (check3 > -1) ||
+                (check4 > -1)) {
+                alert("Identity card must be numeric format and have 9 characters");
+                continue;
+            }
+            break;
+        } while (1);
+        let address = prompt("Enter address: ");
+        let birthday;
+        do {
+            birthday = prompt("Enter day of birth")
+        } while (!checkDay(birthday));
+
+        let typeService = prompt("Enter type service: " + "\n1.villa" + "\n2.house" + "\n3.room");
+        let typeRoom = prompt("Enter type room: ");
+        let typeCustomer = prompt("Enter type customer: ");
+        let discount;
+        let check = false;
+        do {
+            discount = prompt("Enter the discount");
+            if (!isNaN(discount)) {
+                discount = Number.parseInt(discount);
+                check = true;
+            } else {
+                alert("Enter again")
+            }
+
+        } while (!check);
+        let quatityIncluded;
+        let check1 = false;
+        do {
+            quatityIncluded = prompt("Enter the quatityincluded");
+            if (!isNaN(quatityIncluded)) {
+                quatityIncluded = Number.parseInt(quatityIncluded);
+                check1 = true;
+            } else {
+                alert("Enter again")
+            }
+        } while (!check1);
+        let rentDay;
+        let check2 = false;
+        do {
+            rentDay = (prompt("Enter rent day"));
+            if (!isNaN(rentDay)) {
+                rentDay = Number.parseInt(rentDay);
+                check2 = true;
+            } else {
+                alert("Enter again")
+            }
+        } while (!check2);
+        let email;
+        do {
+            email = prompt("Enter the email");
+        } while (!checkEmail(email));
+        let customer = new Customer(name, idcard, birthday, address, typeService, typeRoom, typeCustomer, discount,
+            quatityIncluded, rentDay, email);
+        listCustomer.push(customer);
+        displayMainMenu();
+    }
+
+    //kiểm tra email
+
+    function checkEmail(email) {
+        let regex = /^\w{3,}@[a-zA-Z]{3,5}\.[a-zA-Z]{2,3}$/;
+        return regex.test(email);
+    }
+
+    //kiểm tra tháng ngày
+    function checkDay(day) {
+        let regex = /^((0[1-9])|([1-2][0-9])|(3[0-1]))\/(([0][1-9])|1[0-2])\/(19[0-9]{2}|20[0-1][0-9]|2020)$/;
+        return regex.test(day);
+    }
+
+    //sửa thông tin khách hàng
+    function EditInformationCustomer() {
+        let temp = "";
+        for (let i = 0; i < listCustomer.length; i++) {
+            temp += i + ".Name: " + listCustomer[i].getName() + "\t" +
+                "Identity card number: " + listCustomer[i].getIdentityCardNumber() + "\n"
+        }
+        let choose1 = parseInt(prompt(temp));
+        alert(listCustomer[choose1].getInfor());
+
+        let choose = prompt(" Select the information to fix \n" +
+            "1.Name \n" +
+            "2.Indentity card number\n" +
+            "3.Address:\n" +
+            "4.Date of birth \n" +
+            "5.Email address\n" +
+            "6.Discount\n" +
+            "7.Rent day\n" +
+            "8.Quatityincluded\n" +
+            "9.Type of customer\n" +
+            "10.Type of service\n" +
+            "11.Exit");
+        switch (choose) {
+            case '1':
+                let name1 = prompt("Please enter the name again");
+                listCustomer[choose1].setName(name1);
+                displayMainMenu();
+                break;
+            case '2':
+                let address1 = prompt("Please enter address again");
+                listCustomer[choose1].setAddRess(address1);
+                displayMainMenu();
+                break;
+            case '3':
+                let identityCard;
+                do {
+                    identityCard = prompt("Enter the identity card number again: ");
+                    let check = isNaN(identityCard);
+                    let check2 = identityCard.indexOf("+");
+                    let check3 = identityCard.indexOf("-");
+                    let check4 = identityCard.indexOf(".");
+                    if ((check) || (identityCard.length !== 9) ||
+                        (check2 > -1) ||
+                        (check3 > -1) ||
+                        (check4 > -1)) {
+                        alert("Identity card must be numeric format and have 9 characters");
+                        continue;
+                    }
+                    break;
+                } while (1);
+                listCustomer[choose1].setIdentityCardNumber(identityCard);
+                displayMainMenu();
+                break;
+            case '4':
+                let birthday1;
+                do {
+                    birthday1 = prompt("Enter the day of birth again");
+                } while (!checkDay(birthday1));
+                listCustomer[choose1].setBirthday(birthday1);
+                displayMainMenu();
+                break;
+            case '5':
+                let email1;
+                do {
+                    email1 = prompt("Enter email again");
+                } while (!checkEmail(email1));
+                listCustomer[choose1].setEmail(email1);
+                displayMainMenu();
+                break;
+            case '6':
+                let discount1;
+                let check = false;
+                do {
+                    discount1 = prompt("Enter the discount");
+                    if (!isNaN(discount1)) {
+                        discount1 = Number.parseInt(discount1);
+                        check = true;
+                    } else {
+                        alert("Enter again")
+                    }
+
+                } while (!check);
+                listCustomer[choose1].setDiscount(discount1);
+                displayMainMenu();
+                break;
+
+            case '7':
+                let rentDay1;
+                let check0 = false;
+                do {
+                    rentDay1 = prompt("Enter the quatityincluded");
+                    if (!isNaN(rentDay1)) {
+                        rentDay1 = Number.parseInt(rentDay1);
+                        check0 = true;
+                    } else {
+                        alert("Enter again");
+                    }
+
+                } while (!check0);
+                listCustomer[choose1].setRentday(rentDay1);
+                displayMainMenu();
+                break;
+            case '8':
+                let quatityIncluded1;
+                let check1 = false;
+                do {
+                    quatityIncluded1 = prompt("Enter the quatityincluded");
+                    if (!isNaN(quatityIncluded1)) {
+                        quatityIncluded1 = Number.parseInt(quatityIncluded1);
+                        check1 = true;
+                    } else {
+                        alert("Enter again")
+                    }
+                } while (!check1);
+                listCustomer[choose1].setDiscount(quatityIncluded1);
+                displayMainMenu();
+                break;
+
+            case '9':
+                let typeCustomer1 = prompt("Enter the type customer again");
+                listCustomer[choose1].setTypeCustomer(typeCustomer1);
+                displayMainMenu();
+                break;
+            case'10':
+                let typeService1 = prompt("Enter the type service again ");
+                listCustomer[choose1].setTypeService(typeService1);
+                displayMainMenu();
+                break;
+            case '11':
+                break;
+
+        }
+
+    }
+
+    //xóa thông tin khách hàng
+    function deleteCustomer() {
+        alert("Select the customer to delete the information");
+        let temp = "";
+        for (let i = 0; i < listCustomer.length; i++) {
+            temp += i + ".name: " + listCustomer[i].getName() + "\t" +
+                "Identity card" + listCustomer[i].getIdentityCardNumber() + "\n"
+        }
+        let choose1 = parseInt(prompt(temp));
+        alert(listCustomer[choose1].getInfor());
+        let confirmDelete = confirm("Do you really want to delete this customer?");
+        if (confirmDelete) {
+            listCustomer.splice(choose1, 1);
+            displayMainMenu();
+        } else {
+            alert("You do not delete this customer");
+            displayMainMenu();
+        }
+
+    }
+
+    // hiển thị giá tiền
+    function displayTotalpayOfCustomer() {
+        alert("Select the customer to charge");
+        let temp = "";
+
+        for (let i = 0; i < listCustomer.length; i++) {
+            temp += i + ".Name: " + listCustomer[i].getName() + "\t" +
+                "Identity card: " + listCustomer[i].getIdentityCardNumber() + "\n"
+        }
+        let choose1 = parseInt(prompt(temp));
+        alert("Số tiền khách hàng cần trả là:\t" + listCustomer[choose1].getTotalPay() + "$");
+        displayMainMenu();
+    }
+
+
+</script>
+
+</body>
+</html>

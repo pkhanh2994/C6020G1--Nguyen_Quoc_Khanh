@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nums = parseInt(prompt("nhập số a"));
+    taoDayFibonaci(5);
+    alert(kiemTra(nums));
+    function taoDayFibonaci(n) {
+        let so1 = 1;
+        let so2 = 1;
+        let so3;
+        let i;
+        if (n < 2)
+            return 1;
+        i = 1;
+        while (i < n) {
+            so3 = so1 + so2;
+            so1 = so2;
+            so2 = so3;
+            i++;
+        }
+        return so3;
+
+    }
+    function kiemTra(a) {
+        let i = 0;
+        while (a > taoDayFibonaci(i)) {
+            i++;
+        }
+        if (a === taoDayFibonaci(i)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
+
+</body>
+</html>
