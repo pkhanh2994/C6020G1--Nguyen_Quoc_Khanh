@@ -13,6 +13,7 @@ public class HienThi20SoNguyenToDauTien {
             for (int i = 3; i <n; i++) {
                 if (n % i == 0) {
                     check++;
+                    break;
                 }
             }
             if (check ==0) {
