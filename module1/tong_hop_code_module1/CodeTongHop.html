@@ -146,33 +146,33 @@
         //     return a;
         // }
     //Tìm giá trị lớn nhất của số trong mảng
-        //     let nums = prompt("nhập số phần tử của mảng ");
-        //     let array = new Array();
-        //     for (let i = 0; i < nums; i++) {
-        //         array[i] = prompt("nhập phần tử của mảng");
-        //         max(array);
-        //     }
-        //     document.writeln("Mảng được khởi tạo là:\t" + array);
-        //     document.writeln("<br>");
-        //     document.writeln("Phần tử có giá trị lớn nhất trong mảng là:\t" + max(array)+"ở vị trí thứ:"+positionMax(array));
-        //
-        //     function max(a) {
-        //         let max = a[0];
-        //         for (let i = 1; i < a.length; i++) {
-        //             if (max < a[i]) {
-        //                 max = a[i];
-        //             }
-        //         }
-        //         return (max);
-        //     }
-        //     function positionMax(b) {
-        //         for(let i=b.length-1;i>=0;i--){
-        //             if(b[i]===max(b)){
-        //                 return i;
-        //             }
-        //
-        //         }return -1;
-        //     }
+            let nums = prompt("nhập số phần tử của mảng ");
+            let array = new Array();
+            for (let i = 0; i < nums; i++) {
+                array[i] = prompt("nhập phần tử của mảng");
+                max(array);
+            }
+            document.writeln("Mảng được khởi tạo là:\t" + array);
+            document.writeln("<br>");
+            document.writeln("Phần tử có giá trị lớn nhất trong mảng là:\t" + max(array)+"ở vị trí thứ:"+positionMax(array));
+
+            function max(a) {
+                let max = a[0];
+                for (let i = 1; i < a.length; i++) {
+                    if (max < a[i]) {
+                        max = a[i];
+                    }
+                }
+                return (max);
+            }
+            function positionMax(b) {
+                for(let i=b.length-1;i>=0;i--){
+                    if(b[i]===max(b)){
+                        return i;
+                    }
+
+                }return -1;
+            }
     //khởi tạo mảng 2 chiều
         // let n=parseInt(prompt("nhập số hàng"));
         // let m=parseInt(prompt("nhập số cột"));

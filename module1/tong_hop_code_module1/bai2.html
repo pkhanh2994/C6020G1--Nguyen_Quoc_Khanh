@@ -29,12 +29,10 @@
                 count++;
                 viTri = i;
                 if (count > 0) {
-                    for (let i = viTri; i < doDai; i++) {
-                        a[i] = a[i + 1];
+                    for (let j = viTri; j < doDai; j++) {
+                        a[j] = a[j + 1];
                     }
                     a[doDai - 1] = 0;
-                    a.pop();
-                    a.join(" ");
                     i--;
                 }
             }
