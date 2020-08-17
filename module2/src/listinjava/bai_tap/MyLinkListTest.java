@@ -38,10 +38,10 @@ public class MyLinkListTest {
         Student student4 = new Student(1, "khánh3");
         Student student5 = new Student(1, "khánh4");
         myLinkedList.addFirst(student1);
-        myLinkedList.addFirst(student2);
-        myLinkedList.addFirst(student3);
-        myLinkedList.addFirst(student4);
-        myLinkedList.addFirst(student5);
+        myLinkedList.add(1,student2);
+        myLinkedList.add(2,student3);
+        myLinkedList.add(3,student4);
+        myLinkedList.addLast(student5);
 
         MyLinkedList<Student> cloneLinkedList = myLinkedList.clone();
 
