@@ -101,6 +101,7 @@ public class MyLinkedList<E> {
             while (temp != null) {
                 if (temp.next.data.equals(element)) {
                     temp.next = temp.next.next;
+                    numNodes--;
                     return true;
                 }
 
@@ -163,6 +164,16 @@ public class MyLinkedList<E> {
             temp = temp.next;
         }
         return false;
+    }
+
+    public void clear() {
+        Node temp = head;
+        head = null;
+        while (temp.next != null) {
+            temp.next = null;
+        }
+        numNodes = 0;
+
     }
 
     public int indexOf(E element) {
