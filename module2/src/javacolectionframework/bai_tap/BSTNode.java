@@ -6,9 +6,10 @@ public class BSTNode {
         Node left;
         Node right;
 
+
         public Node(int item) {
-            key = item;
-            left = right = null;
+            this.key = item;
+            this.left = this.right = null;
         }
 
     }
@@ -16,10 +17,10 @@ public class BSTNode {
     Node root;
 
     public BSTNode() {
-        root = null;
+        this.root = null;
     }
 
-    void postOderRec(Node root) {
+    private void postOderRec(Node root) {
         if (root != null) {
             postOderRec(root.left);
             postOderRec(root.right);
@@ -27,13 +28,24 @@ public class BSTNode {
         }
     }
 
-    // Phương thức gọi hàm sắp xếp
-    void postOder() {
-        postOderRec(root);
+    private void preOderRec(Node root) {
+        if (root != null) {
+            System.out.printf("%d ", root.key);
+            preOderRec(root.left);
+            preOderRec(root.right);
+        }
     }
 
-    // hàm thực hiện việc sắp xếp và in ra cây nhị phân đã được sắp xếp
-    public Node insertRec(Node root, int key) {
+    // Phương thức gọi hàm sắp xếp
+    public void postOder() {
+        postOderRec(this.root);
+    }
+
+    public void preOder() {
+        preOderRec(this.root);
+    }
+
+    private Node insertRec(Node root, int key) {
         if (root == null) {
             root = new Node(key);
             return root;
@@ -47,15 +59,15 @@ public class BSTNode {
     }
 
     void insert(int key) {
-        root = insertRec(root, key);
+        this.root = insertRec(this.root, key);
     }
 
     Node searchKey(int key) {
-        return search(root, key);
+        return search(this.root, key);
     }
 
     void deleteKey(int key) {
-        root = deleteRec(root, key);
+        this.root = deleteRec(this.root, key);
     }
 
     int minValue(Node root) {

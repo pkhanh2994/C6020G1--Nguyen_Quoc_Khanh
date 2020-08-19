@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 public class ProductManager implements Comparator<Product> {
-   static Scanner scanner = new Scanner(System.in);
+    static Scanner scanner = new Scanner(System.in);
     public static ArrayList<Product> arrayPro = new ArrayList<>();
 
     public static void edit() {
@@ -30,10 +30,13 @@ public class ProductManager implements Comparator<Product> {
 
     public static String search() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("If you want to search product information please enter the product name");
+        System.out.println("If you want to search product information please enter the product name and id");
+        System.out.println("Enter the product name");
         String name = scanner.nextLine();
+        System.out.println("Enter the product id");
+        int id = scanner.nextInt();
         for (Product product : arrayPro) {
-            if (product.getName().equals(name))
+            if (product.getName().equals(name) && id == product.getId())
                 return product.toString();
         }
         return "No available";
