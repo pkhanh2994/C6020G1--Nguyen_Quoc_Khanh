@@ -16,7 +16,7 @@ public class MainBST {
         System.out.println("Preoder traversal of the given tree");
         tree.preOder();
         System.out.println();
-        tree.deleteKey(50);
+        tree.deleteKey(40);
         System.out.println("The BST after deleted");
         tree.postOder();
         System.out.println();

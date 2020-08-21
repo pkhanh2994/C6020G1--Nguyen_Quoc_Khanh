@@ -13,6 +13,7 @@ public class BSTNode {
         }
 
     }
+    ///tạo một nút root trong BTSNode
 
     Node root;
 
@@ -82,25 +83,23 @@ public class BSTNode {
     Node deleteRec(Node root, int key) {
         if (root == null) {
             return root;
-        }
-        if (key < root.key) {
-            root.left = deleteRec(root.left, key);
-        } else if (key > root.key) {
-            root.right = deleteRec(root.right, key);
-            // nếu key có cùng giá trị với node key thì chính là node cần xóa
         } else {
-            if (root.left == null)
-                return root.right;
-            else if (root.right == null)
-                return root.left;
+            if (key < root.key) {
+                deleteRec(root.left, key);
+            } else if (key > root.key) {
+                deleteRec(root.right, key);
+                // nếu key có cùng giá trị với node key thì chính là node cần xóa
+            } else {
+                if (root.left == null)//cây con bên trái là rỗng thì đây là cây nhị phân phải, trỏ về bên phải để cập nhật mối liên hệ giữa cha và con
+                    return root.right;
+                else if (root.right == null)
+                    return root.left;
 
-            // node có 2 node con.
-            root.key = minValue(root.right);
-
-            // Xóa phần từ nhỏ nhất bên phải
-            root.right = deleteRec(root.right, root.key);
+                root.key = minValue(root.right);
+                root.right = deleteRec(root.right, root.key);
+            }
+            return root;
         }
-        return root;
     }
 
     private Node search(Node root, int key) {
