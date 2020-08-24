@@ -8,15 +8,17 @@ public class Selectionsort {
     public static int[] selectSort(int[] arr, int nums) {
         int min;
         for (int i = 0; i <nums-1; i++) {
+
             min = i;
             for (int j = i + 1; j < nums; j++) {
                 if (arr[j] < arr[min]) {
                     min = j;
-                   int temp=arr[i];
-                   arr[i]=arr[min];
-                   arr[min]=temp;
                 }
-
+            }
+            if(min!=i){
+                int temp=arr[i];
+                arr[i]=arr[min];
+                arr[min]=temp;
             }
         }
         return arr;

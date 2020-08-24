@@ -14,7 +14,6 @@ public class InsertsionSortByStep {
                 arr[j + 1] = arr[j];
                 j--;
             }
-            System.out.println("insert the temp into "+ arr[j+1]);
             arr[j + 1] = temp;
             needNextPass = true;
 
