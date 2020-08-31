@@ -1,24 +1,35 @@
 package OOP.thuc_hanh;
 
 public class Student {
-    private int rollno;
+    private int id;
     private String name;
-    private static String college = "BBDIT";
 
-    //constructor to initialize the variable
-    Student(int r, String n) {
-        rollno = r;
-        name = n;
+    public Student(int id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
-    //static method to change the value of static variable
-    static void change() {
-        college = "CODEGYM";
+    public int getId() {
+        return id;
     }
 
-    //method to display values
-    void display() {
-        System.out.println(rollno + " " + name + " " + college);
+    public void setId(int id) {
+        this.id = id;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "id: " + id + " name: " + name;
+    }
+
+
 }
 

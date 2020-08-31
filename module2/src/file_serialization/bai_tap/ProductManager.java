@@ -16,7 +16,6 @@ public class ProductManager {
         int id = scanner.nextInt();
         scanner.skip("\\R");
         System.out.println("Name of product");
-
         String name = scanner.nextLine();
         System.out.println("Manufacturer of product");
         String manufacturer = scanner.nextLine();
@@ -34,7 +33,6 @@ public class ProductManager {
         product.setOtherDescriptions(otherDescriptions);
         listProduct.add(product);
         writeBinaryFile();
-        readBinaryfile();
 
     }
 
@@ -45,26 +43,37 @@ public class ProductManager {
         String name = scanner.nextLine();
         System.out.println("Enter the product id");
         int id = scanner.nextInt();
+
+        readBinaryfile();
+        boolean check=true;
         for (Product product : listProduct) {
             if (product.getName().equals(name) && id == product.getId()) {
+                check=false;
                 System.out.println(product.toString());
+
             }
+        }
+        if(check){
+            System.out.println("The product does not exist");
+
         }
     }
 
+
     public static void display() {
+        readBinaryfile();
         for (Product product : listProduct) {
-            System.out.println(product.toString());
+            System.out.println(product);
         }
+
     }
 
     public static void writeBinaryFile() throws IOException {
-        FileOutputStream fileOutputStream = new FileOutputStream("Product.txt");
-        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
-        ObjectOutputStream outputStream = new ObjectOutputStream(bufferedOutputStream);
+        FileOutputStream fileOutputStream = new FileOutputStream("Product.csv");
+        ObjectOutputStream outputStream = new ObjectOutputStream(fileOutputStream);
         try {
             outputStream.writeObject(listProduct);
-           bufferedOutputStream.flush();
+            outputStream.flush();
             outputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -73,18 +82,12 @@ public class ProductManager {
 
     public static void readBinaryfile() {
         try {
-            FileInputStream fileInputStream = new FileInputStream("Product.txt");
-            BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
-            ObjectInputStream objectInputStream = new ObjectInputStream(bufferedInputStream);
+            FileInputStream fileInputStream = new FileInputStream("Product.csv");
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             listProduct = (ArrayList<Product>) objectInputStream.readObject();
-            for (Product product : listProduct) {
-                System.out.println(product);
-            }
-            bufferedInputStream.close();
             objectInputStream.close();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
-
 }

@@ -18,7 +18,7 @@ public class ProductMain {
                     case 2:
                         ProductManager.search();
                         break;
-                    case 3:
+                  case 3:
                         ProductManager.display();
                         break;
                     case 0:
