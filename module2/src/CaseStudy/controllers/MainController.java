@@ -21,15 +21,14 @@ public class MainController {
     public static Scanner scanner = new Scanner(System.in);
     final static String VILA = "C:\\C0620G1- Nguyen Quoc Khanh\\module2\\src\\CaseStudy\\data\\vila.csv";
     final static String HOUSE = "C:\\C0620G1- Nguyen Quoc Khanh\\module2\\src\\CaseStudy\\data\\house.csv";
-    final static String ROOM = "C:\\C0620G1- Nguyen Quoc Khanh\\module2\\src\\CaseStudy\\data\\room.csv";
-    final static String ROOM_TXT = "C:\\C0620G1- Nguyen Quoc Khanh\\module2\\src\\CaseStudy\\data\\room_txt.txt";
-    final static String VILLA_TXT = "C:\\C0620G1- Nguyen Quoc Khanh\\module2\\src\\CaseStudy\\data\\villa_txt.txt";
+    final static String ROOM = "C:\\C0620G1- Nguyen Quoc Khanh\\module2\\src\\CaseStudy\\data\\room1.csv";
+//    final static String ROOM_TXT = "C:\\C0620G1- Nguyen Quoc Khanh\\module2\\src\\CaseStudy\\data\\room_txt.txt";
+//    final static String VILLA_TXT = "C:\\C0620G1- Nguyen Quoc Khanh\\module2\\src\\CaseStudy\\data\\villa_txt.txt";
     final static String CUSTOMER = "C:\\C0620G1- Nguyen Quoc Khanh\\module2\\src\\CaseStudy\\data\\customer.csv";
     final static String CUSTOMER_SORT = "C:\\C0620G1- Nguyen Quoc Khanh\\module2\\src\\CaseStudy\\data\\customer_sort.txt";
     final static String BOOKING_CSV = "C:\\C0620G1- Nguyen Quoc Khanh\\module2\\src\\CaseStudy\\data\\booking.csv";
-    final static String BOOKING_CSV_TXT = "C:\\C0620G1- Nguyen Quoc Khanh\\module2\\src\\CaseStudy\\data\\booking_txt.txt";
+    //final static String BOOKING_CSV_TXT = "C:\\C0620G1- Nguyen Quoc Khanh\\module2\\src\\CaseStudy\\data\\booking_txt.txt";
 
-    public static List<String> information = new ArrayList<>();
     public static Queue<Customer> customerQueue = new LinkedList<>();
     public static int ticket = 2;
 
@@ -74,6 +73,7 @@ public class MainController {
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
+                    break;
                 case "8":
                     try {
                         buyTicket();
@@ -781,7 +781,6 @@ public class MainController {
         do {
             System.out.println("Enter the area");
             area = scanner.nextDouble();
-            scanner.skip("\\R");
             if (area < 30) {
                 System.out.println("The area must be larger than 30 square meters");
             }

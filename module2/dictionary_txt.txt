@@ -1,0 +1,13 @@
+[car
+*type word: noun
+- meaning: xe hơi
+, bus
+*type word: noun
+- meaning: xe buýt
+, play
+*type word: noun
+- meaning: vở kịch
+, play
+*type word: verb
+- meaning: chơi
+]
