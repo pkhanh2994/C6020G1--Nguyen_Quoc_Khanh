@@ -1,13 +1,11 @@
 package CaseStudy.models;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class House extends Services implements Serializable {
     private String standardRoom;
     private String otherExclusives;
     private int floors;
-public static ArrayList<House>listHouse=new ArrayList<>();
     public House(String id, String servicesType, int rentCost, int guestAmount, String rentType, double area, String standardRoom, String otherExclusives, int floors) {
         super(id, servicesType, rentCost, guestAmount, rentType, area);
         this.standardRoom = standardRoom;

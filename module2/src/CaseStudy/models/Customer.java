@@ -1,11 +1,8 @@
 package CaseStudy.models;
 
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Comparator;
 
-public class Customer implements Serializable, Comparator<Customer> {
-    public static ArrayList<Customer> arrCustomer=new ArrayList<>();
+public class Customer implements Comparator<Customer> {
     private  String name;
     private  String birthday;
     private  String gender;
@@ -19,7 +16,7 @@ public class Customer implements Serializable, Comparator<Customer> {
     public Customer() {
     }
 
-    public Customer(String name, String birthday, String gender, String identifyCard, String phoneNumber, String email, String typeGuest, String address, Services services) {
+    public Customer(String name, String birthday, String gender, String identifyCard, String phoneNumber, String email, String typeGuest, String address) {
         this.name = name;
         this.birthday = birthday;
         this.gender = gender;
@@ -28,7 +25,6 @@ public class Customer implements Serializable, Comparator<Customer> {
         this.email = email;
         this.typeGuest = typeGuest;
         this.address = address;
-        this.services = services;
     }
 
     public String getName() {
@@ -122,8 +118,9 @@ public class Customer implements Serializable, Comparator<Customer> {
        int b;
        if(result!=0){
            return result;
-       }else
-         b=Integer.parseInt(o1.getBirthday().substring(6))-Integer.parseInt(o2.getBirthday().substring(6));
-        return Integer.compare(b, 0);
+       }else {
+           b = Integer.parseInt(o1.getBirthday().substring(6))-Integer.parseInt(o2.getBirthday().substring(6));
+           return Integer.compare(0, b);
+       }
     }
 }

@@ -3,213 +3,132 @@ import java.util.Scanner;
 
 public class DocSo2 {
     public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
-        System.out.println("Nhập số cần đọc:");
-        int so=scanner.nextInt();
-        int hangChuc;
-        int donvi;
-        int hang20;
-        int hangtram;
-        hang20=so/10;
-        donvi=so%10;
-        hangtram=so/100;
-        if(so>=0&&so<=10){
-            switch (so){
-                case 0:
-                    System.out.print("zero");
-                    break;
-                case 1:
-                    System.out.print("one");
-                    break;
-                case 2:
-                    System.out.print("two");
-                    break;
-                case 3:
-                    System.out.print("three");
-                    break;
-                case 4:
-                    System.out.print("four");
-                    break;
-                case 5:
-                    System.out.print("five");
-                    break;
-                case 6:
-                    System.out.print("six");
-                    break;
-                case 7:
-                    System.out.print("seven");
-                    break;
-                case 8:
-                    System.out.print("eight");
-                    break;
-                case 9:
-                    System.out.print("night");
-                    break;
-                case 10:
-                    System.out.print("ten");
-                    break;
-
+        Scanner scanner = new Scanner(System.in);
+        int number, donVi, hangChuc, hangTram;
+        System.out.print("Nhập số cần đọc : ");
+        number = scanner.nextInt();
+        hangChuc = -1;
+        hangTram = 0;
+        if (number == 0) {
+            System.out.print("Không");
+        } else if (number > 0 && number <= 999) {
+            if (number < 10) {
+                donVi = number;
+            } else if (number < 100) {
+                hangChuc = number / 10;
+                donVi = number - hangChuc * 10;
+            } else {
+                hangTram = number / 100;
+                hangChuc = (number - hangTram * 100) / 10;
+                donVi = number - (hangTram * 100 + hangChuc * 10);
+                if (hangChuc == 0 && donVi == 0) {
+                    hangChuc = -1;
+                    donVi = -1;
+                }
             }
-        }else {
-            if(so>10&&so<20){
-                hangChuc=so%10;
-                switch (hangChuc){
+            if (hangTram > 0) {
+                switch (hangTram) {
                     case 1:
-                        System.out.print("eleven");
+                        System.out.print("Một Trăm ");
                         break;
                     case 2:
-                        System.out.print("twelve");
+                        System.out.print("Hai Trăm ");
                         break;
                     case 3:
-                        System.out.print("thirteen");
+                        System.out.print("Ba Trăm ");
                         break;
                     case 4:
-                        System.out.print("fourteen");
+                        System.out.print("Bốn Trăm ");
                         break;
                     case 5:
-                        System.out.print("fifteen");
+                        System.out.print("Năm Trăm ");
                         break;
                     case 6:
-                        System.out.print("sixteen");
+                        System.out.print("Sáu Trăm ");
                         break;
                     case 7:
-                        System.out.print("seventeen");
+                        System.out.print("Bảy Trăm ");
                         break;
                     case 8:
-                        System.out.print("eighteen");
+                        System.out.print("Tám Trăm ");
                         break;
                     case 9:
-                        System.out.print("nineteen");
+                        System.out.print("Chín Trăm ");
                         break;
                 }
-            }else {
-                if(so>=20&&so<100){
-                    switch (hang20){
-                        case 2:
-                            System.out.print("twenty\t");
-                            break;
-                        case 3:
-                            System.out.print("thirty\t");
-                            break;
-                        case 4:
-                            System.out.print("forty\t");
-                            break;
-                        case 5:
-                            System.out.print("fifty\t");
-                            break;
-                        case 6:
-                            System.out.print("sixty\t");
-                            break;
-                        case 7:
-                            System.out.print("seventy\t");
-                            break;
-                        case 8:
-                            System.out.print("eighty\t");
-                            break;
-                        case 9:
-                            System.out.print("ninety\t");
-                            break;
-                    }
-                    switch (donvi){
-                        case 1:
-                            System.out.print("one");
-                            break;
-                        case 2:
-                            System.out.print("two");
-                            break;
-                        case 3:
-                            System.out.print("three");
-                            break;
-                        case 4:
-                            System.out.print("four");
-                            break;
-                        case 5:
-                            System.out.print("five");
-                            break;
-                        case 6:
-                            System.out.print("six");
-                            break;
-                        case 7:
-                            System.out.print("seven");
-                            break;
-                        case 8:
-                            System.out.print("eight");
-                            break;
-                        case 9:
-                            System.out.print("night");
-                            break;
-                    }
-
-                }else {
-                    if(so>=100&&so<1000){
-                        int donvi2=so%100;
-                        switch (hangtram){
-                            case 1:
-                                System.out.print("one hundred ");
-                                break;
-                            case 2:
-                                System.out.print("two hundred ");
-                                break;
-                            case 3:
-                                System.out.print("three hundred ");
-                                break;
-                            case 4:
-                                System.out.print("four hundred ");
-                                break;
-                            case 5:
-                                System.out.print("five hundred ");
-                                break;
-                            case 6:
-                                System.out.print("six hundred ");
-                                break;
-                            case 7:
-                                System.out.print("seven hundred ");
-                                break;
-                            case 8:
-                                System.out.print("eight hundred ");
-                                break;
-                            case 9:
-                                System.out.print("nine hundred ");
-                                break;
-                        }
-
-                        switch (donvi2){
-                            case 1:
-                                System.out.print("and one");
-                                break;
-                            case 2:
-                                System.out.print("and two");
-                                break;
-                            case 3:
-                                System.out.print("and three");
-                                break;
-                            case 4:
-                                System.out.print("and four");
-                                break;
-                            case 5:
-                                System.out.print("and five");
-                                break;
-                            case 6:
-                                System.out.print("and six");
-                                break;
-                            case 7:
-                                System.out.print("and seven");
-                                break;
-                            case 8:
-                                System.out.print("and eight");
-                                break;
-                            case 9:
-                                System.out.print("and night");
-                                break;
-                            case 10:
-                                System.out.print("and ten");
-                                break;
-
-                        }
-
-                    }
+            }
+            if (hangChuc > -1) {
+                switch (hangChuc) {
+                    case 0:
+                        System.out.print("Lẻ ");
+                        break;
+                    case 1:
+                        System.out.print("Mười ");
+                        break;
+                    case 2:
+                        System.out.print("Hai Mươi ");
+                        break;
+                    case 3:
+                        System.out.print("Ba Mươi ");
+                        break;
+                    case 4:
+                        System.out.print("Bốn Mươi ");
+                        break;
+                    case 5:
+                        System.out.print("Năm Mươi ");
+                        break;
+                    case 6:
+                        System.out.print("Sáu Mươi ");
+                        break;
+                    case 7:
+                        System.out.print("Bảy Mươi ");
+                        break;
+                    case 8:
+                        System.out.print("Tám Mươi ");
+                        break;
+                    case 9:
+                        System.out.print("Chín Mươi ");
+                        break;
                 }
             }
-        }
+            if (donVi > 0) {
+                switch (donVi) {
+//                    case 0:
+//                        System.out.print("");
+//                        break;
+                    case 1:
+                        if (hangChuc > 1) {
+                            System.out.print("Mốt");
+                        } else System.out.print("Một");
+                        break;
+                    case 2:
+                        System.out.print("Hai");
+                        break;
+                    case 3:
+                        System.out.print("Ba");
+                        break;
+                    case 4:
+                        System.out.print("Bốn");
+                        break;
+                    case 5:
+                        if (hangChuc > 0) {
+                            System.out.print("Lăm");
+                        } else System.out.print("Năm");
+                        break;
+                    case 6:
+                        System.out.print("Sáu");
+                        break;
+                    case 7:
+                        System.out.print("Bảy");
+                        break;
+                    case 8:
+                        System.out.print("Tám");
+                        break;
+                    case 9:
+                        System.out.print("Chín");
+                        break;
+                }
+            }
+        } else System.out.print("Out of ability");
     }
 }

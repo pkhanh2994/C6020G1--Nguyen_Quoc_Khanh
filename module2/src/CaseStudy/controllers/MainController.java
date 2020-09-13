@@ -1,34 +1,30 @@
 package CaseStudy.controllers;
 
-import CaseStudy.commons.ReadCSVEmployee;
-import CaseStudy.commons.ReadCSVHouse;
-import CaseStudy.commons.ReadCSVRoom;
-import CaseStudy.commons.ReadCSVVilla;
+import CaseStudy.commons.*;
 import CaseStudy.exception.*;
 import CaseStudy.models.*;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static CaseStudy.commons.WriteCSV.writeCSV;
 import static CaseStudy.commons.WriteCSVCustomer.writeCSVCustomer;
-import static CaseStudy.commons.WriteObject.writeObject;
-import static CaseStudy.models.Customer.arrCustomer;
 
 public class MainController {
     public static Scanner scanner = new Scanner(System.in);
     final static String VILA = "C:\\C0620G1- Nguyen Quoc Khanh\\module2\\src\\CaseStudy\\data\\vila.csv";
     final static String HOUSE = "C:\\C0620G1- Nguyen Quoc Khanh\\module2\\src\\CaseStudy\\data\\house.csv";
     final static String ROOM = "C:\\C0620G1- Nguyen Quoc Khanh\\module2\\src\\CaseStudy\\data\\room1.csv";
-//    final static String ROOM_TXT = "C:\\C0620G1- Nguyen Quoc Khanh\\module2\\src\\CaseStudy\\data\\room_txt.txt";
-//    final static String VILLA_TXT = "C:\\C0620G1- Nguyen Quoc Khanh\\module2\\src\\CaseStudy\\data\\villa_txt.txt";
     final static String CUSTOMER = "C:\\C0620G1- Nguyen Quoc Khanh\\module2\\src\\CaseStudy\\data\\customer.csv";
     final static String CUSTOMER_SORT = "C:\\C0620G1- Nguyen Quoc Khanh\\module2\\src\\CaseStudy\\data\\customer_sort.txt";
     final static String BOOKING_CSV = "C:\\C0620G1- Nguyen Quoc Khanh\\module2\\src\\CaseStudy\\data\\booking.csv";
-    //final static String BOOKING_CSV_TXT = "C:\\C0620G1- Nguyen Quoc Khanh\\module2\\src\\CaseStudy\\data\\booking_txt.txt";
 
+    public static List<Customer> arrCustomer=new ArrayList<>();
     public static Queue<Customer> customerQueue = new LinkedList<>();
     public static int ticket = 2;
 
@@ -317,20 +313,19 @@ public class MainController {
     }
 
     public static void showInformationUpdateSort() {
+
         try {
-            FileInputStream fileInputStream = new FileInputStream(CUSTOMER_SORT);
-            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-            arrCustomer = (ArrayList<Customer>) objectInputStream.readObject();
-            Collections.sort(arrCustomer, new Customer());
+            arrCustomer = ReadCustomerCSV.readCSVCustomer();
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        }
+        Collections.sort(arrCustomer, new Customer());
             int i = 1;
             for (Customer customer : arrCustomer) {
                 System.out.println("Customer " + i + " :" + customer.toString());
                 i++;
             }
-            objectInputStream.close();
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+
 
     }
 
@@ -481,8 +476,6 @@ public class MainController {
         customer.setAddress(address);
         writeCSVCustomer(CUSTOMER, customer);
 
-        arrCustomer.add(customer);
-        writeObject(arrCustomer, CUSTOMER_SORT);
 
     }
 
