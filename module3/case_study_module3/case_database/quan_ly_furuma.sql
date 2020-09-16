@@ -56,6 +56,7 @@ foreign key(id_bo_phan) references bophan(id_bophan)
   -- tao bang dich vu
  create table dichvu(
  id_dichvu int primary key,
+ ten_dich_vu varchar(50),
  dientich int not null,
  sotang int not null,
  so_nguoi_toi_da int not null,
@@ -107,7 +108,7 @@ foreign key(id_bo_phan) references bophan(id_bophan)
  id_dichvudikem int primary key,
  ten_dichvudikem varchar(50) not null,
  gia int not null,
- donvi int not null,
+ donvi varchar(20) not null,
  trang_thai_kha_dung varchar(50) not null
  );
  -- tao bang hop dong chi tiet
@@ -119,6 +120,7 @@ foreign key(id_bo_phan) references bophan(id_bophan)
  foreign key(id_hopdong)references hopdong(id_hopdong),
  foreign key(id_dichvudikem)references dichvudikem(id_dichvudikem)
  );
+ 
  
 -- -----------------------------------chèn dữ liệu vào bảng---------------------------------
  -- bảng bộ phận 
@@ -160,7 +162,7 @@ values
 
 insert into loaikhach
 values
-(1loaikhach,'Diamond'),
+(1,'Diamond'),
 (2,'Platinium'),
 (3,'Gold'),
 (4,'Sliver'),
@@ -174,3 +176,49 @@ values
 (4,4,'Rock Lee','1997-12-12','123123123','078122123','lee@gmail.com','Suna'),
 (5,5,'Huyga Hinata','1997-12-12','123123123','067123123','hianata@gmail.com','Ikanari');
 
+insert into kieuthue
+values 
+(1,'năm',40000000),
+(2,'tháng',400000),
+(3,'ngày',40000),
+(4,'giờ',400);
+
+
+insert into loaidichvu
+values
+(1,'villa'),
+(2,'house'),
+(3,'room');
+
+
+ insert into dichvu
+ values
+ (1,'villa bê đê',1000,3,2,400000,2,1,'còn trống'),
+ (2,'villa không bê đê',1200,4,3,44400,2,1,'hết chỗ'),
+ (3,'house bê đê',200,2,2,40000,3,2,'còn trống'),
+ (4,'room không bê đê',100,1,2,40000,2,3,'còn trống'),
+ (5,'room bê đê',100,3,4,40,2,3,'còn trống');
+ 
+ insert into hopdong
+ values
+ (1,1,1,2,'2020-02-29','2020-03-28',1000,2000),
+ (2,3,4,3,'2020-01-25','2020-01-26',50,200),
+ (3,2,3,4,'2020-02-29','2020-03-28',100,2000),
+ (4,1,3,2,'2020-02-29','2020-04-28',150,2000),
+ (5,1,2,2,'2020-02-29','2020-05-28',130,2000);
+ 
+ insert into dichvudikem
+ values
+ (1,'karaoke',200,'usd','oke'),
+ (2,'đồ uống',300,'usd','oke'),
+ (3,'massage',500,'usd','not oke'),
+ (4,'thức ăn',100,'usd','not oke'),
+ (5,'karaoke',200,'usd','oke');
+ 
+ insert into hopdongchitiet
+ values
+ (1,2,3,4),
+ (2,3,2,1),
+ (3,4,1,2),
+ (4,5,3,3),
+ (5,1,2,5);

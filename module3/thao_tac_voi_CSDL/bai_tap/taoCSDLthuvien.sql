@@ -43,13 +43,9 @@ number_of_pblication int,
 type_of_book varchar(50),
 price_book int,
 student_number_book int,
-foreign key(student_number_book) references students(student_number),
-borrowOder_number  int,
-foreign key(borrowOder_number)references borrowOder(borrow_number),
 type_id_book int,
 foreign key(type_id_book) references type_of_book(id)
 );
-
 
 
 
