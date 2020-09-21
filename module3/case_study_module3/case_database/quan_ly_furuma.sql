@@ -34,9 +34,9 @@ luong int not null,
 so_dien_thoai varchar(20),
 email varchar(50),
 dia_chi varchar(50) not null,
-foreign key (id_vi_tri) references vitri(id_vitri),
-foreign key (id_trinh_do) references trinhdo(id_trinhdo),
-foreign key(id_bo_phan) references bophan(id_bophan)
+constraint fk_vitri foreign key (id_vi_tri) references vitri(id_vitri),
+constraint fk_trinhdo foreign key (id_trinh_do) references trinhdo(id_trinhdo),
+constraint fk_bophan foreign key(id_bo_phan) references bophan(id_bophan)
 );
  -- ---------------------------------dich vu
   -- tao bang loai dich vu
@@ -64,8 +64,8 @@ foreign key(id_bo_phan) references bophan(id_bophan)
  id_kieuthue int not null,
  id_loaidichvu int not null,
  trang_thai varchar(45) not null,
- foreign key(id_kieuthue)references kieuthue(id_kieuthue),
- foreign key(id_loaidichvu) references loaidichvu(id_loaidichvu)
+constraint fk_kieuthue foreign key(id_kieuthue)references kieuthue(id_kieuthue),
+constraint fk_loaidichvu foreign key(id_loaidichvu) references loaidichvu(id_loaidichvu)
  );
  
  -- --------------------------------khach hang----------------
@@ -84,7 +84,7 @@ foreign key(id_bo_phan) references bophan(id_bophan)
  so_dien_thoai varchar(12) not null,
  email varchar(45) not null,
  dia_chi varchar(50) not null,
- foreign key(id_loaikhach) references loaikhach(id_loaikhach)
+constraint fk_loaikhach foreign key(id_loaikhach) references loaikhach(id_loaikhach)
  );
  
  -- ------------------------------------------- hop dong
@@ -98,9 +98,9 @@ foreign key(id_bo_phan) references bophan(id_bophan)
  ngay_ket_thuc date not null,
  tien_dat_coc int not null,
  tongtien int not null,
- foreign key(id_nhanvien) references nhanvien(id_NhanVien),
- foreign key(id_dichvu) references dichvu(id_dichvu),
- foreign key(id_khachhang) references khachhang(id_khachhang)
+constraint fk_nhanvien foreign key(id_nhanvien) references nhanvien(id_NhanVien),
+constraint fk_dichvu foreign key(id_dichvu) references dichvu(id_dichvu),
+constraint fk_khachhang foreign key(id_khachhang) references khachhang(id_khachhang)
  );
 
  -- tao bang dich vu di kem
@@ -117,8 +117,8 @@ foreign key(id_bo_phan) references bophan(id_bophan)
  id_hopdong int not null,
  id_dichvudikem int ,
  soluong int not null,
- foreign key(id_hopdong)references hopdong(id_hopdong),
- foreign key(id_dichvudikem)references dichvudikem(id_dichvudikem)
+constraint fk_hopdong foreign key(id_hopdong)references hopdong(id_hopdong),
+constraint fk_dichvudikem foreign key(id_dichvudikem)references dichvudikem(id_dichvudikem)
  );
  
  
@@ -174,7 +174,8 @@ values
 (2,1,'Uchiha Suzuke','1997-12-12','123123123','099991239','suzuke@gmail.com','Ame'),
 (3,3,'Hatake Kakashi','1997-12-12','123123123','0899123123','kakashi@gmail.com','Kaze'),
 (4,4,'Rock Lee','1997-12-12','123123123','078122123','lee@gmail.com','Suna'),
-(5,5,'Huyga Hinata','1997-12-12','123123123','067123123','hianata@gmail.com','Ikanari');
+(5,5,'Huyga Hinata','1997-12-12','123123123','067123123','hianata@gmail.com','Ikanari'),
+(6,1,'Huyga Hinata','1997-12-12','123123123','067123123','hianata@gmail.com', 'Quảng Ngãi');
 
 insert into kieuthue
 values 
@@ -201,11 +202,21 @@ values
  
  insert into hopdong
  values
- (1,1,1,2,'2020-02-29','2020-03-28',1000,2000),
- (2,3,4,3,'2020-01-25','2020-01-26',50,200),
- (3,2,3,4,'2020-02-29','2020-03-28',100,2000),
- (4,1,3,2,'2020-02-29','2020-04-28',150,2000),
- (5,1,2,2,'2020-02-29','2020-05-28',130,2000);
+(1,1,2,2,'2018-01-29','2020-03-28',1000,2000),
+(2,3,2,3,'2020-01-25','2020-01-26',50,200),
+(3,2,3,4,'2020-02-29','2020-03-28',100,2000),
+(4,1,3,2,'2018-01-29','2020-04-28',150,2000),
+(5,1,2,2,'2018-03-29','2020-05-28',130,2000),
+(6,2,2,4,'2018-02-27','2020-05-23',34,233),
+(7, 2,1,3,'2019-02-27','2019-03-28',34,2000),
+(8,3,4,2,'2018-03-27','2019-03-29',32,23),
+(9,2,5,1,'2019-03-25','2019-04-25',32,300),
+(10,2,1,1,'2019-02-27','2019-03-28',34,2000),
+(11,2,3,2,'2019-02-27','2019-03-28',32,10),
+(12,3,1,3,'2019-10-22','2019-11-22',3,4),
+(13,4,2,2,'2018-10-23','2018-11-22',1,2),
+(14,4,3,1,'2019-06-17','2019-09-22',3,4);
+
  
  insert into dichvudikem
  values
@@ -217,8 +228,12 @@ values
  
  insert into hopdongchitiet
  values
- (1,2,3,4),
- (2,3,2,1),
- (3,4,1,2),
- (4,5,3,3),
- (5,1,2,5);
+(1,2,3,4),
+(2,9,2,1),
+(3,8,1,2),
+(4,5,3,3),
+(5,1,2,5),
+(6,1,3,2),
+(7,12,3,2),
+(8,9,2,2),
+(9,5,2,3);
