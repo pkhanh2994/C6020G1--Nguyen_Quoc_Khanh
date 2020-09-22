@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Truyện Tranh hay</title>
+    <style>
+        .divimage {
+            background-image: url("khungdau.jpg");
+            background-size: contain;
+            padding: 23px 23px 43px 43px;
+        }
+        body{
+            background-image: url("hinh-nen-may-tinh-don-gian.jpg");
+        }
+        img {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+    </style>
+
+</head>
+<body>
+<iframe src="Nang%20Tho%20-%20Hoang%20Dung.mp3" allow="autoplay" style="display:none" id="iframeAudio"></iframe>
+<div class="divimage" style="color: white">.</div>
+<h5 style="font-style: italic;font-size: 13px;text-align: center;color: palegoldenrod">目を閉じれば、夏が見える</h5>
+<audio autoplay loop id="playAudio"><source src="Nang%20Tho%20-%20Hoang%20Dung.mp3" type="audio/mp3"></audio>
+<h4 style="color: blue;position:relative;top: 30px;left: 20px"> --Truyện hot--</h4>
+<a href="https://www.nettruyen.com/truyen-tranh/thanh-guom-diet-quy-12523" target="_blank"><img  width="200" height="200" src="dietquy.jpg" style="size: 30px" title="Thanh gươm diệt quỹ"></a>
+<a href="http://www.nettruyen.com/truyen-tranh/tham-tu-conan-4638" target="_blank">  <img width="220" height="220" src="conan.jpg" style="size: 30px" title="Conan"></a>
+<a href="http://www.nettruyen.com/truyen-tranh/naruto-full-color-23583"target="_blank" ><img width="240" height="240" src="naruto.jpg" style="size: 30px" title="Naruto"></a>
+<h4 style="color: darkred;position: relative"> --Truyện Kinh Dị--</h4>
+<img width="220" height="220" src="quai-vat-tai-chung-cu-xanh.jpg">
+<img width="220" height="220" src="zanuff-the-butcher-do-te-zanuff.jpg">
+<img width="220" height="220" src="the-mysterious-tale-of-yumi-chan.jpg">
+<a href="http://www.nettruyen.com/truyen-tranh/quai-vat-tai-chung-cu-xanh-18115"target="_blank"style="text-decoration: none" ><p style="position: relative;bottom: 20px;left: 20px;color:blue "> Quái vật tại chung cư xanh</p></a>
+<a href="http://www.nettruyen.com/truyen-tranh/zanuff-the-butcher-do-te-zanuff-27901"target="_blank"style="text-decoration: none" ><p style="position: relative;bottom: 52px;left: 320px;color:black ">Đồ tể zanuff</p></a>
+<a href="http://www.nettruyen.com/truyen-tranh/the-mysterious-tale-of-yumi-chan-25977"target="_blank"style="text-decoration: none" ><p style="position: relative;bottom: 90px;left: 500px;color:darkviolet ">The mysterious tale of yumichan</p></a>
+
+
+
+</body>
+<script>
+    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    if (!isChrome){
+        $('#iframeAudio').remove()
+    }
+    else {
+        $('#playAudio').remove()
+    }
+</script>
+</html>
