@@ -181,10 +181,12 @@ update khachhang
 set khachhang.id_loaikhach=1
 where khachhang.id_khachhang in(
 select bang_tam.id_khachhang
-from(select khachhang.id_khachhang
+from(
+select khachhang.id_khachhang
 from khachhang
 inner join hopdong on hopdong.id_khachhang=khachhang.id_khachhang
-where year(hopdong.ngay_lam_hop_dong)=2019 and hopdong.tongtien>10) as bang_tam);
+where year(hopdong.ngay_lam_hop_dong)=2019 and hopdong.tongtien>10)
+ as bang_tam);
 
 -- câu 18
 alter table hopdong

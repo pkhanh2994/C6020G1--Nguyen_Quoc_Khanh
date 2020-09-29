@@ -1,0 +1,78 @@
+24-Sep-2020 11:02:24.926 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.38
+24-Sep-2020 11:02:24.930 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 10 2020 08:20:30 UTC
+24-Sep-2020 11:02:24.930 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.38.0
+24-Sep-2020 11:02:24.931 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+24-Sep-2020 11:02:24.931 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+24-Sep-2020 11:02:24.931 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+24-Sep-2020 11:02:24.931 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-14.0.2
+24-Sep-2020 11:02:24.931 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           14.0.2+12-46
+24-Sep-2020 11:02:24.931 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+24-Sep-2020 11:02:24.931 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38
+24-Sep-2020 11:02:24.932 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38
+24-Sep-2020 11:02:24.956 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Sep-2020 11:02:24.956 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+24-Sep-2020 11:02:24.956 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Sep-2020 11:02:24.957 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\conf\logging.properties
+24-Sep-2020 11:02:24.958 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Sep-2020 11:02:24.958 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+24-Sep-2020 11:02:24.959 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+24-Sep-2020 11:02:24.960 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+24-Sep-2020 11:02:24.960 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38
+24-Sep-2020 11:02:24.961 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38
+24-Sep-2020 11:02:24.962 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\temp
+24-Sep-2020 11:02:24.970 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Java\jdk-14.0.2\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;"C:\Program Files\Java\jdk-14.0.2\bin;;C:\C0620G1- Nguyen Quoc Khanh\module2";"C:\Program Files\Java\jdk-14.0.2\bin;C:\C0620G1- Nguyen Quoc Khanh\module2";;C:\Users\LENOVO\AppData\Local\Programs\Microsoft VS Code\bin;.]
+24-Sep-2020 11:02:25.351 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+24-Sep-2020 11:02:25.474 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [798] milliseconds
+24-Sep-2020 11:02:25.560 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+24-Sep-2020 11:02:25.561 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.38]
+24-Sep-2020 11:02:25.579 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\webapps\docs]
+24-Sep-2020 11:02:26.112 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\webapps\docs] has finished in [532] ms
+24-Sep-2020 11:02:26.112 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\webapps\examples]
+24-Sep-2020 11:02:26.770 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\webapps\examples] has finished in [658] ms
+24-Sep-2020 11:02:26.771 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\webapps\host-manager]
+24-Sep-2020 11:02:26.837 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\webapps\host-manager] has finished in [65] ms
+24-Sep-2020 11:02:26.839 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\webapps\manager]
+24-Sep-2020 11:02:26.909 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\webapps\manager] has finished in [70] ms
+24-Sep-2020 11:02:26.910 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\webapps\ROOT]
+24-Sep-2020 11:02:26.976 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\webapps\ROOT] has finished in [66] ms
+24-Sep-2020 11:02:26.991 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+24-Sep-2020 11:02:27.010 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1532] milliseconds
+24-Sep-2020 11:02:43.484 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.38
+24-Sep-2020 11:02:43.489 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Sep 10 2020 08:20:30 UTC
+24-Sep-2020 11:02:43.489 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.38.0
+24-Sep-2020 11:02:43.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+24-Sep-2020 11:02:43.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+24-Sep-2020 11:02:43.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+24-Sep-2020 11:02:43.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk-14.0.2
+24-Sep-2020 11:02:43.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           14.0.2+12-46
+24-Sep-2020 11:02:43.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+24-Sep-2020 11:02:43.490 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38
+24-Sep-2020 11:02:43.491 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38
+24-Sep-2020 11:02:43.506 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Sep-2020 11:02:43.506 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+24-Sep-2020 11:02:43.506 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Sep-2020 11:02:43.506 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\conf\logging.properties
+24-Sep-2020 11:02:43.506 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Sep-2020 11:02:43.507 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+24-Sep-2020 11:02:43.510 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+24-Sep-2020 11:02:43.512 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+24-Sep-2020 11:02:43.514 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38
+24-Sep-2020 11:02:43.514 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38
+24-Sep-2020 11:02:43.515 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\temp
+24-Sep-2020 11:02:43.520 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\Program Files\Java\jdk-14.0.2\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;"C:\Program Files\Java\jdk-14.0.2\bin;;C:\C0620G1- Nguyen Quoc Khanh\module2";"C:\Program Files\Java\jdk-14.0.2\bin;C:\C0620G1- Nguyen Quoc Khanh\module2";;C:\Users\LENOVO\AppData\Local\Programs\Microsoft VS Code\bin;.]
+24-Sep-2020 11:02:43.866 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+24-Sep-2020 11:02:43.959 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [690] milliseconds
+24-Sep-2020 11:02:44.014 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+24-Sep-2020 11:02:44.014 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.38]
+24-Sep-2020 11:02:44.026 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\webapps\docs]
+24-Sep-2020 11:02:44.351 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\webapps\docs] has finished in [324] ms
+24-Sep-2020 11:02:44.352 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\webapps\examples]
+24-Sep-2020 11:02:44.930 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\webapps\examples] has finished in [578] ms
+24-Sep-2020 11:02:44.931 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\webapps\host-manager]
+24-Sep-2020 11:02:44.979 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\webapps\host-manager] has finished in [48] ms
+24-Sep-2020 11:02:44.980 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\webapps\manager]
+24-Sep-2020 11:02:45.028 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\webapps\manager] has finished in [48] ms
+24-Sep-2020 11:02:45.029 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\webapps\ROOT]
+24-Sep-2020 11:02:45.071 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\LENOVO\Downloads\modlue3\apache-tomcat-9.0.38\webapps\ROOT] has finished in [42] ms
+24-Sep-2020 11:02:45.076 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+24-Sep-2020 11:02:45.090 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [1130] milliseconds
