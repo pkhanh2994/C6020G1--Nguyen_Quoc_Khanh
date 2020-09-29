@@ -130,7 +130,7 @@ import java.util.List;
                 customer.setName(name);
                 customer.setEmail(email);
                 customer.setAddress(address);
-                this.customerService.update(id, customer);
+                this.customerService.update(id,customer);
                 request.setAttribute("customer", customer);
                 request.setAttribute("message", "Customer information was updated");
                 dispatcher = request.getRequestDispatcher("customer/edit.jsp");
@@ -175,9 +175,7 @@ import java.util.List;
             request.setAttribute("message", "New customer was created");
             try {
                 dispatcher.forward(request, response);
-            } catch (ServletException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
+            } catch (ServletException | IOException e) {
                 e.printStackTrace();
             }
         }
