@@ -18,6 +18,7 @@ public class UserServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private UserDAO userDAO;
 
+
     public void init() {
         userDAO = new UserDAO();
     }
@@ -102,6 +103,8 @@ public class UserServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
+
+
     private void listUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
 //        List<User> listUser = userDAO.selectAllUsers();
@@ -118,6 +121,7 @@ public class UserServlet extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
+
     private void showEditForm(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
@@ -129,6 +133,7 @@ public class UserServlet extends HttpServlet {
         dispatcher.forward(request, response);
 
     }
+
 
     private void insertUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
@@ -143,6 +148,7 @@ public class UserServlet extends HttpServlet {
         response.sendRedirect("/users");
     }
 
+
     private void updateUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
         int id = Integer.parseInt(request.getParameter("id"));
@@ -156,6 +162,7 @@ public class UserServlet extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("user/edit.jsp");
         dispatcher.forward(request, response);
     }
+
 
     private void deleteUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {

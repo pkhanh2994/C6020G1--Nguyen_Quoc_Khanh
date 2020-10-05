@@ -13,7 +13,7 @@
        <form action="/users"method="post">
            <input type="hidden" name="action" value="find">
            <input type="text" name="country" placeholder="Enter country to find information">
-           <input type="submit" name="action" value="Find">
+           <input type="submit" value="Find">
        </form>
     </h2>
 </center>

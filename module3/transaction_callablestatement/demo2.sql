@@ -16,6 +16,33 @@ values
 ("Kakashi","kakashi@gmail.com","Japan");
 select * from users order by `name`;
 
+
+create table Permision(
+
+id int primary key auto_increment,
+
+name varchar(50)
+
+);
+
+
+create table User_Permision(
+
+permision_id int,
+
+user_id int
+
+);
+
+insert into Permision(name) values('add');
+
+insert into Permision(name) values('edit');
+
+insert into Permision(name) values('delete');
+
+insert into Permision(name) values('view');
+
+
 delimiter //
 create procedure find_information_users()
 begin
@@ -35,4 +62,17 @@ where s.id=id;
 end//
 delimiter ;
 
- call update_information_users(?,?,?)
+delimiter //
+CREATE  PROCEDURE get_user_by_id(user_id int)
+begin
+select users.name,users.country,users.email
+from users where users.id=user_id;
+end//
+delimiter ;
+
+delimiter //
+create procedure delete_users(id int)
+begin
+delete from users where users.id=id;
+end//
+delimiter ;
