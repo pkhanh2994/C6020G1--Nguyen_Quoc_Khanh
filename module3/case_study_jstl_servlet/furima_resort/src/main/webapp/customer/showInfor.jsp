@@ -47,8 +47,14 @@
                         <a class="dropdown-item" href="furama?action=showInfor">Cutomer Information</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Service
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                        <a class="dropdown-item" href="service?action=create">Create</a>
+                    </div>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0" action="/furama" method="post">
@@ -77,7 +83,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <table id="customer" class="table table-striped table-bordered" style="width:100%;
-                            color: white;text-align: center;align-content: center;font-family: Arial">
+                            color: black;text-align: center;align-content: center;font-family: Arial;background: white">
                                 <thead>
                                 <tr>
                                     <th>ID</th>

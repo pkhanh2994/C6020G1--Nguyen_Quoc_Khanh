@@ -1,8 +1,9 @@
 package controller;
 
-import bo.*;
-import dao.TypeOfRentDao;
-import model.*;
+import bo.service.*;
+import model.service.Service;
+import model.service.TypeOfRent;
+import model.service.TypeOfService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

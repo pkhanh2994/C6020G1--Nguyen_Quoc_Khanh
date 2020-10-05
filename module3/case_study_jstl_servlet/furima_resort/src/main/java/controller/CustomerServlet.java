@@ -1,13 +1,11 @@
 package controller;
 
-import bo.CustomerBo;
-import bo.CustomerBoImpl;
-import bo.TypeOfCustomerBO;
-import bo.TypeOfCustomerBOImpl;
-import dao.CustomerDao;
-import dao.CustomerDaoImpl;
-import model.Customer;
-import model.TypeOfCustomer;
+import bo.customer.CustomerBo;
+import bo.customer.CustomerBoImpl;
+import bo.customer.TypeOfCustomerBO;
+import bo.customer.TypeOfCustomerBOImpl;
+import model.customer.Customer;
+import model.customer.TypeOfCustomer;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
