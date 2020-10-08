@@ -12,4 +12,6 @@ public interface CustomerDao {
     public String deleteById(String id);
     public String updateCustomer(Customer customer) throws SQLException;
     public List<Customer>selectCustomerByName(String name);
+
+
 }

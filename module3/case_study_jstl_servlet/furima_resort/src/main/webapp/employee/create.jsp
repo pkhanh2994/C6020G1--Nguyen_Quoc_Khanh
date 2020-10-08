@@ -2,7 +2,7 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Create</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="datatables/css/dataTables.bootstrap4.min.css" />
 
@@ -37,8 +37,15 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Employee <span class="sr-only">(current)</span></a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Employee
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item" href="employee?action=create">Create</a>
+                        <a class="dropdown-item" href="employee?action=showInfor">Employee Information</a>
+                    </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -46,8 +53,7 @@
                         Customer
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Create</a>
-                        <a class="dropdown-item" href="furama?action=delete">Delete</a>
+                        <a class="dropdown-item" href="furama?action=create">Create</a>
                         <a class="dropdown-item" href="furama?action=showInfor">Cutomer Information</a>
                     </div>
                 </li>
@@ -58,6 +64,37 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                         <a class="dropdown-item" href="service?action=create">Create</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Contract
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                        <a class="dropdown-item" href="contract?action=create">Create</a>
+                        <a class="dropdown-item" href="contract?action=showInfor">Show information</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Contract Details
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+                        <a class="dropdown-item" href="contractDetails?action=create">Create</a>
+                        <a class="dropdown-item" href="contractDetails?action=showInfor">Show information</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Customer Using Service
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+                        <a class="dropdown-item" href="userService?action=showInfor">Show information</a>
                     </div>
                 </li>
             </ul>
@@ -88,49 +125,49 @@
                     <form method="post">
 
                         <div class="form-group">
-                            <label for="id">Service ID:</label>
-                            <input type="id" name="service_id" class="form-control" placeholder="Enter Service ID" id="id">
+                            <label for="id">Employee ID:</label>
+                            <input type="id" name="employee_id" class="form-control" placeholder="Enter Employee ID" id="id">
                         </div>
 
                         <div class="form-group">
-                            <label for="name">Service Name:</label>
-                            <input type="name" name="service_name" class="form-control" placeholder="Enter Service" id="name">
+                            <label for="name">Employee Name:</label>
+                            <input type="name" name="employee_name" class="form-control" placeholder="Enter employee name" id="name">
                         </div>
 
                         <div class="form-group">
-                            <label for="ar">Area:</label>
-                            <input type="service_area" name="service_area" class="form-control" placeholder="Enter Area" id="ar">
+                            <label for="ar">Birthday:</label>
+                            <input type="employee_birthday" name="employee_birthday" class="form-control" placeholder="Enter employee birthday" id="ar">
                         </div>
 
                         <div class="form-group">
-                            <label for="cs">Cost:</label>
-                            <input type="service_cost" name="service_cost" class="form-control" placeholder="Enter Cost" id="cs">
+                            <label for="cs">ID Card:</label>
+                            <input type="employee_id_card" name="employee_id_card" class="form-control" placeholder="Enter ID card" id="cs">
                         </div>
 
                         <div class="form-group">
-                            <label for="pp">Max People:</label>
-                            <input type="service_max_people" name="service_max_people" class="form-control" placeholder="Enter max people" id="pp">
+                            <label for="pp">Salary</label>
+                            <input type="employee_salary" name="employee_salary" class="form-control" placeholder="Enter Salary" id="pp">
                         </div>
 
                         <div class="form-group">
-                            <label for="sd">Standar room:</label>
-                            <input type="standard_room" name="standard_room" class="form-control" placeholder="Enter standard room" id="sd">
+                            <label for="sd">Phone number:</label>
+                            <input type="employee_phone" name="employee_phone" class="form-control" placeholder="Enter phone number" id="sd">
                         </div>
 
                         <div class="form-group">
-                            <label for="dc">Description convenience:</label>
-                            <input type="description_other_convenience" name="description_other_convenience" class="form-control" placeholder="Enter description convenience " id="dc">
+                            <label for="dc">Email:</label>
+                            <input type="employee_email" name="employee_email" class="form-control" placeholder="Enter email " id="dc">
                         </div>
 
                         <div class="form-group">
-                            <label for="pa">Pool Area:</label>
-                            <input type="pool_area" name="pool_area" class="form-control" placeholder="Enter pool area" id="pa">
+                            <label for="pa">Address:</label>
+                            <input type="employee_address" name="employee_address" class="form-control" placeholder="Enter address" id="pa">
                         </div>
 
 
                         <div class="form-group">
-                            <label for="nf">Number of floors:</label>
-                            <input type="number_of_floors" name="number_of_floors" class="form-control" placeholder="Enter number of floors" id="nf">
+                            <label for="nf">User Name:</label>
+                            <input type="user_name" name="user_name" class="form-control" placeholder="Enter user name" id="nf">
                         </div>
 
 
@@ -139,10 +176,10 @@
 
                         <div class="form-group">
                             <input type="hidden" name="action" value="create" />
-                            <label>Type of Service</label>
-                            <select class="custom-select" name="service_type_id">
-                                <c:forEach var="typeOfService" items="${typeOfServices}">
-                                    <option value="${typeOfService.service_type_id}">${typeOfService.service_type_name}</option>
+                            <label>Position</label>
+                            <select class="custom-select" name="position_id">
+                                <c:forEach var="position" items="${positions}">
+                                    <option value="${position.position_id}">${position.position_name}</option>
                                 </c:forEach>
                             </select>
                         </div>
@@ -150,16 +187,28 @@
 
                         <div class="form-group">
                             <input type="hidden" name="action" value="create" />
-                            <label>Type of rentr</label>
-                            <select class="custom-select" name="rent_type_id">
-                                <c:forEach var="typeOfRent" items="${typeOfRents}">
-                                    <option value="${typeOfRent.rent_type_id}">${typeOfRent.rent_type_name}</option>
+                            <label>Education degrees</label>
+                            <select class="custom-select" name="educationDegrees">
+                                <c:forEach var="educationDegree" items="${educationDegrees}">
+                                    <option value="${educationDegree.education_degree_id}">${educationDegree.education_degree_name}</option>
                                 </c:forEach>
                             </select>
                         </div>
 
+
+                        <div class="form-group">
+                            <input type="hidden" name="action" value="create" />
+                            <label>Division</label>
+                            <select class="custom-select" name="divisions">
+                                <c:forEach var="division" items="${divisions}">
+                                    <option value="${division.division_id}">${division.division_name}</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+
+
                         <button type="submit" class="btn btn-primary">Submit</button><span>
-                    <p style="color: red">${message}</p></span>
+                      <p style="color: red">${message}</p></span>
 
                     </form>
 

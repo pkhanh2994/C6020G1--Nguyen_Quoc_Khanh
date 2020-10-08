@@ -167,9 +167,8 @@ public class UserServlet extends HttpServlet {
 
         User book = new User(id, name, email, country);
         userDAO.updateUser(book);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("user/edit.jsp");
-        dispatcher.forward(request, response);
-    }
+        response.sendRedirect("/users");
+}
 
     private void deleteUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {

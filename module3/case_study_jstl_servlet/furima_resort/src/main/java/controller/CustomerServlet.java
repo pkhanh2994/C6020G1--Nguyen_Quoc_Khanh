@@ -113,21 +113,26 @@ public class CustomerServlet extends HttpServlet {
 
         List<TypeOfCustomer> typeOfCustomers = this.typeOfCustomerBO.findAllTypeOfCustomer();
         request.setAttribute("typeOfCustomers", typeOfCustomers);
-
         request.setAttribute("message", message);
+
         request.getRequestDispatcher("customer/create.jsp").forward(request,response);
+
+//        List<Customer> customerList = this.customerBo.selectAllCustomer();
+//        request.setAttribute("listCustomer", customerList);
+//
+//
+//        request.getRequestDispatcher("customer/showInfor.jsp").forward(request,response);
     }
 
     private void deleteCustomer(HttpServletRequest request,HttpServletResponse response){
-        List<Customer> customerList = this.customerBo.selectAllCustomer();
-
         String id = request.getParameter("idCustomerHidden");
         String message= this.customerBo.deleteById(id);
+        List<Customer> customerList = this.customerBo.selectAllCustomer();
 
-        request.setAttribute("customerList", customerList);
+        request.setAttribute("listCustomer", customerList);
         request.setAttribute("message",message);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("customer/delete.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("customer/showInfor.jsp");
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {
@@ -161,11 +166,12 @@ public class CustomerServlet extends HttpServlet {
         String address = request.getParameter("address");
         String id =request.getParameter("id");
         Customer customer = new Customer(id, name, birthday,gender,idCard, phone,typeCustomer,address);
-        customerBo.updateCustomer(customer);
+        String message=customerBo.updateCustomer(customer);
 
         List<TypeOfCustomer> typeOfCustomers = this.typeOfCustomerBO.findAllTypeOfCustomer();
         request.setAttribute("typeOfCustomers", typeOfCustomers);
-
+        request.setAttribute("message",message);
+        request.setAttribute("customer",customer);
         RequestDispatcher dispatcher = request.getRequestDispatcher("customer/update.jsp");
         try {
             dispatcher.forward(request, response);
@@ -181,9 +187,9 @@ public class CustomerServlet extends HttpServlet {
         for(Customer customer:customerList){
             System.out.println(customer.getCustomer_name());
         }
-        request.setAttribute("customerList",customerList);
+        request.setAttribute("listCustomer",customerList);
         try {
-            request.getRequestDispatcher("customer/selectCustomerByName.jsp").forward(request,response);
+            request.getRequestDispatcher("customer/showInfor.jsp").forward(request,response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {

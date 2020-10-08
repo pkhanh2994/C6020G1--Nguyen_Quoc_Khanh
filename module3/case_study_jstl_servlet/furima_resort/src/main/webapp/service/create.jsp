@@ -37,8 +37,15 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Employee <span class="sr-only">(current)</span></a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Employee
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item" href="employee?action=create">Create</a>
+                        <a class="dropdown-item" href="employee?action=showInfor">Employee Information</a>
+                    </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -46,8 +53,7 @@
                         Customer
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Create</a>
-                        <a class="dropdown-item" href="furama?action=delete">Delete</a>
+                        <a class="dropdown-item" href="furama?action=create">Create</a>
                         <a class="dropdown-item" href="furama?action=showInfor">Cutomer Information</a>
                     </div>
                 </li>
@@ -89,7 +95,7 @@
 
                         <div class="form-group">
                             <label for="id">Service ID:</label>
-                            <input type="id" name="service_id" class="form-control" placeholder="Enter Service ID" id="id">
+                            <input type="id" name="service_id" class="form-control" placeholder="Enter Service ID" id="id" >
                         </div>
 
                         <div class="form-group">
@@ -99,12 +105,12 @@
 
                         <div class="form-group">
                             <label for="ar">Area:</label>
-                            <input type="service_area" name="service_area" class="form-control" placeholder="Enter Area" id="ar">
+                            <input type="service_area" name="service_area" class="form-control" placeholder="Enter Area" id="ar" >
                         </div>
 
                         <div class="form-group">
                             <label for="cs">Cost:</label>
-                            <input type="service_cost" name="service_cost" class="form-control" placeholder="Enter Cost" id="cs">
+                            <input type="service_cost" name="service_cost" class="form-control" placeholder="Enter Cost" id="cs" >
                         </div>
 
                         <div class="form-group">
@@ -114,23 +120,24 @@
 
                         <div class="form-group">
                             <label for="sd">Standar room:</label>
-                            <input type="standard_room" name="standard_room" class="form-control" placeholder="Enter standard room" id="sd">
+                            <input type="standard_room" name="standard_room" class="form-control" placeholder="Enter standard room" id="sd" >
                         </div>
 
                         <div class="form-group">
                             <label for="dc">Description convenience:</label>
-                            <input type="description_other_convenience" name="description_other_convenience" class="form-control" placeholder="Enter description convenience " id="dc">
+                            <input type="description_other_convenience" name="description_other_convenience" class="form-control" placeholder="Enter description convenience " id="dc"
+                                   value="${service.description_other_convenience}" >
                         </div>
 
                         <div class="form-group">
                             <label for="pa">Pool Area:</label>
-                            <input type="pool_area" name="pool_area" class="form-control" placeholder="Enter pool area" id="pa">
+                            <input type="pool_area" name="pool_area" class="form-control" placeholder="Enter pool area" id="pa" value="${service.pool_area}">
                         </div>
 
 
                         <div class="form-group">
                             <label for="nf">Number of floors:</label>
-                            <input type="number_of_floors" name="number_of_floors" class="form-control" placeholder="Enter number of floors" id="nf">
+                            <input type="number_of_floors" name="number_of_floors" class="form-control" placeholder="Enter number of floors" id="nf" >
                         </div>
 
 

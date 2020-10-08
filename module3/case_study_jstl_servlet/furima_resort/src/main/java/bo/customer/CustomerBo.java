@@ -12,6 +12,8 @@ public interface CustomerBo {
 
     public Customer findCustomerByID(String id);
     String deleteById(String id);
+
     public String updateCustomer(Customer customer);
     public List<Customer> selectCustomerByName(String name);
+
 }

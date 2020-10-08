@@ -1,6 +1,7 @@
 package controller;
 
 import bo.service.*;
+import model.customer.Customer;
 import model.service.Service;
 import model.service.TypeOfRent;
 import model.service.TypeOfService;
@@ -33,6 +34,7 @@ public class ServiceServlet extends HttpServlet {
                     e.printStackTrace();
                 }
                 break;
+
         }
 
     }
@@ -46,9 +48,27 @@ public class ServiceServlet extends HttpServlet {
             case "create":
                 showNewForm(request, response);
                 break;
+            case "showInfor":
+                try {
+                    listAllService(request, response);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case "delete":
+                deleteService(request, response);
+                break;
 
         }
     }
+    private void listAllService(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, IOException, ServletException {
+        List<Service>serviceList=this.serviceBo.selectAllService();
+        request.setAttribute("serviceList", serviceList);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("service/showInfor.jsp");
+        dispatcher.forward(request, response);
+    }
+
         private void showNewForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             request.getParameter("action");
@@ -82,9 +102,28 @@ public class ServiceServlet extends HttpServlet {
         request.setAttribute("typeOfServices", typeOfServices);
         List<TypeOfRent> typeOfRents = this.typeOfRentBo.findAllTypeOfRent();
         request.setAttribute("typeOfRents", typeOfRents);
+        request.setAttribute("service",service);
 
         request.setAttribute("message", message);
-        request.getRequestDispatcher("customer/create.jsp").forward(request,response);
+        request.getRequestDispatcher("service/create.jsp").forward(request,response);
+    }
+
+    private void deleteService(HttpServletRequest request,HttpServletResponse response){
+        String id = request.getParameter("idServiceHidden");
+        String message= this.serviceBo.deleteServiceByID(id);
+        List<Service> serviceList = this.serviceBo.selectAllService();
+
+        request.setAttribute("serviceList", serviceList);
+        request.setAttribute("message",message);
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("service/showInfor.jsp");
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

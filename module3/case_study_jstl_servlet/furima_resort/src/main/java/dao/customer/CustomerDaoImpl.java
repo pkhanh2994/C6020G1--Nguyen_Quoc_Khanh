@@ -28,6 +28,8 @@ public class CustomerDaoImpl implements CustomerDao {
             "            from customer where customer_name  like ? escape '!';";
 
 
+
+
     //thiet lap message thong bao loi
     private void printSQLException(SQLException ex) {
         for (Throwable e : ex) {
@@ -106,7 +108,8 @@ public class CustomerDaoImpl implements CustomerDao {
             resultSet.next();
             customer = new Customer(resultSet.getString("customer_id"),
                     resultSet.getString("customer_name"),resultSet.getString("customer_birthday"),
-                    resultSet.getString("customer_gender"),resultSet.getString("customer_id_card"),resultSet.getString("customer_phone"),
+                    resultSet.getString("customer_gender"),resultSet.getString("customer_id_card"),
+                    resultSet.getString("customer_phone"),
                     resultSet.getString("customer_type_id"),resultSet.getString("customer_address"));
             customer.setCustomer_id(id);
         } catch (SQLException e) {
@@ -151,27 +154,30 @@ public class CustomerDaoImpl implements CustomerDao {
     @Override
     public List<Customer> selectCustomerByName(String name) {
       List<Customer>customerList=new ArrayList<>();
-      try(PreparedStatement preparedStatement=this.baseDAO.getConnection().prepareStatement(SELECT_CUSTOMER_BY_NAME)) {
-          preparedStatement.setString(1, "%" + name + "%");
-          ResultSet rs = preparedStatement.executeQuery();
-          while (rs.next()){
-              String customerId=rs.getString("customer_id");
-              String customerName=rs.getString("customer_name");
-              String customerBirthday=rs.getString("customer_birthday");
-              String customerGender=rs.getString("customer_gender");
-              String customerIdCard=rs.getString("customer_id_card");
-              String customerPhone=rs.getString("customer_phone");
-              String customerEmail=rs.getString("customer_email");
-              String customerTypeId=rs.getString("customer_type_id");
-              String customerAddress=rs.getString("customer_address");
-              customerList.add(new Customer(customerId,customerName,customerBirthday,customerGender,
-                      customerIdCard,customerPhone,customerEmail,customerTypeId,customerAddress));
-          }
+        try(PreparedStatement preparedStatement=this.baseDAO.getConnection().prepareStatement(SELECT_CUSTOMER_BY_NAME)) {
+            preparedStatement.setString(1, "%" + name + "%");
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()){
+                String customerId=rs.getString("customer_id");
+                String customerName=rs.getString("customer_name");
+                String customerBirthday=rs.getString("customer_birthday");
+                String customerGender=rs.getString("customer_gender");
+                String customerIdCard=rs.getString("customer_id_card");
+                String customerPhone=rs.getString("customer_phone");
+                String customerEmail=rs.getString("customer_email");
+                String customerTypeId=rs.getString("customer_type_id");
+                String customerAddress=rs.getString("customer_address");
+                customerList.add(new Customer(customerId,customerName,customerBirthday,customerGender,
+                        customerIdCard,customerPhone,customerEmail,customerTypeId,customerAddress));
+            }
 
-      } catch (SQLException e) {
-          e.printStackTrace();
-      }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return customerList;
     }
 
-}
+
+    }
+
+

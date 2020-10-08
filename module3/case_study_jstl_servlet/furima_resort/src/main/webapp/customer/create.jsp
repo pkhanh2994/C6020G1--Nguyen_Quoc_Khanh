@@ -37,8 +37,15 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Employee <span class="sr-only">(current)</span></a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Employee
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item" href="employee?action=create">Create</a>
+                        <a class="dropdown-item" href="employee?action=showInfor">Employee Information</a>
+                    </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -58,6 +65,37 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                         <a class="dropdown-item" href="service?action=create">Create</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Contract
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                        <a class="dropdown-item" href="contract?action=create">Create</a>
+                        <a class="dropdown-item" href="contract?action=showInfor">Show information</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Contract Details
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+                        <a class="dropdown-item" href="contractDetails?action=create">Create</a>
+                        <a class="dropdown-item" href="contractDetails?action=showInfor">Show information</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Customer Using Service
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown4">
+                        <a class="dropdown-item" href="userService?action=showInfor">Show information</a>
                     </div>
                 </li>
             </ul>
@@ -99,7 +137,7 @@
 
                     <div class="form-group">
                         <label for="bd">Birthday:</label>
-                        <input type="birthday" name="birthday" class="form-control" placeholder="Enter birthday" id="bd">
+                        <input type="date" name="birthday" class="form-control" placeholder="Enter birthday" id="bd">
                     </div>
 
                     <div class="form-group">

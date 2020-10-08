@@ -43,7 +43,6 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="furama?action=create">Create</a>
-                        <a class="dropdown-item" href="furama?action=delete">Delete</a>
                         <a class="dropdown-item" href="furama?action=showInfor">Cutomer Information</a>
                     </div>
                 </li>
@@ -66,7 +65,7 @@
     </nav>
     <div class="container-fluid pt-5">
         <div class="row">
-            <div class="col-3 px-0  vh-100 ">
+            <div class="col-2 px-0  vh-100 ">
                 <div class="list-group">
                     <a href="#" class="list-group-item list-group-item-action list-group-item-primary">Primary item</a>
                     <a href="#" class="list-group-item list-group-item-action ">Primary item</a>
@@ -78,7 +77,7 @@
 
                 </div>
             </div>
-            <div class="col-9">
+            <div class="col-10">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
@@ -96,6 +95,7 @@
                                     <th>Id type of customer</th>
                                     <th>Address</th>
                                     <th>Edit</th>
+                                    <th>Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -111,9 +111,12 @@
                                         <td><c:out value="${customer.customer_type_id}"></c:out></td>
                                         <td><c:out value="${customer.customer_address}"></c:out></td>
                                         <td>
-                                            <a style="color: white" href="/furama?action=edit&id=${customer.customer_id}">Update</a>
+                                            <a href="/furama?action=edit&id=${customer.customer_id}">Update</a>
                                         </td>
-
+                                        <td>
+                                            <a href="#" onclick="setCustomer('${customer.customer_id}')"
+                                               data-toggle="modal" data-target="#deleteModal">Delete</a>
+                                        </td>
 
                                     </tr>
                                 </c:forEach>
@@ -125,6 +128,38 @@
             </div>
         </div>
     </div>
+
+
+<%--                    delete modale--%>
+<div>
+
+    <form action="/furama" method="get" id="formDelete">
+        <input type="hidden" name="action" value="delete" />
+        <input type="hidden" id="idCustomerHidden" name="idCustomerHidden" />
+    </form>
+
+    <!-- Modal -->
+
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete Customer</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Do you want to delete this customer?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="submitFormDelete()">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 
 
@@ -143,5 +178,18 @@
         });
     });
 </script>
+<script>
+
+    function setCustomer(id) {
+        document.getElementById("idCustomerHidden").value = id;
+    }
+
+    function submitFormDelete() {
+        let formDelete = document.getElementById("formDelete");
+        formDelete.submit();
+    }
+</script>
+
+
 </body>
 </html>
