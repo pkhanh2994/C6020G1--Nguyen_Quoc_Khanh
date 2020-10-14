@@ -8,6 +8,7 @@
     <style>
         .container-fluid {
             background-image: url("https://bietthubientrieudo.com/wp-content/uploads/2015/11/EXT_Vinpearl-VungMe_Villa_Night_141107.jpg");
+            background-repeat: no-repeat;
         }
     </style>
 
@@ -17,7 +18,7 @@
 <div>
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="product?action=abc">
-            <img src="https://furamavietnam.com/wp-content/uploads/2018/08/logo@2x.png" width="50" height="60" alt=""
+            <img src="https://png.pngtree.com/element_our/20190530/ourlarge/pngtree-520-couple-avatar-boy-avatar-little-dinosaur-cartoon-cute-image_1263411.jpg" width="50" height="60" alt=""
                  loading="lazy">
         </a>
     </nav>
@@ -30,13 +31,19 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent3">
+            <form class="form-inline my-2 my-lg-0" action="/product" method="post">
+                <input class="form-control mr-sm-2" type="hidden" name="action" value="findPriceName">
+                <input class="form-control mr-sm-2" type="search" name="price" placeholder="Price" aria-label="Search">
+                <input class="form-control mr-sm-2" type="search" name="name" placeholder="Name" aria-label="Search">
+                <button class="btn btn-success my-2 my-sm-0" type="submit" style="position: relative;left: 60px">Search Price and Name</button>
             </form>
         </div>
-        <div class="col-sm-4" style="padding-left: 200px">
+
+
+
+        <div class="col-sm-4" style="padding-left: 300px">
             <a href="/product?action=create" class="btn btn-success"><i
                     class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
         </div>
@@ -67,8 +74,9 @@
                             <th>Name</th>
                             <th>Price</th>
                             <th>Quantity</th>
-                            <th>Color</th>
                             <th>Category</th>
+                            <th>Description</th>
+                            <th>Color</th>
                             <th>Update</th>
                             <th>Delete</th>
                         </tr>
@@ -81,7 +89,7 @@
                             <td><c:out value="${product.productName}"></c:out></td>
                             <td><c:out value="${product.price}"></c:out></td>
                             <td><c:out value="${product.quantity}"></c:out></td>
-                            <td><c:out value="${product.color}"></c:out></td>
+
 
                             <td>
                                 <c:forEach var="category" items="${categoryList}">
@@ -91,9 +99,21 @@
                                 </c:forEach>
                             </td>
 
+                            <td><c:out value="${product.description}"></c:out></td>
+
+                            <td>
+                                <c:forEach var="color" items="${colorList}">
+                                    <c:if test="${color.getColorID().equals(product.getColorID())}">
+                                        <c:out value="${color.colorName}"></c:out>
+                                    </c:if>
+                                </c:forEach>
+                            </td>
+
+
                             <td>
                                 <a href="/product?action=edit&id=${product.productID}">Update</a>
                             </td>
+
                             <td>
                                 <a href="#" onclick="setProduct('${product.productID}')"
                                    data-toggle="modal" data-target="#deleteModal">Delete</a>

@@ -1,19 +1,19 @@
 package model.customer;
 
 public class TypeOfCustomer {
-    private Integer idTypeOfCustomer;
+    private String idTypeOfCustomer;
     private String typeOfcustomer;
 
-    public TypeOfCustomer(Integer idTypeOfCustomer, String typeOfcustomer) {
+    public TypeOfCustomer(String idTypeOfCustomer, String typeOfcustomer) {
         this.idTypeOfCustomer = idTypeOfCustomer;
         this.typeOfcustomer = typeOfcustomer;
     }
 
-    public Integer getIdTypeOfCustomer() {
+    public String getIdTypeOfCustomer() {
         return idTypeOfCustomer;
     }
 
-    public void setIdTypeOfCustomer(Integer idTypeOfCustomer) {
+    public void setIdTypeOfCustomer(String idTypeOfCustomer) {
         this.idTypeOfCustomer = idTypeOfCustomer;
     }
 

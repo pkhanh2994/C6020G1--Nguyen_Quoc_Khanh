@@ -77,10 +77,6 @@
                             <input type="quantity" name="quantity" class="form-control" placeholder="Enter quantity" id="qt">
                         </div>
 
-                        <div class="form-group">
-                            <label for="cl">Color:</label>
-                            <input type="colorr" name="color" class="form-control" placeholder="Enter color" id="cl">
-                        </div>
 
 
                         <%--  lay tu database--%>
@@ -95,9 +91,34 @@
                             </select>
                         </div>
 
+                        <div class="form-group">
+                            <label for="dr">Description:</label>
+                            <input type="description" name="description" class="form-control" placeholder="Enter description" id="dr">
+                        </div>
 
-                        <button type="submit" class="btn btn-primary">Submit</button><span>
-                    <p style="color: red">${message}</p></span>
+                        <div class="form-group">
+                            <input type="hidden" name="action" value="create" />
+                            <label>Color</label>
+                            <select class="custom-select" name="colorID">
+                                <c:forEach var="color" items="${colorList}">
+                                    <option value="${color.colorID}">${color.colorName}</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+
+                        <div>
+                            <button type="submit" class="btn btn-primary" formaction="/product">Create</button>
+
+                        </div>
+
+
+                       <div style="position: relative;left: 100px;bottom: 38px;background-color: gray;width: 50px">
+                           <a class="btn btn-primary" href="/product" role="button">Back</a>
+                       </div>
+                        <div>
+                            <h4 style="color: red">${message}</h4>
+                        </div>
+
 
                     </form>
 
@@ -110,5 +131,10 @@
 
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
+<script>
+    function a() {
+
+    }
+</script>
 </body>
 </html>

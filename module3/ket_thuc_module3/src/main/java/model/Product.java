@@ -5,24 +5,63 @@ public class Product {
     private String productName;
     private String price;
     private String quantity;
-    private String color;
     private String categoryID;
+    private String description;
+    private String colorID;
 
-    public Product(String productID, String productName, String price, String quantity, String color, String categoryID) {
+//    public Product(String productID, String productName, String price, String quantity, String color, String categoryID,String description,String colorID) {
+//        this.productID = productID;
+//        this.productName = productName;
+//        this.price = price;
+//        this.quantity = quantity;
+//        this.color = color;
+//        this.categoryID = categoryID;
+//        this.description = description;
+//        this.colorID = colorID;
+//    }
+
+
+    public Product(String productID, String productName, String price, String quantity, String categoryID, String description, String colorID) {
         this.productID = productID;
         this.productName = productName;
         this.price = price;
         this.quantity = quantity;
-        this.color = color;
         this.categoryID = categoryID;
+        this.description = description;
+        this.colorID = colorID;
     }
 
-    public Product(String productName, String price, String quantity, String color, String categoryID) {
+    public Product(String productName, String price, String quantity, String categoryID, String description, String colorID) {
         this.productName = productName;
         this.price = price;
         this.quantity = quantity;
-        this.color = color;
         this.categoryID = categoryID;
+        this.description = description;
+        this.colorID = colorID;
+    }
+
+    public String getColorID() {
+        return colorID;
+    }
+
+    public void setColorID(String colorID) {
+        this.colorID = colorID;
+    }
+
+    public Product(String productName, String price, String quantity, String categoryID, String description) {
+        this.productName = productName;
+        this.price = price;
+        this.quantity = quantity;
+        this.categoryID = categoryID;
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getProductName() {
@@ -34,7 +73,6 @@ public class Product {
     }
 
 
-
     public String getCategoryID() {
         return categoryID;
     }
@@ -42,7 +80,6 @@ public class Product {
     public void setCategoryID(String categoryID) {
         this.categoryID = categoryID;
     }
-
 
 
     public String getProductID() {
@@ -68,12 +105,6 @@ public class Product {
     public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
 }
+
+

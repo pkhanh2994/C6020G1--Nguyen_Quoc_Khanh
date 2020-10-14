@@ -10,6 +10,8 @@ public interface ProductBo {
     String updateProduct(Product product);
     String deleteProductByID(String id);
     List<Product> selectProductByName(String name);
+    List<Product> selectProductByPrice(String price);
     Product selectProductByID(String id);
+    List<Product> selectProductByNameAndPrice(String price,String name);
 
 }

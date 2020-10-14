@@ -92,7 +92,7 @@
                                     <th>Identify Card</th>
                                     <th>Phone Number</th>
                                     <th>Email</th>
-                                    <th>Id type of customer</th>
+                                    <th>Type of customer</th>
                                     <th>Address</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
@@ -108,7 +108,16 @@
                                         <td><c:out value="${customer.customer_id_card}"></c:out></td>
                                         <td><c:out value="${customer.customer_phone}"></c:out></td>
                                         <td><c:out value="${customer.customer_email}"></c:out></td>
-                                        <td><c:out value="${customer.customer_type_id}"></c:out></td>
+                                        <td>
+                                            <c:forEach var="types" items="${typeOfCustomers}">
+
+                                                <c:if test="${types.getIdTypeOfCustomer().equals(customer.getCustomer_type_id())}">
+                                                   <c:out value="${types.typeOfcustomer}"></c:out>
+                                                </c:if>
+
+                                            </c:forEach>
+                                        </td>
+
                                         <td><c:out value="${customer.customer_address}"></c:out></td>
                                         <td>
                                             <a href="/furama?action=edit&id=${customer.customer_id}">Update</a>

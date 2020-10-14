@@ -127,8 +127,9 @@
 
                     <div class="form-group">
                         <label for="id">Customer ID:</label>
-                        <input type="id" name="id" class="form-control" placeholder="Enter Customer ID" id="id">
+                        <input type="id" name="id" class="form-control" placeholder="Enter Customer ID" id="id" value="${customer.customer_id}">
                     </div>
+                    <p style="color: red">${message}</p></span>
 
                     <div class="form-group">
                         <label for="name">Name:</label>
@@ -144,17 +145,16 @@
                         <label for="gd">Gender:</label>
                         <input type="gender" name="gender" class="form-control" placeholder="Enter gender" id="gd">
                     </div>
-
-                    <div class="form-group">
-                        <label for="id_cd">ID Card:</label>
-                        <input type="idCard" name="idcard" class="form-control" placeholder="Enter ID Card" id="id_cd">
-                    </div>
-
+                    
                     <div class="form-group">
                         <label for="ph">Phone number:</label>
                         <input type="Phone" name="phone" class="form-control" placeholder="Enter phone number" id="ph">
                     </div>
 
+                    <div class="form-group">
+                        <label for="id_cd">ID Card:</label>
+                        <input type="idCard" name="idcard" class="form-control" placeholder="Enter ID Card" id="id_cd">
+                    </div>
 
 
                     <div class="form-group">
@@ -181,7 +181,7 @@
                         <input type="address" name="address" class="form-control" placeholder="Enter address" id="adr">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button><span>
-                    <p style="color: red">${message}</p></span>
+
 
                 </form>
 

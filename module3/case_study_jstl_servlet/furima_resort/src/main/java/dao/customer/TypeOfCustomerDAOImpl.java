@@ -26,7 +26,7 @@ public class TypeOfCustomerDAOImpl implements TypeOfCustomerDAO {
 
             TypeOfCustomer typeOfCustomer;
             while (resultSet.next()) {
-                Integer id = Integer.valueOf(resultSet.getString("customer_type_id"));
+                String id = resultSet.getString("customer_type_id");
                 String name = resultSet.getString("customer_type_name");
 
                 typeOfCustomer = new TypeOfCustomer(id, name);

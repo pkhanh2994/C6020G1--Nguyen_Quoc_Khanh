@@ -80,8 +80,13 @@ public class CustomerServlet extends HttpServlet {
 
     private void listAllCustomer(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
-       List<Customer>customerList=this.customerBo.selectAllCustomer();
+        
+        List<Customer>customerList=this.customerBo.selectAllCustomer();
+        List<TypeOfCustomer> typeOfCustomers = this.typeOfCustomerBO.findAllTypeOfCustomer();
+
         request.setAttribute("listCustomer", customerList);
+        request.setAttribute("typeOfCustomers", typeOfCustomers);
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("customer/showInfor.jsp");
         dispatcher.forward(request, response);
     }
@@ -112,6 +117,8 @@ public class CustomerServlet extends HttpServlet {
         String message = this.customerBo.insertCustomer(customer);
 
         List<TypeOfCustomer> typeOfCustomers = this.typeOfCustomerBO.findAllTypeOfCustomer();
+
+        request.setAttribute("customer",customer);
         request.setAttribute("typeOfCustomers", typeOfCustomers);
         request.setAttribute("message", message);
 
@@ -170,6 +177,7 @@ public class CustomerServlet extends HttpServlet {
 
         List<TypeOfCustomer> typeOfCustomers = this.typeOfCustomerBO.findAllTypeOfCustomer();
         request.setAttribute("typeOfCustomers", typeOfCustomers);
+
         request.setAttribute("message",message);
         request.setAttribute("customer",customer);
         RequestDispatcher dispatcher = request.getRequestDispatcher("customer/update.jsp");

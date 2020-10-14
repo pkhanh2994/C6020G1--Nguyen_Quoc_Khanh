@@ -1,10 +1,8 @@
 package controller;
 
-import bo.CategoryBo;
-import bo.CategoryBoImpl;
-import bo.ProductBo;
-import bo.ProductBoImpl;
+import bo.*;
 import model.Category;
+import model.Color;
 import model.Product;
 
 import javax.servlet.RequestDispatcher;
@@ -22,6 +20,7 @@ public class ProductServlet extends HttpServlet {
 
     ProductBo productBo = new ProductBoImpl();
     CategoryBo categoryBo = new CategoryBoImpl();
+    ColorBo colorBo=new ColorBoImpl();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -36,8 +35,14 @@ public class ProductServlet extends HttpServlet {
                 editProduct(request, response);
                 break;
 //            case "find":
-//                selectCustomerByName(request,response);
+//                selectProductByName(request,response);
 //                break;
+//            case "findPrice":
+//                selectProductByPrice(request,response);
+//                break;
+            case "findPriceName":
+                selectProductByPriceName(request,response);
+                break;
         }
 
     }
@@ -72,8 +77,10 @@ public class ProductServlet extends HttpServlet {
     private void listAllProduct(HttpServletRequest request, HttpServletResponse response) {
         List<Product> productList = this.productBo.findAllProduct();
         List<Category> categoryList = this.categoryBo.findAllCategory();
+        List<Color> colorList = this.colorBo.findAllColor();
         request.setAttribute("productList", productList);
         request.setAttribute("categoryList", categoryList);
+        request.setAttribute("colorList", colorList);
         try {
             request.getRequestDispatcher("productDisplay.jsp").forward(request, response);
         } catch (ServletException | IOException e) {
@@ -86,29 +93,41 @@ public class ProductServlet extends HttpServlet {
         request.getParameter("action");
 
         List<Category> categoryList = this.categoryBo.findAllCategory();
-        request.setAttribute("categoryList", categoryList)
-        ;
+        request.setAttribute("categoryList", categoryList);
+        List<Color> colorList = this.colorBo.findAllColor();
+
+        request.setAttribute("colorList", colorList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("create.jsp");
         dispatcher.forward(request, response);
     }
 
-    private void insertProduct(HttpServletRequest request, HttpServletResponse response) {
+    private void insertProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name");
         String price = request.getParameter("price");
         String quantity = request.getParameter("quantity");
-        String color = request.getParameter("color");
         String category = request.getParameter("category");
-        Product product = new Product(name, price, quantity, color, category);
-//         String message=this.productBo.insertProduct(product);
-        this.productBo.insertProduct(product);
-//         List<Category>categoryList=this.categoryBo.findAllCategory();
-//         request.setAttribute("message",message);
-//         request.setAttribute("categoryList",categoryList);
-        try {
-            response.sendRedirect("/product");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        String description = request.getParameter("description");
+        String colorID = request.getParameter("colorID");
+        Product product = new Product(name, price, quantity, category,description,colorID);
+         String message=this.productBo.insertProduct(product);
+        List<Category>categoryList=this.categoryBo.findAllCategory();
+        List<Color> colorList = this.colorBo.findAllColor();
+
+        request.setAttribute("colorList", colorList);
+
+        request.setAttribute("message", message);
+        request.setAttribute("categoryList", categoryList);
+
+        if(message.equals("created new product")) {
+             try {
+                 response.sendRedirect("/product");
+             } catch (IOException e) {
+                 e.printStackTrace();
+             }
+         }else {
+             request.getRequestDispatcher("create.jsp").forward(request, response);
+         }
+
 
     }
 
@@ -118,6 +137,7 @@ public class ProductServlet extends HttpServlet {
         //User existingUser = userDAO.selectUser(id);
         Product product = this.productBo.selectProductByID(id);
         List<Category> categoryList = this.categoryBo.findAllCategory();
+
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("update.jsp");
 
@@ -133,12 +153,14 @@ public class ProductServlet extends HttpServlet {
         String quantity = request.getParameter("quantity");
         String color = request.getParameter("color");
         String category = request.getParameter("category");
+        String description = request.getParameter("description");
         String id = request.getParameter("id");
-        Product product = new Product(id, name, price, quantity, color, category);
+        Product product = new Product(id, name, price, quantity, color, category,description);
         String message = productBo.updateProduct(product);
 
         List<Category> categoryList = this.categoryBo.findAllCategory();
         request.setAttribute("categoryList", categoryList);
+
         request.setAttribute("message", message);
         request.setAttribute("product", product);
         RequestDispatcher dispatcher = request.getRequestDispatcher("update.jsp");
@@ -157,6 +179,10 @@ public class ProductServlet extends HttpServlet {
         List<Product> productList = this.productBo.findAllProduct();
 
         request.setAttribute("productList", productList);
+        List<Category> categoryList = this.categoryBo.findAllCategory();
+        List<Color> colorList = this.colorBo.findAllColor();
+        request.setAttribute("colorList", colorList);
+        request.setAttribute("categoryList", categoryList);
         request.setAttribute("message", message);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("productDisplay.jsp");
@@ -168,5 +194,70 @@ public class ProductServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
+    private void selectProductByName(HttpServletRequest request,HttpServletResponse response){
+        String name=request.getParameter("name");
+        List<Product>productList=this.productBo.selectProductByName(name);
+
+        List<Category>categoryList=this.categoryBo.findAllCategory();
+
+        request.setAttribute("categoryList",categoryList);
+        List<Color> colorList = this.colorBo.findAllColor();
+
+        request.setAttribute("colorList", colorList);
+        request.setAttribute("productList",productList);
+        try {
+            request.getRequestDispatcher("productDisplay.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    private void selectProductByPrice(HttpServletRequest request,HttpServletResponse response){
+        String price=request.getParameter("price");
+        List<Product>productList=this.productBo.selectProductByPrice(price);
+        List<Category>categoryList=this.categoryBo.findAllCategory();
+        request.setAttribute("categoryList",categoryList);
+        List<Color> colorList = this.colorBo.findAllColor();
+        request.setAttribute("colorList", colorList);
+
+        request.setAttribute("productList",productList);
+        try {
+            request.getRequestDispatcher("productDisplay.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void selectProductByPriceName(HttpServletRequest request,HttpServletResponse response){
+        String price=request.getParameter("price");
+        String name=request.getParameter("name");
+        List<Product>productList=null;
+        if(price.equals("")){
+            productList=this.productBo.selectProductByName(name);
+        }else if(price.equals("")){
+            productList=this.productBo.selectProductByPrice(
+                    price);
+        }else {
+            productList=this.productBo.selectProductByNameAndPrice(price,name);
+        }
+        List<Category>categoryList=this.categoryBo.findAllCategory();
+        request.setAttribute("categoryList",categoryList);
+        List<Color> colorList = this.colorBo.findAllColor();
+
+        request.setAttribute("colorList", colorList);
+
+        request.setAttribute("productList",productList);
+        try {
+            request.getRequestDispatcher("productDisplay.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

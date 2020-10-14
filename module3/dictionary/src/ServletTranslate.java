@@ -9,6 +9,7 @@ import java.util.Map;
 
 @WebServlet(name = "ServletTranslate",urlPatterns = "/translate")
 public class ServletTranslate extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Map<String, String> dictionary = new HashMap<>();
         dictionary.put("hello", "Xin chào");

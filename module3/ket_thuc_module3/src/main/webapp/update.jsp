@@ -91,6 +91,7 @@
                                     />
                                 </td>
                             </tr>
+
                             <tr>
                                 <th>Category</th>
                                 <td>
@@ -109,6 +110,15 @@
                                     </select>
                                 </td>
 
+                            </tr>
+
+                            <tr>
+                                <th> Description</th>
+                                <td>
+                                    <input type="text" name="description" size="15"
+                                           value="<c:out value='${product.description}' />"
+                                    />
+                                </td>
                             </tr>
 
                             <tr>

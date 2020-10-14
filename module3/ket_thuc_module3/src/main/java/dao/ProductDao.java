@@ -11,5 +11,9 @@ public interface ProductDao {
     String deleteProductByID(String id);
     List<Product> selectProductByName(String name);
     Product selectProductByID(String id);
+    List<Product> selectProductByPrice(String price);
+    List<Product> selectProductByNameAndPrice(String price,String name);
+
+
 
 }

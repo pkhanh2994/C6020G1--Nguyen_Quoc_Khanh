@@ -192,7 +192,7 @@
         $('#customer').dataTable({
             "dom": 'lrtip',
             "lengthChange": false,
-            "pageLength": 5
+            "pageLength": 4
         });
     });
 </script>
