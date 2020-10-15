@@ -20,10 +20,10 @@ public class EmailController {
     String successEmail(@RequestParam String email, Model model){
         boolean result=emailRegex.regexEmail(email);
         if(!result){
-            model.addAttribute("Email is invalid",email);
+            model.addAttribute("message","Email is invalid");
             return "Home";
         }
-        model.addAttribute("email",email);
-        return "successPage";
+        model.addAttribute("message","oke babe");
+        return "Home";
     }
 }
