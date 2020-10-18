@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fb22e5d9-b7cb-4b34-a441-ff4bfc98ee15" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../data_binding/thuc_hanh/thymeleaf_customer_ management/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../data_binding/thuc_hanh/thymeleaf_customer_ management/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../data_binding/thuc_hanh/thymeleaf_customer_ management/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../data_binding/thuc_hanh/thymeleaf_customer_ management/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../data_binding/thuc_hanh/thymeleaf_customer_ management/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../data_binding/thuc_hanh/thymeleaf_customer_ management/src/main/java/com/codegym/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../data_binding/thuc_hanh/thymeleaf_customer_ management/src/main/java/com/codegym/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../data_binding/thuc_hanh/thymeleaf_customer_ management/src/main/java/com/codegym/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../data_binding/thuc_hanh/thymeleaf_customer_ management/src/main/java/com/codegym/service/CustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../data_binding/thuc_hanh/thymeleaf_customer_ management/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../data_binding/thuc_hanh/thymeleaf_customer_ management/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../data_binding/thuc_hanh/thymeleaf_customer_ management/src/main/webapp/WEB-INF/views/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../data_binding/thuc_hanh/thymeleaf_customer_ management/src/main/webapp/WEB-INF/views/view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../data_binding/thuc_hanh/thymeleaf_customer_ management/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.38/webapps/ROOT/WEB-INF/classes/com/example/controller/EmailController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.38/webapps/ROOT/WEB-INF/classes/com/example/service/EmailRegex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.38/webapps/ROOT/WEB-INF/classes/com/example/service/EmailRegexImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.38/webapps/ROOT/WEB-INF/dispatcher-servlet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../apache-tomcat-9.0.38/webapps/ROOT/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.38/webapps/ROOT/WEB-INF/views/Home.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.38/webapps/ROOT/WEB-INF/views/successPage.jsp" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1izxAhMFhccH7Y1EubCt3VOPVzG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fb22e5d9-b7cb-4b34-a441-ff4bfc98ee15" name="Default Changelist" comment="" />
+      <created>1602924079679</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602924079679</updated>
+      <workItem from="1602924081216" duration="6000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="72" key="#Project_Structure" timestamp="1602924086000">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="72" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1602924086000" />
+  </component>
+</project>

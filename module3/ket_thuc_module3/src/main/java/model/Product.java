@@ -9,16 +9,7 @@ public class Product {
     private String description;
     private String colorID;
 
-//    public Product(String productID, String productName, String price, String quantity, String color, String categoryID,String description,String colorID) {
-//        this.productID = productID;
-//        this.productName = productName;
-//        this.price = price;
-//        this.quantity = quantity;
-//        this.color = color;
-//        this.categoryID = categoryID;
-//        this.description = description;
-//        this.colorID = colorID;
-//    }
+
 
 
     public Product(String productID, String productName, String price, String quantity, String categoryID, String description, String colorID) {
