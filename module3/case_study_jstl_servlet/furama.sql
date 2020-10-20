@@ -321,7 +321,7 @@ BEGIN
 	update employee
     set employee_name = name_update, employee_birthday = birthday_update, employee_id_card = id_card_update, employee_salary = salary_update,
     employee_phone = phone_update, employee_email = email_update, employee_address = address_update, position_id = position_id_update,
-    education_degree_id = education_degree_id_update, division_id = division_id_update, user_name = user_name_update
+    education_degree_id = education_degree_id_update, division_id = division_id_update, user_name = user_name_updatecustomer
     where employee_id = id_update;
 END //
 DELIMITER ;

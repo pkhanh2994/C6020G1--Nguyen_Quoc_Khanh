@@ -1,0 +1,36 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>List customer</title>
+</head>
+<body>
+    <header th:replace="~{common::headerProduct}"></header>
+    <p style="color: green" th:text="${message}"></p>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>View</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        <th:block th:each="product : ${productList}">
+            <tr>
+                <td th:text="${product.id}"></td>
+                <td th:text="${product.productName}"></td>
+                <td th:text="${product.price}"></td>
+                <td th:text="${product.quantity}"></td>
+
+                <td><a th:href="@{{id}/detail(id=${product.id})}">View</a></td>
+                <td><a th:href="@{{id}/delete(id=${product.id})}">Delete</a></td>
+<!--                <td><a th:href="@{{id}/edit(productID=${product.getProductID()})}">edit</a></td>-->
+                <td><a th:href="@{{id}/update(id=${product.id})}">Update</a></td>
+            </tr>
+        </th:block>
+    </table>
+<!--    <footer th:insert="common::footerStudent"></footer>-->
+<!--    <th:block th:insert="common::footerStudent"></th:block>-->
+    <footer th:replace="common::footerProduct"></footer>
+</body>
+</html>

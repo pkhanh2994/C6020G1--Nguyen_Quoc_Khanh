@@ -1,0 +1,34 @@
+package com.codegym.service.impl;
+
+import com.codegym.entity.BlogApp;
+import com.codegym.repository.BlogAppRepository;
+import com.codegym.service.BlogAppService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+@Service
+public class BlogAppServiceImpl implements BlogAppService {
+    @Autowired
+    private BlogAppRepository blogAppRepository;
+    @Override
+    public List<BlogApp> findAll() {
+        return this.blogAppRepository.findAll();
+    }
+
+    @Override
+    public BlogApp findById(String id) {
+        return this.blogAppRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public void save(BlogApp blogApp) {
+        this.blogAppRepository.save(blogApp);
+    }
+
+    @Override
+    public void deleteById(String id) {
+        this.blogAppRepository.deleteById(id);
+    }
+
+}
