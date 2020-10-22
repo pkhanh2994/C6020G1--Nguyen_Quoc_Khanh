@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog mới lớn</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+<div class="jumbotron">
+    <h1 class="display-4" ></h1>
+        <p th:each="blog : ${category.blogAppList}" th:value="${blog.id}" th:text="${blog.blogName}"></p>
+
+
+    <a class="btn btn-primary btn-lg" th:href="@{/}" role="button">Back home</a>
+</div>
+
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

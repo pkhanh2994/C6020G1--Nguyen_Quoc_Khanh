@@ -7,7 +7,29 @@
 <body>
 <header th:fragment="headerBlogApp">
     <h3 style="color: deeppink;text-align: center" >Blog list</h3>
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link active" th:href="@{/}">Back home</a>
+        </li>
+<!--        <li class="nav-item dropdown">-->
+<!--            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Category</a>-->
+<!--            <div class="dropdown-menu">-->
+<!--                <a class="dropdown-item" href="#">Link 1</a>-->
+<!--                <a class="dropdown-item" href="#">Link 2</a>-->
+<!--                <a class="dropdown-item" href="#">Link 3</a>-->
+<!--            </div>-->
+<!--        </li>-->
+        <li class="nav-item">
+            <a class="nav-link" href="/create">Create blog</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/viewCategory">view category</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/createCategory">Create category</a>
+        </li>
 
+    </ul>
 </header>
 <footer th:fragment="footerBlog">
     <h4  style="color: plum">@Quoc Khanh</h4>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+<a th:href="@{/}" style="color: blue">Back home</a>
+<div style="position: relative;left: 500px">
+
+    <form action="/createCategory" method="post" th:object="${category}">
+
+        <p>Category name:</p>
+        <input type="text" th:field="*{categoryName}" />
+        <br>
+        <input type="submit" value="Save" />
+    </form>
+</div>
+<footer th:replace="~{common::footerBlog}"></footer>
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -2,6 +2,10 @@ package com.codegym.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity(name = "blog")
 public class BlogApp {
@@ -9,6 +13,21 @@ public class BlogApp {
     private String id;
     private String blogName;
     private String blogContent;
+    private LocalDateTime timeDate;
+
+
+
+    @ManyToOne
+    @JoinColumn(name = "idCategory",referencedColumnName = "idCategory")
+    private Category category;
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
     public BlogApp() {
     }
@@ -35,5 +54,14 @@ public class BlogApp {
 
     public void setBlogContent(String blogContent) {
         this.blogContent = blogContent;
+    }
+
+
+    public LocalDateTime getTimeDate() {
+        return LocalDateTime.now();
+    }
+
+    public void setTimeDate(LocalDateTime timeDate) {
+        this.timeDate = timeDate;
     }
 }

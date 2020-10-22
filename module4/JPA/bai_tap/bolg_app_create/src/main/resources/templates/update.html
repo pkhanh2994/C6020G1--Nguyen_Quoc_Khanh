@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head></head>
 <body>
-<header th:replace="common::headerBlogApp"></header>
+<header th:replace="~{common::headerBlogApp}"></header>
 <h3>Remove Blog</h3>
 <p>
     <a th:href="@{/}">
@@ -24,7 +24,7 @@
         <input type="submit" value="Update"/>
     </form>
 </div>
-<footer th:replace="/common ::footerBlog"></footer>
+<footer th:replace="~{common ::footerBlog}"></footer>
 
 </body>
 </html>
