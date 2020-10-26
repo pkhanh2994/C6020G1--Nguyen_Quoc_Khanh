@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>List customer</title>
+</head>
+<body>
+<header th:replace="common::headerProduct"></header>
+<p style="color: green" th:text="${message}"></p>
+<a href="/infoCart">Your Cart</a>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>By</th>
+
+    </tr>
+    <th:block th:each="product : ${listProduct}">
+        <tr>
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.productName}"></td>
+            <td th:text="${product.price}"></td>
+            <td th:text="${product.quantity}"></td>
+            <td><a th:href="@{{id}/detailsProduct(id=${product.id})}">By</a></td>
+        </tr>
+    </th:block>
+</table>
+
+
+</body>
+</html>

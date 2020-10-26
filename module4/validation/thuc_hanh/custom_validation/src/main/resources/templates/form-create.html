@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>Input PhoneNumber</title>
+</head>
+<body>
+<form action="/create" th:object="${phoneBd}" method="post">
+    <table>
+        <tr>
+            <td>PhoneNumber</td>
+            <td><input type="text" th:field="*{phoneNumber}"/></td>
+        </tr>
+    </table>
+    <p th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></p>
+    <button type="submit">submit</button>
+</form>
+</body>
+</html>

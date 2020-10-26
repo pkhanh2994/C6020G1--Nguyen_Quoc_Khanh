@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+
+<header th:replace="common::headerProduct"></header>
+<p>
+    <a th:href="@{/homePage}">
+        Back to product list
+    </a>
+</p>
+<div id="form" >
+    <form action="/addCart" th:object="${product}" method="post" >
+        <input type="hidden" th:field="*{id}">
+        <div>
+            <p> Name: <span th:text="${product.productName}"></span></p><p>
+        </div>
+        <div>
+            <p>Price: <span th:text="${product.price}"></span></p><p>
+        </div>
+        <div>
+            <label>Price:</label>
+            <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+            </select>
+        </div>
+
+        <input type="submit" value="By">
+    </form>
+
+</div>
+
+</body>
+</html>

@@ -6,7 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import java.util.List;
+
 
 public interface BlogAppRepository extends JpaRepository<BlogApp,String> {
     @Query(value = "select * from blog where blog_name like concat('%',?1, '%')",nativeQuery = true)

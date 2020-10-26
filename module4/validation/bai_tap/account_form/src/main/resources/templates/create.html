@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+<form action="/create" th:object="${user}" method="post">
+    <div class="form-group">
+        <label for="id">Id user :</label>
+        <input type="text" th:field="*{idUser}" class="form-control" placeholder="Enter id" id="id">
+        <p th:if="${#fields.hasErrors('idUser')}" th:errors="*{idUser}"></p>
+    </div>
+    <div class="form-group">
+        <label for="fn">First name:</label>
+        <input type="text" th:field="*{firstName}" class="form-control" placeholder="Enter first name" id="fn">
+        <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+    </div>
+    <div class="form-group">
+        <label for="ln">Last name:</label>
+        <input type="text" th:field="*{lastName}" class="form-control" placeholder="Enter last name" id="ln">
+        <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+    </div>
+    <div class="form-group">
+        <label for="pwd">Age:</label>
+        <input type="text" th:field="*{age}" class="form-control" placeholder="Enter age" id="pwd">
+        <p th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></p>
+    </div>
+    <div class="form-group">
+        <label for="pn">Phone number:</label>
+        <input type="text" th:field="*{phoneNumber}" class="form-control" placeholder="Enter phone number" id="pn">
+<!--        <p th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></p>-->
+    </div>
+    <div class="form-group">
+        <label for="email">Email address:</label>
+        <input  type="text" th:field="*{email}" class="form-control" placeholder="Enter email" id="email">
+        <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

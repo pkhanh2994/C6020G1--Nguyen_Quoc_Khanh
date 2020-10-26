@@ -12,6 +12,7 @@
 <header th:replace="~{common::headerBlogApp}"></header>
 <br>
 <br>
+
 <form action="/">
     <input  type="text" name="keyword" th:value="${holdKeyword}">
     <input type="submit" name="Search" value="Search">
@@ -39,7 +40,6 @@
         <td><a th:href="@{{id}/detail(id=${blog.id})}">detail</a></td>
         <td><a th:href="@{{id}/update(id=${blog.id})}">update</a></td>
         <td><a th:href="@{{id}/delete(id=${blog.id})}">delete</a></td>
-
 
     </tr>
     </tbody>

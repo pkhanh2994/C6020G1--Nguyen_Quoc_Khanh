@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+
+
+<p>
+    <a th:href="@{/}">
+        Back to book list
+    </a>
+</p>
+<div id="form" >
+    <form action="/giveBack" th:object="${book}" method="post" >
+        <input type="hidden" th:field="*{idBook}"/>
+        <div>
+            <p>Book Name: <span th:text="${book.bookName}"></span></p><p>
+        </div>
+        <div>
+            <p>Author: <span th:text="${book.author}"></span></p><p>
+        </div>
+        <input type="text" name="codeBorrow" value="codeBorrow" >
+
+
+        <input type="submit" value="Modify">
+    </form>
+</div>
+
+</body>
+</html>
