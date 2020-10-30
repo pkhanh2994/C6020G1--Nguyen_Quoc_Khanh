@@ -17,11 +17,25 @@ public class ProductController {
     private ProductService productService;
     @ModelAttribute("productList")
     public List<Product>productList(){
-        return new ArrayList<Product>();
+        return new ArrayList<>();
     }
     @PostMapping("addCart")
     public String addCart(@RequestParam Integer id, @ModelAttribute("productList") List<Product>productList){
-  productList.add(this.productService.findById(id));
+        Product product=this.productService.findById(id);
+        if(productList==null)
+        {
+            productList.add(product);
+        }else {
+            for(Product product1 : productList){
+                if(product1.getId().equals(product.getId())){
+                    product1.setQuantity(product1.getQuantity()+product.getQuantity());
+                    productList.add(product1);
+
+                }
+
+            }
+
+        }
         return  "redirect:/homePage";
     }
     @GetMapping("infoCart")

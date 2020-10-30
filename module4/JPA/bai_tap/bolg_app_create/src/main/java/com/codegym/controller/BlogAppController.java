@@ -39,6 +39,7 @@ public class BlogAppController {
         model.addAttribute("categoryList",this.categoryService.findAll());
         model.addAttribute("blog",new BlogApp());
 
+
         return "create";
     }
     @PostMapping("create")

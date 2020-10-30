@@ -1,0 +1,43 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>List student</title>
+</head>
+<body>
+    <header th:replace="~{common::headerCustomer}"></header>
+    <p style="color: green" th:text="${message}"></p>
+    <form action="/">
+        <input type="text" name="keyword" th:value="${holdKeyword}" />
+        <input type="submit" value="Search" />
+    </form>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Province</th>
+            <th>View</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        <th:block th:each="customer : ${customerList}">
+            <tr>
+                <td th:text="${customer.id}"></td>
+                <td th:text="${customer.firstName}"></td>
+                <td th:text="${customer.lastName}"></td>
+                <td th:text="${customer.province.name}"></td>
+
+                <td><a th:href="@{{id}/detail(id=${customer.id})}">View</a></td>
+                <td><a th:href="@{{id}/delete(id=${customer.id})}">Delete</a></td>
+<!--                <td><a th:href="@{{id}/edit(productID=${product.getProductID()})}">edit</a></td>-->
+                <td><a th:href="@{{id}/update(id=${customer.id})}">Update</a></td>
+            </tr>
+        </th:block>
+    </table>
+    <div th:if="${customerList.totalPages!=0}">
+    <a th:if="${customerList.hasPrevious()}" th:href="@{/(page = ${customerList.number - 1}, keyword = ${holdKeyword})}">Previous</a>
+    <span th:text="${customerList.number + 1}"></span>/<span th:text="${customerList.totalPages}"></span>
+    <a th:if="${customerList.hasNext()}" th:href="@{/(page = ${customerList.number + 1}, keyword = ${holdKeyword})}">Next</a>
+    </div>
+    <footer th:replace="common::footerCustomer"></footer>
+</body>
+</html>

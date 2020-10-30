@@ -13,6 +13,12 @@ import java.util.List;
 public class CustomerServiceIpml implements CustomerService {
     @Autowired
     private CustomerRepository customerRepository;
+
+    @Override
+    public List<Customer> findAll() {
+      return   this.customerRepository.findAll();
+    }
+
     @Override
     public Page<Customer> findAll(Pageable pageable) {
         return this.customerRepository.findAll(pageable);

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+<header th:replace="~{common::headerBlogApp}"></header>
+<h3>Remove Blog</h3>
+<p>
+    <a th:href="@{/}">
+        Back to blog list
+    </a>
+</p>
+<div id="form">
+    <form  action="/update" th:object="${blog}" method="POST" novalidate="novalidate">
+        <input type="hidden" th:field="*{id}"/>
+        <div>
+            <label>Blog Name</label>
+            <input type="text" th:field="*{blogName}"/>
+        </div>
+        <div>
+            <label>Blog content</label>
+            <textarea th:field="*{blogContent}"style="width: 500px;color: deeppink"></textarea>
+        </div>
+
+        <input type="submit" value="Update"/>
+    </form>
+</div>
+<footer th:replace="~{common ::footerBlog}"></footer>
+
+</body>
+</html>

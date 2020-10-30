@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Blog</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+<div>
+    <input type="text" id="inputSearch">
+    <input type="submit" id="myInput" value="search">
+</div>
+
+
+<div class="container-fluid">
+    <!--    <div class="row">-->
+    <!--        <div class="col-lg-6">-->
+    <!--          -->
+    <!--        </div>-->
+    <div class="row">
+
+        <div class="col-lg-6">
+            <table class="table table-borderless table-light">
+                <thead>
+                <tr>
+                    <th scope="col">Blog Name</th>
+                    <th scope="col">Category Name</th>
+                    <th scope="col">Category</th>
+                </tr>
+                </thead>
+                <tbody id="tableList">
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="col-lg-6">
+            <div class="form-group">-->
+                <div>
+                    <label for="inputIdRegister">Id</label>
+                    <input type="text" class="form-control" id="inputIdRegister">
+                </div>
+                <div>
+                    <label for="inputNameRegister">Name</label>
+                    <input type="text" class="form-control" id="inputNameRegister">
+                </div>
+
+                <div class="form-group">
+                    <label for="inputContent">Content</label>
+                    <textarea type="date" class="form-control" id="inputContent"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <select id="category">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="button" class="form-control btn-primary" id="btnRegister" value="Register">
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            let data = '';
+            $("#myInput").click(function () {
+                let nameBlog = $("#inputSearch").val();
+                console.log(nameBlog);
+                $.ajax({
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    type: "GET",
+                    // data: {"blogName": nameBlog},
+                    url: "http://localhost:8080/blogRest/listBlog/" + nameBlog,
+                    success: function (blogName) {
+                        data = "";
+                        for (let i = 0; i < blogName.length; i++) {
+                            data += '<tr>\n' +
+                                '        <td> ' + blogName[i].blogName + '</td>\n' +
+                                '        <td> ' + blogName[i].blogContent + '</td>\n' +
+                                '        <td> ' + blogName[i].category.categoryName.toString() + '</td>\n' +
+                                '    </tr>';
+                        }
+                        $("#tableList").html(data);
+                    },
+                    error: function (content) {
+                        console.log(content);
+                    }
+                });
+            });
+
+
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                type: "GET",
+                // data: {"id": idStudent},
+                url: "http://localhost:8080/blogRest/listBlog",
+                success: function (listBlog) {
+
+                    for (let i = 0; i < listBlog.length; i++) {
+                        data += '<tr>\n' +
+                            '        <td> ' + listBlog[i].blogName + '</td>\n' +
+                            '        <td> ' + listBlog[i].blogContent + '</td>\n' +
+                            '        <td> ' + listBlog[i].category.categoryName.toString() + '</td>\n' +
+                            '    </tr>';
+                    }
+                    $("#tableList").html(data);
+                },
+                error: function (content) {
+                    console.log(content);
+                }
+            });
+
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                type : "GET",
+                url: "http://localhost:8080/blogRest/listCategory",
+                success: function(listCategory) {
+                    data="";
+
+                    for (let i=0;i<listCategory.length;i++){
+                        data+='<option>' +
+                            listCategory[i].categoryName
+                            +
+                            '</option>';
+                    }
+                    $("#category").html(data);
+                },
+                error: function(content) {
+                    console.log(content);
+                }
+            });
+
+            $("#btnRegister").click(function() {
+                let idBlog = $("#inputIdRegister").val();
+                let nameBlog = $("#inputNameRegister").val();
+                let content = $("#inputContent").val();
+                let category = $("#category").val();
+
+                let objBlog = {"id": idBlog, "blogName": nameBlog, "blogContent" :content,"category":category};
+                console.log(objBlog);
+                $.ajax({
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    type : "POST",
+                    data: JSON.stringify(objBlog),
+                    url: "http://localhost:8080/studentRest/register",
+                    success: function(data, statusContent, header) {
+                        console.log("1: " + statusContent);
+                        console.log("2: " + header.status);
+                        // location.href = "https://www.google.com";
+                    },
+                    error: function(content) {
+                        console.log(content);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
