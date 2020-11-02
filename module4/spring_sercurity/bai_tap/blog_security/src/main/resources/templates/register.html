@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Account</title>
+</head>
+<body>
+<form action="/signUp/register" method="post" th:object="${appUser}">
+    <label for="un"> Account Name</label>
+    <input type="text"  id="un" th:field="*{userName}">
+    <br>
+    <br>
+    <label for="ps">Password</label>
+    <input type="password" id="ps" th:field="*{encrytedPassword}">
+    <br>
+    <br>
+    <label for="adm">Admin</label>
+    <input type="checkbox" name="admin" id="adm" value="1">
+    <label for="us">User</label>
+    <input type="checkbox" name="admin" id="us" value="2">
+    <br>
+    <br>
+    <input type="submit" value="register">
+</form>
+<p th:text="${message}" style="color: red"></p>
+
+</body>
+</html>

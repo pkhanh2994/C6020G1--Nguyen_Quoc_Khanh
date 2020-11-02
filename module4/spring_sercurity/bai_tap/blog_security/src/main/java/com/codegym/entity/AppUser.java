@@ -1,26 +1,27 @@
 package com.codegym.entity;
 
-import javax.persistence.*;
+        import javax.persistence.*;
 
 @Entity
-
-@Table(name = "app_user", //
+@Table(name = "App_User", //
         uniqueConstraints = { //
-                @UniqueConstraint(name = "APP_USER_UK", columnNames = "user_name") })
+                @UniqueConstraint(name = "APP_USER_UK", columnNames = "User_Name") })
 public class AppUser {
+    public AppUser() {
+    }
 
     @Id
-    @GeneratedValue
-    @Column(name = "user_id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "User_Id", nullable = false)
     private Long userId;
 
-    @Column(name = "user_name", length = 36, nullable = false)
+    @Column(name = "User_Name", length = 36, nullable = false)
     private String userName;
 
-    @Column(name = "encryted_password", length = 128, nullable = false)
+    @Column(name = "Encryted_Password", length = 128, nullable = false)
     private String encrytedPassword;
 
-    @Column(name = "enabled", length = 1, nullable = false)
+    @Column(name = "Enabled", length = 1, nullable = false)
     private boolean enabled;
 
     public Long getUserId() {
