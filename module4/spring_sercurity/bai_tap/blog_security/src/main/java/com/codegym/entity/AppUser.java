@@ -22,7 +22,7 @@ public class AppUser {
     private String encrytedPassword;
 
     @Column(name = "Enabled", length = 1, nullable = false)
-    private boolean enabled;
+    private boolean enabled=true;
 
     public Long getUserId() {
         return userId;

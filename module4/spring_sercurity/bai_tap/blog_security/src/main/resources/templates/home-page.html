@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Home page</title>
 <!--    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">-->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
 
 
 </head>
@@ -37,9 +37,9 @@
         <td th:text="${blog.blogName}"></td>
         <td th:text="${blog.category.categoryName}"></td>
         <td th:text="${blog.timeDate}"></td>
-        <td><a th:href="@{{id}/detail(id=${blog.id})}">detail</a></td>
-        <td><a th:href="@{{id}/update(id=${blog.id})}">update</a></td>
-        <td><a th:href="@{{id}/delete(id=${blog.id})}">delete</a></td>
+        <td><a th:href="@{/blog/detail(id=${blog.id})}">detail</a></td>
+        <td><a th:href="@{/blog/update/{id}(id=${blog.id})}">update</a></td>
+        <td><a th:href="@{/blog/delete(id=${blog.id})}">delete</a></td>
 
     </tr>
     </tbody>

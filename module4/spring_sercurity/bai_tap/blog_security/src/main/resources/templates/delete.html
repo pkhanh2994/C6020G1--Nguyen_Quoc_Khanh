@@ -10,7 +10,7 @@
     </a>
 </p>
 <div id="form">
-    <form  action="/delete" th:object="${blog}" method="POST" novalidate="novalidate">
+    <form  action="/delete" th:object="${blog}" method="post" novalidate="novalidate">
         <input type="hidden" th:field="*{id}"/>
         <div>
             <label>Blog Name</label>

@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>common</title>
 </head>
 <body>
-<header th:fragment="headerBlogApp">
+<header th:fragment="headerBlogApp" >
     <h3 style="color: deeppink;text-align: center" >Blog list</h3>
     <ul class="nav nav-pills">
         <li class="nav-item">
-            <a class="nav-link active" th:href="@{/}">Back home</a>
+            <a class="nav-link active" href="/blog/home">Back home</a>
         </li>
 <!--        <li class="nav-item dropdown">-->
 <!--            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Category</a>-->
@@ -20,7 +21,7 @@
 <!--            </div>-->
 <!--        </li>-->
         <li class="nav-item">
-            <a class="nav-link" href="/create">Create blog</a>
+            <a class="nav-link" href="/blog/create" sec:authorize="hasRole('ADMIN')">Create blog</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/viewCategory">view category</a>
@@ -28,6 +29,10 @@
         <li class="nav-item">
             <a class="nav-link" href="/createCategory">Create category</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/logout">Log out</a>
+        </li>
+
 
     </ul>
 </header>

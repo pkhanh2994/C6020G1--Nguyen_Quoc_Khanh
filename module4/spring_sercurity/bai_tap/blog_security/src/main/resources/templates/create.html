@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-<a th:href="@{/}" style="color: blue">Back home</a>
+<a href="/blog/home"  style="color: blue">Back home</a>
 <div style="position: relative;left: 500px">
 
-<form action="/create" method="post" th:object="${blog}">
+<form action="/blog/create" method="post" th:object="${blog}">
     <p>Blog id:</p>
     <input type="text" th:field="*{id}"/>
     <p>Blog name:</p>

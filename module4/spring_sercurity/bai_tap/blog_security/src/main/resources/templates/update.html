@@ -5,12 +5,12 @@
 <header th:replace="~{common::headerBlogApp}"></header>
 <h3>Remove Blog</h3>
 <p>
-    <a th:href="@{/}">
+    <a href="/blog/home">
         Back to blog list
     </a>
 </p>
 <div id="form">
-    <form  action="/update" th:object="${blog}" method="POST" novalidate="novalidate">
+    <form action="blog/update" th:object="${blog}" method="post" novalidate="novalidate">
         <input type="hidden" th:field="*{id}"/>
         <div>
             <label>Blog Name</label>
@@ -18,9 +18,16 @@
         </div>
         <div>
             <label>Blog content</label>
-            <textarea th:field="*{blogContent}"style="width: 500px;color: deeppink"></textarea>
+            <textarea th:field="*{blogContent}" style="width: 500px;color: deeppink"></textarea>
         </div>
+        <div>
+            <label>Category</label>
+            <select th:field="*{category}">
+                <option th:each="category : ${categoryList}" th:value="${category.idCategory}" th:text="${category.categoryName }">
 
+                </option>
+            </select>
+        </div>
         <input type="submit" value="Update"/>
     </form>
 </div>

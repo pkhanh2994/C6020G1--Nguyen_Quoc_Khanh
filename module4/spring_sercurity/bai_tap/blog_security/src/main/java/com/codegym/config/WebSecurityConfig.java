@@ -40,7 +40,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginProcessingUrl("/checkLogin")
                 .loginPage("/")
                 // login successful
-                .defaultSuccessUrl("/home")
+                .defaultSuccessUrl("/blog/home")
                 // login failed
                 .failureUrl("/?error=true")
                 // setting username, password
@@ -50,6 +50,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().logout().logoutUrl("/logout")
                 // logout successful
                 .logoutSuccessUrl("/");
+
+        //guest
+        http.authorizeRequests().antMatchers("/","/logout","/register").permitAll();
+        //user
+//        http.authorizeRequests().antMatchers("blog/detail","blog/home").hasRole("USER");
+        http.authorizeRequests().antMatchers("/blog/detail","/blog/home").hasRole("USER");
+
+       //admin
+        http.authorizeRequests().antMatchers("/blog/create","/blog/delete","/blog/update/*","/blog/detail").hasRole("ADMIN");
+        //no permission
+        http.exceptionHandling().accessDeniedPage("/403");
+        //remember me
+        http.rememberMe()
+                .rememberMeParameter("rememberMe")
+                .rememberMeCookieName("remember")
+                .tokenValiditySeconds(60);
     }
+
 
 }

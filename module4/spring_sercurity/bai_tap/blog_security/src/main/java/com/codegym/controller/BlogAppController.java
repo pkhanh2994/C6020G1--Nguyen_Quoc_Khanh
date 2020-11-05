@@ -14,17 +14,13 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.util.Optional;
 
 @Controller
+@RequestMapping("/blog")
 public class BlogAppController {
     @Autowired
     private BlogAppService blogAppService;
     @Autowired
     private CategoryService categoryService;
 
-
-    @GetMapping("/")
-    public String loginPage() {
-        return "login";
-    }
 
     @GetMapping("/home")
     public String homePage(Model model, @PageableDefault(size = 2) Pageable pageable, Optional<String> keyword) {
@@ -39,24 +35,22 @@ public class BlogAppController {
         return "home-page";
     }
 
-    @GetMapping("create")
+    @GetMapping("/create")
     public String newForm(Model model) {
         model.addAttribute("categoryList", this.categoryService.findAll());
         model.addAttribute("blog", new BlogApp());
-
-
         return "create";
     }
 
-    @PostMapping("create")
+    @PostMapping("/create")
     public String createBlog(@ModelAttribute BlogApp blogApp, RedirectAttributes redirectAttributes) {
         this.blogAppService.save(blogApp);
         redirectAttributes.addFlashAttribute("message", "created new blog");
-        return "redirect:/";
+        return "redirect:/blog/home";
     }
 
-    @GetMapping("{id}/delete")
-    public String deleteInfo(@PathVariable String id, Model model) {
+    @GetMapping("/delete")
+    public String deleteInfo(@RequestParam String id, Model model) {
         BlogApp blogApp = this.blogAppService.findById(id);
         model.addAttribute("blog", blogApp);
         return "delete";
@@ -67,20 +61,21 @@ public class BlogAppController {
 
         this.blogAppService.deleteById(id);
         redirectAttributes.addFlashAttribute("message", "deleted blog");
-        return "redirect:/home";
+        return "redirect:/blog/home";
 
     }
 
-    @GetMapping("{id}/detail")
-    public String detailBlog(@PathVariable String id, Model model) {
+    @GetMapping("/detail")
+    public String detailBlog(@RequestParam String id, Model model) {
         BlogApp blogApp = this.blogAppService.findById(id);
         model.addAttribute("blog", blogApp);
         return "detail";
     }
 
-    @GetMapping("{id}/update")
+    @GetMapping("/update/{id}")
     public String updateInfo(@PathVariable String id, Model model) {
         BlogApp blogApp = this.blogAppService.findById(id);
+        model.addAttribute("categoryList", this.categoryService.findAll());
         model.addAttribute("blog", blogApp);
         return "update";
     }
@@ -89,7 +84,7 @@ public class BlogAppController {
     public String updateBlog(@ModelAttribute BlogApp blogApp, RedirectAttributes redirectAttributes) {
         this.blogAppService.save(blogApp);
         redirectAttributes.addFlashAttribute("message", "updated blog");
-        return "redirect:/home";
+        return "redirect:/blog/home";
     }
 
 }

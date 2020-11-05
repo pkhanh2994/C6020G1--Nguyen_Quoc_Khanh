@@ -29,7 +29,8 @@ public class RegisterController {
     }
 
     @PostMapping("/register")
-    public String saveAccount(@ModelAttribute AppUser appUser, @RequestParam("admin") Long[] admin, RedirectAttributes redirectAttributes) {
+    public String saveAccount(@ModelAttribute AppUser appUser, @RequestParam("admin") Long[] admin, RedirectAttributes redirectAttributes, Model model
+    ) {
         boolean checkExist = true;
         List<AppUser> appUserList = this.appUserService.findAll();
         for (AppUser appUser1 : appUserList) {
@@ -47,8 +48,8 @@ public class RegisterController {
           redirectAttributes.addFlashAttribute("message","successful");
           return "redirect:/";
         } else {
-            redirectAttributes.addFlashAttribute("message", "user name exist.Please enter another user name");
-            return "redirect:/register";
+            model.addAttribute("message", "user name exist.Please enter another user name");
+            return "register";
         }
 
     }

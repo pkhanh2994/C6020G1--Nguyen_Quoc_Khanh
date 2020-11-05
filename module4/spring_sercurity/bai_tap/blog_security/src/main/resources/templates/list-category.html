@@ -32,9 +32,9 @@
     <tr th:each="category : ${categoryList}">
         <td th:text="${category.idCategory}"></td>
         <td th:text="${category.categoryName}"></td>
-        <td><a th:href="@{{id}/detailCategory(id=${category.idCategory})}">detail</a></td>
-        <td><a th:href="@{{id}/updateCategory(id=${category.idCategory})}">update</a></td>
-        <td><a th:href="@{{id}/deleteCategory(id=${category.idCategory})}">delete</a></td>
+        <td><a th:href="@{blog/{id}/detailCategory(id=${category.idCategory})}">detail</a></td>
+        <td><a th:href="@{blog/{id}/updateCategory(id=${category.idCategory})}">update</a></td>
+        <td><a th:href="@{blog/{id}/deleteCategory(id=${category.idCategory})}">delete</a></td>
     </tr>
     </tbody>
 </table>
