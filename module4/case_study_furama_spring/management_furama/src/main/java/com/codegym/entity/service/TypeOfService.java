@@ -11,7 +11,7 @@ public class TypeOfService {
     @Column(name = "service_type_name")
     private String service_type_name;
     @OneToMany(mappedBy = "typeOfService",cascade = CascadeType.ALL)
-    private List<Service>serviceList;
+    private List<ServiceFrurama> serviceFruramaList;
 
     public TypeOfService() {
     }
@@ -32,11 +32,11 @@ public class TypeOfService {
         this.service_type_name = service_type_name;
     }
 
-    public List<Service> getServiceList() {
-        return serviceList;
+    public List<ServiceFrurama> getServiceFruramaList() {
+        return serviceFruramaList;
     }
 
-    public void setServiceList(List<Service> serviceList) {
-        this.serviceList = serviceList;
+    public void setServiceFruramaList(List<ServiceFrurama> serviceFruramaList) {
+        this.serviceFruramaList = serviceFruramaList;
     }
 }

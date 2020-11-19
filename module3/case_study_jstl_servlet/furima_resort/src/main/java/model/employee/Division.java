@@ -9,6 +9,9 @@ public class Division {
         this.division_name = division_name;
     }
 
+    public Division() {
+    }
+
     public String getDivision_id() {
         return division_id;
     }

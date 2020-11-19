@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <style>
         .container-fluid{
-            background-image: url("https://bietthubientrieudo.com/wp-content/uploads/2015/11/EXT_Vinpearl-VungMe_Villa_Night_141107.jpg");
+            background-image: url("https://www.blissvn.com/Data/Sites/1/media/blog/%C4%91%E1%BB%8Ba-%C4%91i%E1%BB%83m/hotel-six-senses-ninh-van-resort-nha-trang-vietnam.jpg");
         }
     </style>
 

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create Customer</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <style>
+        body  {
+            /*background-image: url("https://www.blissvn.com/Data/Sites/1/media/blog/%C4%91%E1%BB%8Ba-%C4%91i%E1%BB%83m/hotel-six-senses-ninh-van-resort-nha-trang-vietnam.jpg");*/
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://www.blissvn.com/Data/Sites/1/media/blog/%C4%91%E1%BB%8Ba-%C4%91i%E1%BB%83m/hotel-six-senses-ninh-van-resort-nha-trang-vietnam.jpg");
+            background-size: 100% 101%;
+        }
+        label{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<header th:replace="common::headerFurama"></header>
+<div th:replace="common::navbarFurama"></div>
+<h2 th:text="${message}"></h2>
+<div class="container-fluid">
+    <div class="col-lg-9" id="content">
+        <form action="/createProduct" th:object="${product}" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" placeholder="Enter name" id="name" th:field="*{productName}">
+                <p style="color:red" th:if="${#fields.hasErrors('productName')}" th:errors="*{productName}"></p>
+            </div>
+
+            <div class="form-group">
+                <label for="bd">Price:</label>
+                <input type="text" class="form-control" placeholder="Enter price" id="bd"
+                       th:field="*{price}">
+                <p style="color:red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></p>
+            </div>
+            <div class="form-group">
+                <label for="st">Status:</label>
+                <input type="text" class="form-control" placeholder="Enter status" id="st"
+                       th:field="*{statusProduct}">
+            </div>
+
+            <label for="typeC"></label>
+            <select th:field="*{typeOfProduct}" id="typeC" class="custom-select">
+                <option th:each="type : ${listTypeOfProduct}" th:value="${type.idTypeOfProduct}"
+                        th:text="${type.nameOfTypeOfProduct}"></option>
+            </select>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+
+    </div>
+</div>
+
+
+<script src="/js/jquery-3.5.1.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

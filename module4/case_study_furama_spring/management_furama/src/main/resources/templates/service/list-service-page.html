@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>List Customer</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <style>
+        body{
+            background-image: url("https://www.blissvn.com/Data/Sites/1/media/blog/%C4%91%E1%BB%8Ba-%C4%91i%E1%BB%83m/hotel-six-senses-ninh-van-resort-nha-trang-vietnam.jpg");
+        }
+    </style>
+</head>
+<body>
+<header th:replace="common/common::headerFurama"></header>
+<div th:insert="common/common::navbarFurama">
+</div>
+
+<div class="col-12" style="position: relative;top: 20px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <table id="customer" class="table table-striped table-bordered" style="width:100%;
+                            color: black;text-align: center;align-content: center;font-family: Arial;background: white">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Area</th>
+                        <th>Cost</th>
+                        <th>Max people</th>
+                        <th>Standard room</th>
+                        <th>Other convenience</th>
+                        <th>pool Area</th>
+                        <th>Number of floors</th>
+                        <th>Type of rent</th>
+                        <th>Type of service</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr th:each="service : ${listService}">
+                        <td th:text="${service.service_id}"></td>
+                        <td th:text="${service.service_name}"></td>
+                        <td th:text="${service.service_area}"></td>
+                        <td th:text="${service.service_cost}"></td>
+                        <td th:text="${service.service_max_people}"></td>
+                        <td th:text="${service.standard_room}"></td>
+                        <td th:text="${service.description_other_convenience}"></td>
+                        <td th:text="${service.pool_area}"></td>
+                        <td th:text="${service.number_of_floors}"></td>
+                        <td th:text="${service.typeOfRent.rent_type_name}"></td>
+                        <td th:text="${service.typeOfService.service_type_name}"></td>
+                        <td><a sec:authorize="hasRole('ADMIN')" th:href="@{/service/updateService(idService=${service.service_id})}">Update</a></td>
+
+                        <td>
+                            <a href="#" sec:authorize="hasRole('ADMIN')" th:onclick="setService([[${service.service_id}]])"
+                               data-toggle="modal" data-target="#deleteModal">Delete</a>
+                        </td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<h2 th:text="${message}" style="color: brown"></h2>
+<div th:if="${listService.totalPages!=0}" style="font-size: 20px">
+    <a th:if="${listService.hasPrevious()}" th:href="@{/service/serviceList(page=${listService.number - 1}, keyword=${holdKeyword})}">Previous</a>
+    <a th:if="${listService.hasNext()}" th:href="@{/service/serviceList(page=${listService.number+1},keyword=${holdKeyword})}">Next</a>
+    <th:block th:each="i: ${#numbers.sequence(0, listService.totalPages - 1)}">
+        <a th:href="@{/service/serviceList(page = ${i}, keyword = ${holdKeyword})}" th:text="${i + 1}"></a>
+    </th:block>
+</div>
+
+
+<!--delete modal-->
+
+<div>
+
+    <form action="/service/deleteService" method="get" id="formDelete">
+        <input type="hidden" id="idService" name="idService" />
+    </form>
+
+    <!-- Modal -->
+
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete Customer</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Do you want to delete this service?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="submitFormDelete()">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/jquery-3.5.1.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+    function setService(id) {
+        document.getElementById("idService").value = id;
+    }
+
+    function submitFormDelete() {
+        let formDelete = document.getElementById("formDelete");
+        formDelete.submit();
+    }
+</script>
+</body>
+</html>

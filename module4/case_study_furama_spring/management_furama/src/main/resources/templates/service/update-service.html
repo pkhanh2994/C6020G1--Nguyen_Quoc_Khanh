@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create Customer</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <style>
+        div.container-fluid  {
+            /*background-image: url("https://www.blissvn.com/Data/Sites/1/media/blog/%C4%91%E1%BB%8Ba-%C4%91i%E1%BB%83m/hotel-six-senses-ninh-van-resort-nha-trang-vietnam.jpg");*/
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://www.blissvn.com/Data/Sites/1/media/blog/%C4%91%E1%BB%8Ba-%C4%91i%E1%BB%83m/hotel-six-senses-ninh-van-resort-nha-trang-vietnam.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 101%;
+        }
+        label{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<header th:replace="common/common::headerFurama"></header>
+<div th:replace="common/common::navbarFurama"></div>
+<div class="container-fluid">
+    <div class="col-lg-9" id="content">
+        <form action="/service/updateService" th:object="${service}" method="post">
+            <div class="form-group">
+                <input type="hidden" class="form-control" placeholder="Enter Id" id="idc" th:field="*{service_id}">
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" placeholder="Enter name" id="name" th:field="*{service_name}">
+            </div>
+            <div class="form-group">
+                <label for="ar">Area:</label>
+                <input type="text" class="form-control" placeholder="Enter area" id="ar"
+                       th:field="*{service_area}">
+                <p style="color: red" th:if="${#fields.hasErrors('service_area')}" th:errors="*{service_area}"></p>
+            </div>
+            <label for="cs">Cost:</label>
+            <input type="text" class="form-control" placeholder="Enter the cost" id="cs" th:field="*{service_cost}">
+            <p style="color: red" th:if="${#fields.hasErrors('service_cost')}" th:errors="*{service_cost}"></p>
+            <div class="form-group">
+                <label for="mp">Max people:</label>
+                <input type="text" class="form-control" placeholder="Enter max people" id="mp"
+                       th:field="*{service_max_people}">
+                <p style="color: red" th:if="${#fields.hasErrors('service_max_people')}" th:errors="*{service_max_people}"></p>
+            </div>
+            <div class="form-group">
+                <label for="sd">Standard:</label>
+                <input type="text" class="form-control" placeholder="Enter standard" id="sd"
+                       th:field="*{standard_room}">
+            </div>
+            <div class="form-group">
+                <label for="oc">Over convenient:</label>
+                <input type="text" class="form-control" placeholder="Enter convenient" id="oc"
+                       th:field="*{description_other_convenience}">
+            </div>
+            <div class="form-group">
+                <label for="pr">Pool area:</label>
+                <input type="text" class="form-control" placeholder="Enter name" id="pr"
+                       th:field="*{pool_area}">
+            </div>
+            <div class="form-group">
+                <label for="fl">Number of floor:</label>
+                <input type="text" class="form-control" placeholder="Enter floor" id="fl"
+                       th:field="*{number_of_floors}">
+                <p style="color: red" th:if="${#fields.hasErrors('number_of_floors')}" th:errors="*{number_of_floors}"></p>
+            </div>
+            <label for="typeR">Type of rent:</label>
+            <select th:field="*{typeOfRent}" id="typeR" class="custom-select">
+                <option th:each="rent : ${listTypeOfRent}" th:value="${rent.rent_type_id}"
+                        th:text="${rent.rent_type_name}"></option>
+            </select>
+            <label for="typeS">Type of service:</label>
+            <select th:field="*{typeOfService}" id="typeS" class="custom-select">
+                <option th:each="typeService : ${listTypeOfService}" th:value="${typeService.service_type_id}"
+                        th:text="${typeService.service_type_name}"></option>
+            </select>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+
+    </div>
+</div>
+
+
+<script src="/js/jquery-3.5.1.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

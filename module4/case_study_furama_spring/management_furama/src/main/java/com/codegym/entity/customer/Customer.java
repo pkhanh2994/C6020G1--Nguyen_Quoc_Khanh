@@ -1,19 +1,33 @@
 package com.codegym.entity.customer;
 
 import com.codegym.entity.contract.Contract;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 
 @Entity(name = "customer")
 public class Customer {
     @Id
+    @Pattern(regexp = "^KH" + "-" + "\\d{4}$",message = "The customer Id must be follow this form: KH-XXX. " +
+            "X is the number from 0-9")
     private String customer_id;
+    @NotBlank(message = "Please enter name")
     private String customer_name;
+    @DateTimeFormat(pattern = "DD/MM/YYYY")
     private String customer_birthday;
     private String customer_gender;
+    @Pattern(regexp = "\\d{9}|\\d{12}",message = "The identify card must be have 9 number")
     private String customer_id_card;
+    @Pattern(regexp = "^(09[0|1]|849[0|1])+\\d{7}$",message = "The phone number was wrong,please follow" +
+            " this tutorial:090 or 0901 or 8490 " +
+            "or 84911234567")
     private String customer_phone;
+    @Pattern(regexp = "^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$",message = "Email must be follow this " +
+            "form: abc@abc.com")
     private String customer_email;
     private String customer_address;
 

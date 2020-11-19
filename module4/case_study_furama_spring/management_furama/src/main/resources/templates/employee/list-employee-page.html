@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>List Customer</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <style>
+        body{
+            background-image: url("https://www.blissvn.com/Data/Sites/1/media/blog/%C4%91%E1%BB%8Ba-%C4%91i%E1%BB%83m/hotel-six-senses-ninh-van-resort-nha-trang-vietnam.jpg");
+        }
+    </style>
+</head>
+<body>
+<header th:replace="common/common::headerFurama"></header>
+<div th:insert="common/common::navbarFurama">
+</div>
+
+<div class="col-12" style="position: relative;top: 20px;right: 50px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <table id="customer" class="table table-striped table-bordered" style="width:100%;
+                            color: black;text-align: center;align-content: center;font-family: Arial;background: white">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Date of birth</th>
+                        <th>Identify Card</th>
+                        <th>Salary</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Division</th>
+                        <th>Position</th>
+                        <th>Education degrees</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr th:each="employee : ${listEmployee}">
+                        <td th:text="${employee.employee_id}"></td>
+                        <td th:text="${employee.employee_name}"></td>
+                        <td th:text="${employee.employee_birthday}"></td>
+                        <td th:text="${employee.employee_id_card}"></td>
+                        <td th:text="${employee.employee_salary}"></td>
+                        <td th:text="${employee.employee_phone}"></td>
+                        <td th:text="${employee.employee_email}"></td>
+                        <td th:text="${employee.employee_address}"></td>
+                        <td th:text="${employee.division.division_name}"></td>
+                        <td th:text="${employee.position.position_name}"></td>
+                        <td th:text="${employee.educationDegree.getEducation_degree_name()}"></td>
+                        <td><a sec:authorize="hasRole('ADMIN')" th:href="@{/employee/updateEmployee(idEmployee=${employee.employee_id})}">Update</a></td>
+
+                        <td>
+                            <a href="#" th:onclick="setEmployee([[${employee.employee_id}]])"
+                           sec:authorize="hasRole('ADMIN')" data-toggle="modal" data-target="#deleteModal">Delete</a>
+                        </td>
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<h2 th:text="${message}" style="color: #005cbf"></h2>
+<div th:if="${listEmployee.totalPages!=0}" style="font-size: 20px;position: relative;left: 50px">
+    <a th:if="${listEmployee.hasPrevious()}" th:href="@{/employee/listEmployee(page=${listEmployee.number - 1}, keyword=${holdKeyword})}">Previous</a>
+    <!--    <span th:text="${listCustomer.number +1}"></span>/<span th:text="${listCustomer.totalPages}"></span>-->
+    <a th:if="${listEmployee.hasNext()}" th:href="@{/employee/listEmployee(page=${listEmployee.number+1},keyword=${holdKeyword})}">Next</a>
+    <th:block th:each="i: ${#numbers.sequence(0, listEmployee.totalPages - 1)}">
+        <a th:href="@{/employee/listEmployee(page = ${i}, keyword = ${holdKeyword})}" th:text="${i + 1}"></a>
+    </th:block>
+</div>
+
+
+<!--delete modal-->
+
+<div>
+
+    <form action="/employee/deleteEmployee" method="get" id="formDelete">
+        <input type="hidden" id="idEmployee" name="idEmployee" />
+    </form>
+
+    <!-- Modal -->
+
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete Customer</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Do you want to delete this employee?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="submitFormDelete()">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/js/jquery-3.5.1.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+    function setEmployee(id) {
+        document.getElementById("idEmployee").value = id;
+    }
+
+    function submitFormDelete() {
+        let formDelete = document.getElementById("formDelete");
+        formDelete.submit();
+    }
+</script>
+</body>
+</html>

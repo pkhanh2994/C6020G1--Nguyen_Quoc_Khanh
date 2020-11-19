@@ -1,8 +1,10 @@
 package com.codegym.entity.employee;
 
 import com.codegym.entity.contract.Contract;
+import com.codegym.entity.securityFurama.AppUser;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 
 @Entity(name = "employee")
@@ -17,6 +19,7 @@ public class Employee {
     @Column(name = "employee_id_card")
     private String employee_id_card;
     @Column(name = "employee_salary")
+    @Pattern(regexp = "^[1-9][\\d]*",message = "Salary must be number")
     private String employee_salary;
     @Column(name = "employee_phone")
     private String employee_phone;
@@ -35,6 +38,17 @@ public class Employee {
     private Division division;
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
     private List<Contract> contractList;
+    @OneToOne
+    @JoinColumn(name = "User_Id",referencedColumnName = "User_Id")
+    private AppUser appUser;
+
+    public AppUser getAppUser() {
+        return appUser;
+    }
+
+    public void setAppUser(AppUser appUser) {
+        this.appUser = appUser;
+    }
 
     public List<Contract> getContractList() {
         return contractList;
@@ -98,6 +112,7 @@ public class Employee {
     public String getEmployee_email() {
         return employee_email;
     }
+
 
     public void setEmployee_email(String employee_email) {
         this.employee_email = employee_email;

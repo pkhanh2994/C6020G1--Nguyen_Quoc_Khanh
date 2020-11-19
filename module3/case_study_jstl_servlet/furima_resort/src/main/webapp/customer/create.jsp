@@ -114,79 +114,79 @@
                     <a href="#" class="list-group-item list-group-item-action ">Primary item</a>
                     <a href="#" class="list-group-item list-group-item-action ">Primary item</a>
                     <a href="#" class="list-group-item list-group-item-action ">Primary item</a>
-                    <a href="#" class="list-group-item list-group-item-action ">Primary item</a>
+                    <a href="#" class="list-group-i            <div class="col-9">
+                    <div class="w-75 rounded p-1 mx-auto">
+
+                        <form method="post">
+
+                            <div class="form-group">
+                                <label for="id">Customer ID:</label>
+                                <input type="id" name="id" class="form-control" placeholder="Enter Customer ID" id="id" value="${customer.customer_id}">
+                            </div>
+                            <p style="color: red">${message}</p></span>
+
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="name" name="name" class="form-control" placeholder="Enter Name" id="name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="bd">Birthday:</label>
+                                <input type="date" name="birthday" class="form-control" placeholder="Enter birthday" id="bd">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="gd">Gender:</label>
+                                <input type="gender" name="gender" class="form-control" placeholder="Enter gender" id="gd">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ph">Phone number:</label>
+                                <input type="Phone" name="phone" class="form-control" placeholder="Enter phone number" id="ph">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="id_cd">ID Card:</label>
+                                <input type="idCard" name="idcard" class="form-control" placeholder="Enter ID Card" id="id_cd">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="em">Email:</label>
+                                <input type="email" name="email" class="form-control" placeholder="Enter email" id="em">
+                            </div>
+
+                            <%--  lay tu database--%>
+
+                            <div class="form-group">
+                                <input type="hidden" name="action" value="create" />
+                                <label>Type of customer</label>
+                                <select class="custom-select" name="typeOfCustomer">
+                                    <c:forEach var="typeOfCustomer" items="${typeOfCustomers}">
+                                        <option value="${typeOfCustomer.idTypeOfCustomer}">${typeOfCustomer.typeOfcustomer}</option>
+                                    </c:forEach>
+                                </select>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label for="adr">Address:</label>
+                                <input type="address" name="address" class="form-control" placeholder="Enter address" id="adr">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+
+
+                        </form>
+
+                    </div>
+                </div>tem list-group-item-action ">Primary item</a>
                     <a href="#" class="list-group-item list-group-item-action ">Primary item</a>
 
                 </div>
             </div>
 <%--            doan nay thay doi phu hop voi yeu cau them--%>
-            <div class="col-9">
-                <div class="w-75 rounded p-1 mx-auto">
 
-                <form method="post">
-
-                    <div class="form-group">
-                        <label for="id">Customer ID:</label>
-                        <input type="id" name="id" class="form-control" placeholder="Enter Customer ID" id="id" value="${customer.customer_id}">
-                    </div>
-                    <p style="color: red">${message}</p></span>
-
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="name" name="name" class="form-control" placeholder="Enter Name" id="name">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="bd">Birthday:</label>
-                        <input type="date" name="birthday" class="form-control" placeholder="Enter birthday" id="bd">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="gd">Gender:</label>
-                        <input type="gender" name="gender" class="form-control" placeholder="Enter gender" id="gd">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="ph">Phone number:</label>
-                        <input type="Phone" name="phone" class="form-control" placeholder="Enter phone number" id="ph">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="id_cd">ID Card:</label>
-                        <input type="idCard" name="idcard" class="form-control" placeholder="Enter ID Card" id="id_cd">
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for="em">Email:</label>
-                        <input type="email" name="email" class="form-control" placeholder="Enter email" id="em">
-                    </div>
-
-                       <%--  lay tu database--%>
-
-                    <div class="form-group">
-                        <input type="hidden" name="action" value="create" />
-                        <label>Type of customer</label>
-                        <select class="custom-select" name="typeOfCustomer">
-                            <c:forEach var="typeOfCustomer" items="${typeOfCustomers}">
-                                <option value="${typeOfCustomer.idTypeOfCustomer}">${typeOfCustomer.typeOfcustomer}</option>
-                            </c:forEach>
-                        </select>
-                    </div>
-
-
-
-                    <div class="form-group">
-                        <label for="adr">Address:</label>
-                        <input type="address" name="address" class="form-control" placeholder="Enter address" id="adr">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button><span>
-
-
-                </form>
-
-                </div>
-            </div>
         </div>
     </div>
 </div>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create Customer</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <style>
+        div.container-fluid  {
+            /*background-image: url("https://www.blissvn.com/Data/Sites/1/media/blog/%C4%91%E1%BB%8Ba-%C4%91i%E1%BB%83m/hotel-six-senses-ninh-van-resort-nha-trang-vietnam.jpg");*/
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://www.blissvn.com/Data/Sites/1/media/blog/%C4%91%E1%BB%8Ba-%C4%91i%E1%BB%83m/hotel-six-senses-ninh-van-resort-nha-trang-vietnam.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 101%;
+        }
+        label{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<header th:replace="common/common::headerFurama"></header>
+<div th:replace="common/common::navbarFurama"></div>
+<h2 th:text="${message}"></h2>
+<div class="container-fluid">
+    <div class="col-lg-9" id="content">
+        <form action="/contract/createContract" th:object="${contract}" method="post">
+            <div class="form-group">
+                <label for="idc">ID:</label>
+                <input type="text" class="form-control" placeholder="Enter Id" id="idc" th:field="*{contract_id}">
+            </div>
+            <div class="form-group">
+                <label for="sd">Start day:</label>
+                <input type="date" class="form-control" placeholder="Enter start day" id="sd" th:field="*{contract_start_date}">
+            </div>
+            <div class="form-group">
+                <label for="bd">End day:</label>
+                <input type="date" class="form-control" placeholder="Enter end day" id="bd"
+                       th:field="*{contract_end_date}">
+            </div>
+            <div>
+                <label for="dp">Deposit:</label>
+                <input type="text" class="form-control" placeholder="Enter  deposit" id="dp"
+                       th:field="*{contract_deposit}">
+                <p style="color: red" th:if="${#fields.hasErrors('contract_deposit')}" th:errors="*{contract_deposit}"></p>
+            </div>
+            <div>
+                <label for="tm">Total money:</label>
+                <input type="text" class="form-control" placeholder="Enter total money " id="tm"
+                       th:field="*{contract_total_money}">
+                <p style="color:red" th:if="${#fields.hasErrors('contract_total_money')}" th:errors="*{contract_total_money}"></p>
+            </div>
+            <label for="pl">Employee</label>
+            <select th:field="*{employee}" id="pl" class="custom-select">
+                <option th:each="emp : ${employeeList}" th:value="${emp.employee_id}"
+                        th:text="${emp.employee_name}"></option>
+            </select>
+            <label for="cs">Customer</label>
+            <select th:field="*{customer}" id="cs" class="custom-select">
+                <option th:each="cus : ${customerList}" th:value="${cus.customer_id}"
+                        th:text="${cus.customer_name}"></option>
+            </select>
+            <label for="sv">Service</label>
+            <select th:field="*{serviceFrurama}" id="sv" class="custom-select">
+                <option th:each="servcie : ${serviceList}" th:value="${servcie.service_id}"
+                        th:text="${servcie.service_name}"></option>
+            </select>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+
+    </div>
+</div>
+
+
+<script src="/js/jquery-3.5.1.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

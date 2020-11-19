@@ -13,9 +13,10 @@ public class TypeOfRent {
     @Column(name = "rent_type_name")
     private String rent_type_name;
     @Column(name = "rent_type_cost")
+
     private String rent_type_cost;
     @OneToMany(mappedBy = "typeOfRent", cascade = CascadeType.ALL)
-    private List<Service> serviceList;
+    private List<ServiceFrurama> serviceFruramaList;
 
 
     public TypeOfRent(){
@@ -46,11 +47,11 @@ public class TypeOfRent {
         this.rent_type_cost = rent_type_cost;
     }
 
-    public List<Service> getServiceList() {
-        return serviceList;
+    public List<ServiceFrurama> getServiceFruramaList() {
+        return serviceFruramaList;
     }
 
-    public void setServiceList(List<Service> serviceList) {
-        this.serviceList = serviceList;
+    public void setServiceFruramaList(List<ServiceFrurama> serviceFruramaList) {
+        this.serviceFruramaList = serviceFruramaList;
     }
 }

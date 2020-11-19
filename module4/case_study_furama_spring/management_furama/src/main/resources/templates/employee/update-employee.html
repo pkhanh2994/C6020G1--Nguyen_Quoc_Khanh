@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create Customer</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <style>
+        div.container-fluid  {
+            /*background-image: url("https://www.blissvn.com/Data/Sites/1/media/blog/%C4%91%E1%BB%8Ba-%C4%91i%E1%BB%83m/hotel-six-senses-ninh-van-resort-nha-trang-vietnam.jpg");*/
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://www.blissvn.com/Data/Sites/1/media/blog/%C4%91%E1%BB%8Ba-%C4%91i%E1%BB%83m/hotel-six-senses-ninh-van-resort-nha-trang-vietnam.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 101%;
+        }
+        label{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<header th:replace="common/common::headerFurama"></header>
+<div th:replace="common/common::navbarFurama"></div>
+<h2 th:text="${message}"></h2>
+<div class="container-fluid">
+    <div class="col-lg-9" id="content">
+        <form action="/employee/updateCustomer" th:object="${employee}" method="post">
+            <div class="form-group">
+                <label for="idc">ID:</label>
+                <input type="text" class="form-control" placeholder="Enter Id" id="idc" th:field="*{employee_id}">
+            </div>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" placeholder="Enter name" id="name" th:field="*{employee_name}">
+            </div>
+            <div class="form-group">
+                <label for="bd">Birthday:</label>
+                <input type="date" class="form-control" placeholder="Enter birthday" id="bd"
+                       th:field="*{employee_birthday}">
+            </div>
+            <div>
+                <label for="idCard">ID card number:</label>
+                <input type="text" class="form-control" placeholder="Enter id card number" id="idCard"
+                       th:field="*{employee_id_card}">
+                <p style="color: red" th:if="${#fields.hasErrors('employee_id_card')}" th:errors="*{employee_id_card}"></p>
+            </div>
+            <div>
+                <label for="sl">Salary:</label>
+                <input type="text" class="form-control" placeholder="Enter id salary " id="sl"
+                       th:field="*{employee_salary}">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone number:</label>
+                <input type="text" class="form-control" placeholder="Enter phone number" id="phone"
+                       th:field="*{employee_phone}">
+                <p style="color: red" th:if="${#fields.hasErrors('employee_phone')}" th:errors="*{employee_phone}"></p>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" placeholder="Enter email" id="email"
+                       th:field="*{employee_email}">
+                <p style="color: red" th:if="${#fields.hasErrors('employee_email')}" th:errors="*{employee_email}"></p>
+            </div>
+            <div class="form-group">
+                <label for="adr">Address:</label>
+                <input type="text" class="form-control" placeholder="Enter address" id="adr"
+                       th:field="*{employee_address}">
+            </div>
+            <label for="ps">Position</label>
+            <select th:field="*{position}" id="ps" class="custom-select">
+                <option th:each="position : ${positionList}" th:value="${position.position_id}"
+                        th:text="${position.position_name}"></option>
+            </select>
+            <label for="dv">Division</label>
+            <select th:field="*{division}" id="dv" class="custom-select">
+                <option th:each="division : ${divisionList}" th:value="${division.division_id}"
+                        th:text="${division.division_name}"></option>
+            </select>
+            <label for="ed">Eduacation degrees</label>
+            <select th:field="*{educationDegree}" id="ed" class="custom-select">
+                <option th:each="edu : ${eduList}" th:value="${edu.education_degree_id}"
+                        th:text="${edu.education_degree_name}"></option>
+            </select>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+
+    </div>
+</div>
+
+
+<script src="/js/jquery-3.5.1.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -50,10 +50,10 @@
                             <td th:text="${customer.customer_email}"></td>
                             <td th:text="${customer.typeOfCustomer.nameTypeOfCustomer}"></td>
                             <td th:text="${customer.customer_address}"></td>
-                            <td><a th:href="@{/customerHome/updateCustomer(idCustomer=${customer.customer_id})}">Update</a></td>
+                            <td><a sec:authorize="hasRole('ADMIN')" th:href="@{/customerHome/updateCustomer(idCustomer=${customer.customer_id})}">Update</a></td>
 
                             <td>
-                                <a href="#" th:onclick="setCustomer([[${customer.customer_id}]])"
+                                <a href="#" sec:authorize="hasRole('ADMIN')" th:onclick="setCustomer([[${customer.customer_id}]])"
                                    data-toggle="modal" data-target="#deleteModal">Delete</a>
                             </td>
 

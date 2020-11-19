@@ -1,8 +1,9 @@
 package com.codegym.entity.attachService;
 
-import com.codegym.entity.contract.ContractDetail;
+import com.codegym.entity.contractdetail.ContractDetail;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 
 @Entity(name = "attach_service")
@@ -13,6 +14,7 @@ public class AttachService {
     @Column(name = "attach_service_name")
     private String attach_service_name;
     @Column(name = "attach_service_cost")
+    @Pattern(regexp ="^[1-9][\\d]*",message = "cost must be number" )
     private String attach_service_cost;
     @Column(name = "attach_service_unit")
     private String attach_service_unit;

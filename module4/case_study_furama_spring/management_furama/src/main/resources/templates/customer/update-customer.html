@@ -43,16 +43,19 @@
                 <label for="idCard">ID card number:</label>
                 <input type="text" class="form-control" placeholder="Enter id card number" id="idCard"
                        th:field="*{customer_id_card}">
+                <p style="color:red" th:if="${#fields.hasErrors('customer_id_card')}" th:errors="*{customer_id_card}"></p>
             </div>
             <div class="form-group">
                 <label for="phone">Phone number:</label>
                 <input type="text" class="form-control" placeholder="Enter phone number" id="phone"
                        th:field="*{customer_phone}">
+                <p style="color: red" th:if="${#fields.hasErrors('customer_phone')}" th:errors="*{customer_phone}"></p>
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" class="form-control" placeholder="Enter email" id="email"
                        th:field="*{customer_email}">
+                <p style="color: red" th:if="${#fields.hasErrors('customer_email')}" th:errors="*{customer_email}"></p>
             </div>
             <div class="form-group">
                 <label for="adr">Address:</label>

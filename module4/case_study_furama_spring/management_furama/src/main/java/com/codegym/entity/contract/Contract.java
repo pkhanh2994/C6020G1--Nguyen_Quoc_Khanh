@@ -1,10 +1,12 @@
 package com.codegym.entity.contract;
 
+import com.codegym.entity.contractdetail.ContractDetail;
 import com.codegym.entity.customer.Customer;
 import com.codegym.entity.employee.Employee;
-import com.codegym.entity.service.Service;
+import com.codegym.entity.service.ServiceFrurama;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 
 @Entity(name = "contract")
@@ -17,8 +19,10 @@ public class Contract {
     @Column(name = "contract_end_date")
     private String contract_end_date;
     @Column(name = "contract_deposit")
+    @Pattern(regexp = "^[1-9][\\d]*",message = "Deposit must be number")
     private String contract_deposit;
     @Column(name = "contract_total_money")
+    @Pattern(regexp = "^[1-9][\\d]*",message = "Total money must be number")
     private String contract_total_money;
     @ManyToOne
     @JoinColumn(name = "employee_id",referencedColumnName = "employee_id")
@@ -29,7 +33,7 @@ public class Contract {
     private Customer customer;
     @ManyToOne
     @JoinColumn(name = "service_id",referencedColumnName = "service_id")
-    private Service service;
+    private ServiceFrurama serviceFrurama;
 
     @OneToMany(mappedBy = "contract",cascade = CascadeType.ALL)
     private List<ContractDetail> contractDetailList;
@@ -101,11 +105,11 @@ public class Contract {
         this.customer = customer;
     }
 
-    public Service getService() {
-        return service;
+    public ServiceFrurama getServiceFrurama() {
+        return serviceFrurama;
     }
 
-    public void setService(Service service) {
-        this.service = service;
+    public void setServiceFrurama(ServiceFrurama serviceFrurama) {
+        this.serviceFrurama = serviceFrurama;
     }
 }

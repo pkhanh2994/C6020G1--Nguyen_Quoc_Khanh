@@ -8,6 +8,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -43,7 +45,12 @@ public class CustomerController {
         return "customer/create-customer";
     }
     @PostMapping("/createCustomer")
-    public String createCustomer(@ModelAttribute Customer customer, RedirectAttributes redirectAttributes){
+    public String createCustomer(@Validated @ModelAttribute("customer") Customer customer, BindingResult bindingResult, RedirectAttributes redirectAttributes,Model model){
+        if(bindingResult.hasFieldErrors()){
+            model.addAttribute("typeOfCustomerList", this.typeOfCustomerService.findAllTypeOfCustomer());
+            model.addAttribute("customer",customer);
+            return "customer/create-customer";
+        }
         this.customerService.save(customer);
         redirectAttributes.addFlashAttribute("message","created new customer");
         return "redirect:/customerHome/customerList";
@@ -55,7 +62,12 @@ public class CustomerController {
         return "customer/update-customer";
     }
     @PostMapping("/updateCustomer")
-    public String updateCustomer(@ModelAttribute Customer customer){
+    public String updateCustomer(@Validated @ModelAttribute Customer customer,BindingResult bindingResult,Model model){
+        if(bindingResult.hasFieldErrors()){
+            model.addAttribute("typeOfCustomerList", this.typeOfCustomerService.findAllTypeOfCustomer());
+            model.addAttribute("customer",customer);
+            return "customer/update-customer";
+        }
         this.customerService.save(customer);
         return "redirect:/customerHome/customerList";
     }

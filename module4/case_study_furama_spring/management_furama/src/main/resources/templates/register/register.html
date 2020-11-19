@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Account</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+<div class="row">
+    <div class="col-6 border border-primary" style="position: relative;left: 250px;top: 20px">
+        <form action="/signUp/register" method="post" th:object="${appUser}">
+            <label for="un"> Account Name</label>
+            <select  id="un" th:field="*{userName}" class="form-control" >
+                <option th:each="user : ${listEmployee}" th:value="${user.employee_name}" th:text="${user.employee_name}"></option>
+            </select>
+            <br>
+            <br>
+            <label for="ps">Password</label>
+            <input type="password" id="ps" th:field="*{encrytedPassword}" class="form-control">
+            <br>
+            <br>
+            <label for="adm">Admin</label>
+            <input type="checkbox" name="admin" id="adm" value="1">
+            <label for="us">User</label>
+            <input type="checkbox" name="admin" id="us" value="2">
+            <br>
+            <br>
+            <input type="submit" value="register" class="form-control">
+        </form>
+    </div>
+</div>
+<br>
+<br>
+<p th:text="${message}" style="color: red"></p>
+<script src="/js/jquery-3.5.1.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
